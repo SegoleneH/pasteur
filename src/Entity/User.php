@@ -30,6 +30,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $enabled = null;
 
+    #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
+    private ?Editeur $editeur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,6 +130,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEnabled(bool $enabled): static
     {
         $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    public function getEditeur(): ?Editeur
+    {
+        return $this->editeur;
+    }
+
+    public function setEditeur(Editeur $editeur): static
+    {
+        // set the owning side of the relation if necessary
+        if ($editeur->getUser() !== $this) {
+            $editeur->setUser($this);
+        }
+
+        $this->editeur = $editeur;
 
         return $this;
     }
