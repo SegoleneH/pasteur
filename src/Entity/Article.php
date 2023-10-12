@@ -12,7 +12,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
 
 #[Gedmo\SoftDeleteable(fieldName:"deletedAt", timeAware:false, hardDelete:false)]
-
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
