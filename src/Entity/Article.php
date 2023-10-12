@@ -28,9 +28,13 @@ class Article
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'articles')]
     private Collection $tags;
 
+    #[ORM\ManyToMany(targetEntity: Editeur::class, mappedBy: 'articles')]
+    private Collection $editeurs;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->editeurs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -96,6 +100,33 @@ class Article
     {
         if ($this->tags->removeElement($tag)) {
             $tag->removeArticle($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Editeur>
+     */
+    public function getEditeurs(): Collection
+    {
+        return $this->editeurs;
+    }
+
+    public function addEditeur(Editeur $editeur): static
+    {
+        if (!$this->editeurs->contains($editeur)) {
+            $this->editeurs->add($editeur);
+            $editeur->addArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEditeur(Editeur $editeur): static
+    {
+        if ($this->editeurs->removeElement($editeur)) {
+            $editeur->removeArticle($this);
         }
 
         return $this;
