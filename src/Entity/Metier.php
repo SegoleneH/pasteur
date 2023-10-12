@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MetierRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -19,6 +21,14 @@ class Metier
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
+
+    #[ORM\ManyToMany(targetEntity: Praticien::class, mappedBy: 'metiers')]
+    private Collection $praticiens;
+
+    public function __construct()
+    {
+        $this->praticiens = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -45,6 +55,33 @@ class Metier
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Praticien>
+     */
+    public function getPraticiens(): Collection
+    {
+        return $this->praticiens;
+    }
+
+    public function addPraticien(Praticien $praticien): static
+    {
+        if (!$this->praticiens->contains($praticien)) {
+            $this->praticiens->add($praticien);
+            $praticien->addMetier($this);
+        }
+
+        return $this;
+    }
+
+    public function removePraticien(Praticien $praticien): static
+    {
+        if ($this->praticiens->removeElement($praticien)) {
+            $praticien->removeMetier($this);
+        }
 
         return $this;
     }

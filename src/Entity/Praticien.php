@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PraticienRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PraticienRepository::class)]
@@ -21,6 +23,14 @@ class Praticien
 
     #[ORM\Column(length: 190, nullable: true)]
     private ?string $lienRdv = null;
+
+    #[ORM\ManyToMany(targetEntity: Metier::class, inversedBy: 'praticiens')]
+    private Collection $metiers;
+
+    public function __construct()
+    {
+        $this->metiers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +69,30 @@ class Praticien
     public function setLienRdv(?string $lienRdv): static
     {
         $this->lienRdv = $lienRdv;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Metier>
+     */
+    public function getMetiers(): Collection
+    {
+        return $this->metiers;
+    }
+
+    public function addMetier(Metier $metier): static
+    {
+        if (!$this->metiers->contains($metier)) {
+            $this->metiers->add($metier);
+        }
+
+        return $this;
+    }
+
+    public function removeMetier(Metier $metier): static
+    {
+        $this->metiers->removeElement($metier);
 
         return $this;
     }
