@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Test FAQ {% endblock %}
+
+{% block body %}
+
+<h2>Liste de tous les FAQ</h2>
+
+{% for faq in faqs %}
+
+<p>Question : {{ faq.question }} </p>
+<p>Reponse : {{ faq.reponse }} </p>
+<hr>
+
+{% endfor %}
+
+
+
+{% endblock %}
