@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test des Tags{% endblock %}
+
+{% block body %}
+
+
+<h2>Afficher tous les Tags</h2>
+{% for tag in tags %}
+    <p>{{ tag.nom }}</p>
+{% endfor %}
+
+<h2>Afficher le Tag 1</h2>
+<p>{{ tag1.nom }}</p>
+
+
+{% endblock %}
