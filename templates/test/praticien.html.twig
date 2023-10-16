@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Test Praticien {% endblock %}
+
+{% block body %}
+
+{% for praticiensMetiers in praticiensMetiers %}
+    <p>Praticien : {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
+    <p>RDV : {{ praticiensMetiers.praticien.lienRdv ? (praticiensMetiers.praticien.lienRdv) : "0321759484" }} </p>
+    <p>Métiers : {{ praticiensMetiers.metiers|join(', ') }} </p>
+    <hr>
+{% endfor %}
+
+{% endblock %}

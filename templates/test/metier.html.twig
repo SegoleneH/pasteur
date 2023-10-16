@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Test Metier {% endblock %}
+
+{% block body %}
+
+<h1>Liste de tous les metiers</h1>
+
+{% for metier in metiers %}
+
+<p>nom : {{ metier.nom }} </p>
+<p>description : {{ metier.description }} </p>
+<hr>
+
+{% endfor %}
+
+{% endblock %}
