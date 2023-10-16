@@ -11,9 +11,6 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>DeletedAt</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,9 +20,6 @@
                 <td>{{ tag.id }}</td>
                 <td>{{ tag.nom }}</td>
                 <td>{{ tag.description }}</td>
-                <td>{{ tag.deletedAt ? tag.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tag.createdAt ? tag.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tag.updatedAt ? tag.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_tag_show', {'id': tag.id}) }}">show</a>
                     <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">edit</a>
