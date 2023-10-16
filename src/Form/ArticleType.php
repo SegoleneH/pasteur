@@ -15,9 +15,6 @@ class ArticleType extends AbstractType
             ->add('titre')
             ->add('resume')
             ->add('contenu')
-            ->add('deletedAt')
-            ->add('createdAt')
-            ->add('updatedAt')
             ->add('tags')
             ->add('editeurs')
         ;

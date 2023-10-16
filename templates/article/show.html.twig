@@ -24,16 +24,8 @@
                 <td>{{ article.contenu }}</td>
             </tr>
             <tr>
-                <th>DeletedAt</th>
-                <td>{{ article.deletedAt ? article.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
                 <th>CreatedAt</th>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>UpdatedAt</th>
-                <td>{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>

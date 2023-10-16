@@ -12,9 +12,7 @@
                 <th>Titre</th>
                 <th>Resume</th>
                 <th>Contenu</th>
-                <th>DeletedAt</th>
                 <th>CreatedAt</th>
-                <th>UpdatedAt</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,9 +23,7 @@
                 <td>{{ article.titre }}</td>
                 <td>{{ article.resume }}</td>
                 <td>{{ article.contenu }}</td>
-                <td>{{ article.deletedAt ? article.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
