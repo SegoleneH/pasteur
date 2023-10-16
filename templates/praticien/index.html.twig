@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Praticien index{% endblock %}
+
+{% block body %}
+    <h1>Praticien index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>LienRdv</th>
+                <th>DeletedAt</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for praticien in praticiens %}
+            <tr>
+                <td>{{ praticien.id }}</td>
+                <td>{{ praticien.nom }}</td>
+                <td>{{ praticien.prenom }}</td>
+                <td>{{ praticien.lienRdv }}</td>
+                <td>{{ praticien.deletedAt ? praticien.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ praticien.createdAt ? praticien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ praticien.updatedAt ? praticien.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">show</a>
+                    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_praticien_new') }}">Create new</a>
+{% endblock %}
