@@ -53,6 +53,8 @@ class UserType extends AbstractType
                 $user->setPassword($hashedPassword);
                 $event->setData($user);
             })
+            //! Le MDP est modifié par le hasher, si un user veut modifier 
+            //! son MDP, celui qu'il a créé n'apparaît pas dans le champ MDP
             ->add('enabled')
             // ->add('editeur')
         ;
