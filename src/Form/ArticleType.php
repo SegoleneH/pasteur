@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\Editeur;
 use App\Entity\Tag;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -26,7 +27,17 @@ class ArticleType extends AbstractType
                     'class' => 'checkbox',
                 ],
             ])
-            ->add('editeurs')
+            ->add('editeurs', EntityType::class, [
+                'class' => Editeur::class,
+                'choice_label' => function ($editeur) {
+                    return $editeur->getNom() . ' ' . $editeur->getPrenom();
+                },
+                'multiple' => true,
+                'expanded' => true,
+                'attr' => [
+                    'class' => 'checkbox',
+                ],
+            ])
         ;
     }
 
