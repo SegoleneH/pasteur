@@ -14,9 +14,6 @@ class EditeurType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('deletedAt')
-            ->add('createdAt')
-            ->add('updatedAt')
             ->add('user')
             ->add('articles')
         ;
