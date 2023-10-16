@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test des Éditeurs{% endblock %}
+
+{% block body %}
+
+
+<h2>Afficher tous les Éditeurs</h2>
+{% for editeur in editeurs %}
+    <p>{{ editeur.nom }} {{ editeur.prenom }}</p>
+{% endfor %}
+
+<h2>Afficher l'Éditeur 1</h2>
+<p>{{ editeur3.prenom }} {{ editeur3.nom }}</p>
+
+
+
+{% endblock %}

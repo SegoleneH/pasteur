@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test des Users{% endblock %}
+
+{% block body %}
+
+
+<h2>Afficher tous les Users</h2>
+{% for user in users %}
+    <p>{{ user.email }} </p>
+{% endfor %}
+
+<h2>Afficher l'User 1</h2>
+<p>{{ user1.email }}</p>
+
+
+
+{% endblock %}

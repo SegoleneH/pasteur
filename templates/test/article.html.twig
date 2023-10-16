@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test des Tags{% endblock %}
+
+{% block body %}
+
+
+<h2>Afficher tous les Articles</h2>
+{% for article in articles %}
+    <p>{{ article.titre }}</p>
+{% endfor %}
+
+<h2>Afficher l'Article 1</h2>
+<p>{{ article1.titre }}</p>
+<p>{{ article1.resume }}</p>
+<div>{{ article1.contenu }}</div>
+
+
+
+{% endblock %}
