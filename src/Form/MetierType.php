@@ -14,7 +14,6 @@ class MetierType extends AbstractType
         $builder
             ->add('nom')
             ->add('description')
-            ->add('praticiens')
         ;
     }
 

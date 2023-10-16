@@ -15,7 +15,6 @@ class EditeurType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('user')
-            ->add('articles')
         ;
     }
 
