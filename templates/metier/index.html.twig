@@ -11,9 +11,7 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>DeletedAt</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
+
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,9 +21,6 @@
                 <td>{{ metier.id }}</td>
                 <td>{{ metier.nom }}</td>
                 <td>{{ metier.description }}</td>
-                <td>{{ metier.deletedAt ? metier.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ metier.createdAt ? metier.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ metier.updatedAt ? metier.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_metier_show', {'id': metier.id}) }}">show</a>
                     <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">edit</a>
