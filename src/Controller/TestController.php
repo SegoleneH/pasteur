@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Editeur;
-use App\Entity\Faq;
 use App\Entity\Tag;
 use App\Entity\User;
 use Doctrine\Persistence\ManagerRegistry;
@@ -243,7 +242,7 @@ class TestController extends AbstractController
         $newLastUser = new User();
         //* Si cette ligne n'est pas modifiée entre 2 rechargements du twig, elle essaie de créer un nouveau
         //* user qui a le même email que le précédent : erreur SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry
-        $newLastUser->setEmail($this->$faker->email);
+        $newLastUser->setEmail('7lWpT@example.com');
         $newLastUser->setPassword('123');
         $newLastUser->setEnabled(true);
         $newLastUser->setRoles(['ROLE_USER']);
