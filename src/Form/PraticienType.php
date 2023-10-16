@@ -15,9 +15,6 @@ class PraticienType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('lienRdv')
-            ->add('deletedAt')
-            ->add('createdAt')
-            ->add('updatedAt')
             ->add('metiers')
         ;
     }
