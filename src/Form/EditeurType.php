@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Editeur;
+use App\Form\UserType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,7 +15,9 @@ class EditeurType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('user')
+            ->add('user', UserType::class, [
+                'label' => false,
+            ])
         ;
     }
 
