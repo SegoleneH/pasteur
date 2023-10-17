@@ -28,8 +28,10 @@ class EditeurController extends AbstractController
         $editeur = new Editeur();
         $form = $this->createForm(EditeurType::class, $editeur);
         $form->handleRequest($request);
+        $user = $editeur->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setRoles(['ROLE_USER']);
             $entityManager->persist($editeur);
             $entityManager->flush();
 
