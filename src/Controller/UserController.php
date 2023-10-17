@@ -21,7 +21,10 @@ class UserController extends AbstractController
             'users' => $userRepository->findAll(),
         ]);
     }
+    // function isPasswordValid(PasswordAuthenticatedUserInterface $user, string $plainPassword): bool
+    // {
 
+    // }
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -34,7 +37,6 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
             
-
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
