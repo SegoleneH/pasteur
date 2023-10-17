@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -10,6 +12,8 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
 
+
+#[UniqueEntity('email')]
 #[Gedmo\SoftDeleteable(fieldName: "deletedAt", timeAware: false, hardDelete: false)]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -22,6 +26,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Email(
+        mode: 'html5',
+        message: 'The email {{ value }} is not a valid email.',
+    )]
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
@@ -31,7 +39,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 191)]
+    #[ORM\Column(length: 191)]
     private ?string $password = null;
 
     #[ORM\Column]

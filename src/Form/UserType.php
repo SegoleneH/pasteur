@@ -9,12 +9,13 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 // use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class UserType extends AbstractType
 {
@@ -32,23 +33,27 @@ class UserType extends AbstractType
 
         $builder
             ->add('email')
-            // ->add('roles')
-
-            // Ajout d'un champ pour le mot de passe
             ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
                 'options' => ['attr' => [
                         'class' => 'password-field',
                         'autocomplete' => 'new-password'
-                    ]
-                ],
+                    ]],
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Confirmer le mot de passe'],
-                'required' => true
+                'invalid_message' => 'Les deux mots de passe doivent être identiques.',
+                'required' => true,
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Veuillez entrer un mot de passe',
+                    ]),
+                    new Assert\Length([
+                        'min' => 6,
+                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
+                    ])
+                    ]
                 ])
-            //& Le MDP est modifié par le hasher, si un user veut modifier 
-            //& son MDP, celui qu'il a créé n'apparaît pas dans le champ MDP
-            //& => il faut rendre accessible le MDP non hashé pour l'utilisateur
-            // Ajout d'un event listener pour lancer le hasher au submit
+            ->add('enabled')
             ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($hasher) {
                 $user = $event->getData();
                 $password = $user->getPassword();
@@ -59,7 +64,6 @@ class UserType extends AbstractType
             
             //& comment valider champ 'enabled' sans que
             //& l'utilisateur doive cocher la case "enabled"??
-            ->add('enabled')
             // ->add('editeur')
         ;
     }
