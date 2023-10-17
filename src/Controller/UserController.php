@@ -33,6 +33,7 @@ class UserController extends AbstractController
             $user->setRoles(['ROLE_ADMIN']);
             $entityManager->persist($user);
             $entityManager->flush();
+            
 
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
