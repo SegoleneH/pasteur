@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\Article;
 use App\Entity\Editeur;
 use App\Entity\Tag;
@@ -26,6 +27,13 @@ class ArticleType extends AbstractType
                 'attr' => [
                     'class' => 'checkbox',
                 ],
+                'constraints' => [
+                    new Assert\Count([
+                    'min' => 1,
+                    'minMessage' => 'Votre article doit contenir au moins {{ limit }} tag',
+                    ])
+                ]
+                
             ])
             ->add('editeurs', EntityType::class, [
                 'class' => Editeur::class,
@@ -37,6 +45,12 @@ class ArticleType extends AbstractType
                 'attr' => [
                     'class' => 'checkbox',
                 ],
+                'constraints' => [
+                    new Assert\Count([
+                        'min' => 1,
+                        'minMessage' => 'Votre article doit avoir au moins {{ limit }} auteur',
+                    ])
+                ]
             ])
         ;
     }
