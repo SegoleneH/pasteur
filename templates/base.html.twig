@@ -21,16 +21,30 @@
     <body>
         {% block header %}
             <nav class="pure-menu pure-menu-horizontal">
-                <a href="#" class="pure-menu-heading pure-menu-link">BRAND</a>
+                <a href="#" class="pure-menu-heading pure-menu-link">LOGO</a>
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">News</a>
+                        <a href="{{ path('app_praticien_index') }}" class="pure-menu-link">Praticiens</a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">Sports</a>
+                        <a href="{{ path('app_metier_index') }}" class="pure-menu-link">Métiers</a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">Finance</a>
+                        <a href="{{ path('app_article_index') }}" class="pure-menu-link">Articles</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="{{ path('app_tag_index') }}" class="pure-menu-link">Tags</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="{{ path('app_faq_index') }}" class="pure-menu-link">FAQ</a>
+                    </li>
+                </ul>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">LOGIN</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">LOGOUT</a>
                     </li>
                 </ul>
             </nav>
