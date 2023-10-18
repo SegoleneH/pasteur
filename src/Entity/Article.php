@@ -41,6 +41,7 @@ class Article
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'articles')]
     private Collection $tags;
 
+
     #[ORM\ManyToMany(targetEntity: Editeur::class, mappedBy: 'articles')]
     private Collection $editeurs;
 

@@ -22,11 +22,11 @@ class Faq
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Assert\Length(max: 1000)]
+    #[Assert\Length(max: 400)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $question = null;
 
-    #[Assert\Length(max: 1000)]
+    #[Assert\Length(max: 400)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $reponse = null;
 
