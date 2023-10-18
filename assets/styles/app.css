@@ -1,3 +1,28 @@
 body {
     background-color: lightgray;
 }
+h1 {
+    margin: 5vh auto;
+    text-align: center;
+}
+.pure-menu-horizontal {
+    background-color: rgb(25, 156, 113);
+}
+
+.pure-menu-link, .pure-menu-item {
+    color: black;
+    border: solid 3px transparent;
+}
+.pure-menu-item {
+    border: solid 3px transparent;
+}
+.pure-menu-item:hover, .pure-menu-item:focus {
+    color: rgb(39, 39, 39);
+    border: solid 3px black;
+}
+
+.pure-table-horizontal, tr {
+    border: solid 0.13rem rgba(25, 156, 113, 0.3);
+    margin: 0 auto;
+}
+/* Overflow pour textes longs qui rendent le tableau large */
