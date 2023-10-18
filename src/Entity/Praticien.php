@@ -37,6 +37,7 @@ class Praticien
     #[ORM\Column(length: 190, nullable: true)]
     private ?string $lienRdv = null;
 
+    #[Assert\Count(min: 1, minMessage: 'Veuillez indiquer au moins 1 métier')]
     #[ORM\ManyToMany(targetEntity: Metier::class, inversedBy: 'praticiens')]
     private Collection $metiers;
 

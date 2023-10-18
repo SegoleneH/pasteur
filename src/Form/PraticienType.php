@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Metier;
 use App\Entity\Praticien;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,12 @@ class PraticienType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('lienRdv')
-            ->add('metiers')
+            ->add('metiers', EntityType::class, [
+                'class' => Metier::class,
+                'multiple' => true,
+                'required' => true,
+                'expanded' =>true,
+            ])
         ;
     }
 
