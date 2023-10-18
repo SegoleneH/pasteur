@@ -4,13 +4,11 @@ namespace App\Form;
 
 use App\Entity\User;
 
-// use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-// use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Form\FormEvent;
@@ -38,7 +36,7 @@ class UserType extends AbstractType
                 'options' => ['attr' => [
                         'class' => 'password-field',
                         'autocomplete' => 'new-password'
-                    ]],
+                ]],
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Confirmer le mot de passe'],
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
@@ -51,9 +49,13 @@ class UserType extends AbstractType
                         'min' => 6,
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                     ])
-                    ]
+                ]
                 ])
-            ->add('enabled')
+            ->add('enabled', CheckboxType::class, [
+                'label' => 'Actif',
+                'required' => false,
+                'data' => true,
+            ])
             ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($hasher) {
                 $user = $event->getData();
                 $password = $user->getPassword();
@@ -61,10 +63,6 @@ class UserType extends AbstractType
                 $user->setPassword($hashedPassword);
                 $event->setData($user);
             })
-            
-            //& comment valider champ 'enabled' sans que
-            //& l'utilisateur doive cocher la case "enabled"??
-            // ->add('editeur')
         ;
     }
 
