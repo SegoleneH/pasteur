@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ArticleType extends AbstractType
 {
@@ -18,7 +19,7 @@ class ArticleType extends AbstractType
         $builder
             ->add('titre')
             ->add('resume')
-            ->add('contenu')
+            ->add('contenu', CKEditorType::class)
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'choice_label' => 'nom',
