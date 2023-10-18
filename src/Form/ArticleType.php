@@ -32,7 +32,8 @@ class ArticleType extends AbstractType
                     'min' => 1,
                     'minMessage' => 'Votre article doit contenir au moins {{ limit }} tag',
                     ])
-                ]
+                    ],
+                'by_reference' => false,
                 
             ])
             ->add('editeurs', EntityType::class, [
@@ -50,7 +51,8 @@ class ArticleType extends AbstractType
                         'min' => 1,
                         'minMessage' => 'Votre article doit avoir au moins {{ limit }} auteur',
                     ])
-                ]
+                    ],
+                    'by_reference' => false,
             ])
         ;
     }
