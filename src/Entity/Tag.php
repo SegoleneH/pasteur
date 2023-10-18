@@ -29,7 +29,7 @@ class Tag
     #[ORM\Column(length: 190)]
     private ?string $nom = null;
 
-    #[Assert\Length(max: 1000)]
+    #[Assert\Length(max: 500)]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
