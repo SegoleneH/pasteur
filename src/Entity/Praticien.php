@@ -22,12 +22,17 @@ class Praticien
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 1, max: 190)]
     #[ORM\Column(length: 190)]
     private ?string $nom = null;
 
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 1, max: 190)]
     #[ORM\Column(length: 190)]
     private ?string $prenom = null;
 
+    #[Assert\Length(max: 190)]
     #[ORM\Column(length: 190, nullable: true)]
     private ?string $lienRdv = null;
 

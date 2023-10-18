@@ -10,7 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+#[UniqueEntity('nom')]
 #[Gedmo\SoftDeleteable(fieldName: "deletedAt", timeAware: false, hardDelete: false)]
 #[ORM\Entity(repositoryClass: MetierRepository::class)]
 class Metier
@@ -23,10 +25,14 @@ class Metier
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 1, max: 190)]
     #[ORM\Column(length: 190)]
     private ?string $nom = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\Length(min: 0, max: 500)]
+    //& ça marche pas ^
+    #[ORM\Column(type: Types::TEXT, length: 500, nullable: true)]
     private ?string $description = null;
 
     #[ORM\ManyToMany(targetEntity: Praticien::class, mappedBy: 'metiers')]

@@ -5,9 +5,10 @@ namespace App\Entity;
 use App\Repository\FaqRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[Gedmo\SoftDeleteable(fieldName: "deletedAt", timeAware: false, hardDelete: false)]
 #[ORM\Entity(repositoryClass: FaqRepository::class)]
@@ -21,9 +22,11 @@ class Faq
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(max: 1000)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $question = null;
 
+    #[Assert\Length(max: 1000)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $reponse = null;
 
