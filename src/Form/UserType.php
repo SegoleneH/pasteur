@@ -4,24 +4,16 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-<<<<<<< HEAD
-// use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-=======
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
->>>>>>> 7a3cb114d72c7930b1b1192ed78378e7d6ce9b9d
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 // use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+// use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
-<<<<<<< HEAD
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-=======
 use Symfony\Component\Validator\Constraints as Assert;
->>>>>>> 7a3cb114d72c7930b1b1192ed78378e7d6ce9b9d
 
 class UserType extends AbstractType
 {
@@ -58,23 +50,22 @@ class UserType extends AbstractType
                     ]),
                     new Assert\Length([
                         'min' => 6,
+                        'max'=> 191,
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                     ])
                     ]
-                ])
-<<<<<<< HEAD
+                ]
+            )
 
             //& => il faut rendre accessible le MDP non hashé pour l'utilisateur
             // Ajout d'un event listener pour lancer le hasher au submit
-=======
             ->add('enabled')
->>>>>>> 7a3cb114d72c7930b1b1192ed78378e7d6ce9b9d
             ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($hasher) {
                
                 $user = $event->getData();
-                $password = $user->getPassword();
-                $hashedPassword = $hasher->hashPassword($user, $password);
-                $user->setPassword($hashedPassword);
+                $oldPassword = $user->getPassword();
+                $password = $this->hasher->hashPassword($user, $oldPassword);
+                $user->setPassword($password);
                 $event->setData($user);
             })
             
