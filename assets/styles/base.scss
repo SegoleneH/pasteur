@@ -34,3 +34,13 @@ tr {
     border: solid 0.13rem rgba(25, 156, 113, 0.3);
     margin: 0 auto;
 }
+
+tbody {
+    tr {
+        height: 80px;
+    }
+}
+
+// textarea::placeholder, input::placeholder{
+//     color: blue;
+// }

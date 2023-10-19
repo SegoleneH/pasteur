@@ -13,8 +13,30 @@ class EditeurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('prenom')
+            ->add('nom', null, [
+                'label' => 'Nom',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Entrez ici votre nom de famille.',
+                'help_attr' => ['class' => 'helpForm'],
+
+                'attr' => ['placeholder' => 'Votre nom ici'],
+
+                'invalid_message' => 'Veuillez entrer un nom.',
+                'required' => true,
+            ])
+            ->add('prenom', null, [
+                'label' => 'Prénom',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Entrez ici votre prénom.',
+                'help_attr' => ['class' => 'helpForm'],
+
+                'attr' => ['placeholder' => 'Votre prénom ici'],
+
+                'invalid_message' => 'Veuillez entrer un prénom.',
+                'required' => true,
+            ])
             ->add('user', UserType::class, [
                 'label' => false,
             ])

@@ -32,7 +32,18 @@ class UserType extends AbstractType
         $hasher = $this->hasher;
 
         $builder
-            ->add('email')
+            ->add('email', null, [
+                'label' => 'Email',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Entrez ici votre adresse email.',
+                'help_attr' => ['class' => 'helpForm'],
+
+                'attr' => ['placeholder' => 'Votre mail ici'],
+
+                'invalid_message' => 'Veuillez entrer une adresse email.',
+                'required' => true,
+            ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'options' => ['attr' => [
@@ -41,6 +52,13 @@ class UserType extends AbstractType
                 ]],
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Confirmer le mot de passe'],
+
+                'label' => 'Mot de Passe',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Entrez ici votre nouveau mot de passe.',
+                'help_attr' => ['class' => 'helpForm'],
+                
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
                 'required' => true,
                 'constraints' => [
