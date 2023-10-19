@@ -12,8 +12,24 @@ class FaqType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('question')
-            ->add('reponse')
+            ->add('question', null, [
+                'label' => 'Question',
+                'label_attr' => [ 'class' => 'labelForm'],
+                'help' => 'Saisissez la question qui apparraitra dans la section FAQ',
+                'help_attr' => [ 'class' => 'helpForm'],
+                'attr' => [
+                    'placeholder' => 'Saisissez la question',
+                ],
+            ])
+            ->add('reponse', null, [
+                'label' => 'Reponse',
+                'label_attr' => [ 'class' => 'labelForm'],
+                'help' => 'Saisissez la reponse qui apparaitra dans la section FAQ',
+                'help_attr' => [ 'class' => 'helpForm'],
+                'attr' => [
+                    'placeholder' => 'Saisissez la réponse',
+                ]
+            ])
         ;
     }
 

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Faq{% endblock %}
+{% block title %}Faq {{ faq.id }}{% endblock %}
 
 {% block body %}
-    <h1>Faq</h1>
+    <h1>Faq {{ faq.id }}</h1>
 
     <table class="table pure-table pure-table-horizontal">
         <tbody>
@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_faq_index') }}">back to list</a>
+    <a href="{{ path('app_faq_index') }}">Retour à la liste des FAQ</a>
 
-    <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">edit</a>
+    <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">Editer</a>
 
     {{ include('faq/_delete_form.html.twig') }}
 {% endblock %}

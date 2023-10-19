@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Faq index{% endblock %}
+{% block title %}Liste FAQ{% endblock %}
 
 {% block body %}
-    <h1>Faq index</h1>
+    <h1>Liste des FAQ</h1>
+
+    <a href="{{ path('app_faq_new') }}">Creer une nouvelle FAQ</a>
 
     <table class="table pure-table pure-table-horizontal">
         <thead>
@@ -21,17 +23,17 @@
                 <td>{{ faq.question }}</td>
                 <td>{{ faq.reponse }}</td>
                 <td>
-                    <a href="{{ path('app_faq_show', {'id': faq.id}) }}">show</a>
-                    <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">edit</a>
+                    <a href="{{ path('app_faq_show', {'id': faq.id}) }}">Afficher</a>
+                    <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucune FAQ existante</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_faq_new') }}">Create new</a>
+    
 {% endblock %}
