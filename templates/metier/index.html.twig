@@ -10,21 +10,21 @@
     <table class="table pure-table pure-table-horizontal">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
 
-                <th>actions</th>
+                <th colspan="2">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for metier in metiers %}
             <tr>
-                <td>{{ metier.id }}</td>
                 <td>{{ metier.nom }}</td>
                 <td>{{ metier.description }}</td>
                 <td>
                     <a href="{{ path('app_metier_show', {'id': metier.id}) }}">Afficher</a>
+                </td>
+                <td>
                     <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">Modifier</a>
                 </td>
             </tr>

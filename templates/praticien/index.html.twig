@@ -11,22 +11,22 @@
     <table class="table pure-table pure-table-horizontal">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Prenom</th>
                 <th>Nom</th>
                 <th>LienRdv</th>
-                <th>actions</th>
+                <th colspan="2">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for praticien in praticiens %}
             <tr>
-                <td>{{ praticien.id }}</td>
                 <td>{{ praticien.prenom }}</td>
                 <td>{{ praticien.nom }}</td>
                 <td>{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
                 <td>
                     <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">Afficher</a>
+                </td>
+                <td>
                     <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">Modifier</a>
                 </td>
             </tr>
