@@ -17,9 +17,37 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre')
-            ->add('resume')
-            ->add('contenu', CKEditorType::class)
+            ->add('titre', null, [
+                'label' => 'Titre de votre article',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Veuillez entrer un titre pour votre article.',
+                'help_attr' => ['class' => 'helpForm'],
+
+                'attr' => ['placeholder' => 'Votre titre ici'],
+
+                'invalid_message' => 'Veuillez entrer un titre.',
+                'required' => true,
+            ])
+            ->add('resume', null, [
+                'label' => 'Message destiné à la page d\'accueil',
+                'label_attr' => ['class' => 'labelForm'],
+
+                'help' => 'Veuillez entrer dans le champ ci-contre une brève description du contenu de
+                 l\'article, qui apparaîtra dans la banderole d\'actualités sur la page d\'accueil. 
+                Exemple : si votre article contient une information sur l\'actualité du cabinet, résumez
+                cette information ici.',
+                'help_attr' => ['class' => 'helpForm'],
+
+                'attr' => ['placeholder' => 'Votre message ici'],
+
+                'invalid_message' => 'Veuillez entrer un message.',
+                'required' => true,
+            ])
+            ->add('contenu', CKEditorType::class, [
+                'label' => 'Votre Article',
+                'label_attr' => ['class' => 'labelForm'],
+            ])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'choice_label' => 'nom',
@@ -28,6 +56,8 @@ class ArticleType extends AbstractType
                 'attr' => [
                     'class' => 'checkbox',
                 ],
+                'label' => 'Catégorie(s)',
+                'label_attr' => ['class' => 'labelForm'],
                 'constraints' => [
                     new Assert\Count([
                     'min' => 1,
@@ -39,6 +69,8 @@ class ArticleType extends AbstractType
             ])
             ->add('editeurs', EntityType::class, [
                 'class' => Editeur::class,
+                'label' => 'Editeur(s)',
+                'label_attr' => ['class' => 'labelForm'],
                 'choice_label' => function ($editeur) {
                     return $editeur->getNom() . ' ' . $editeur->getPrenom();
                 },

@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Editeur{% endblock %}
+{% block title %}Créer Editeur{% endblock %}
 
 {% block body %}
-    <h1>Create new Editeur</h1>
+    <h1>Créer un nouvel Editeur</h1>
 
     {{ include('editeur/_form.html.twig') }}
 
-    <a href="{{ path('app_editeur_index') }}">back to list</a>
+    <a href="{{ path('app_editeur_index') }}">Précédent</a>
 {% endblock %}
