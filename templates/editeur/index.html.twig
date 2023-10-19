@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editeurs{% endblock %}
+{% block title %}Éditeurs{% endblock %}
 
 {% block body %}
-    <h1>Liste des éditeurs</h1>
+    <h1>Liste des Éditeurs</h1>
 
     <table class="table pure-table pure-table-horizontal">
+    <a href="{{ path('app_editeur_new') }}">Créer Nouvel Éditeur</a>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Prenom</th>
+                <th>Prénom</th>
                 <th>Email</th>
                 <th>Actions</th>
             </tr>
@@ -35,5 +36,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_editeur_new') }}">Créer Nouveau</a>
 {% endblock %}
