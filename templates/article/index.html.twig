@@ -22,7 +22,7 @@
                 <td>{{ article.id }}</td>
                 <td>{{ article.titre }}</td>
                 <td>{{ article.resume }}</td>
-                <td>{{ article.contenu | raw }}</td>
+                <td>{{ article.contenu |u.truncate(300, '...', false) | raw }}</td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
