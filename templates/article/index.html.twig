@@ -9,22 +9,22 @@
     <a href="{{ path('app_article_new') }}">Créer Nouvel Article</a>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Description pour page d'accueil</th>
                 <th>Créé le</th>
-                <th>actions</th>
+                <th colspan="2">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
                 <td>{{ article.titre }}</td>
                 <td>{{ article.resume }}</td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">Afficher</a>
+                </td>
+                <td>
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
                 </td>
             </tr>
