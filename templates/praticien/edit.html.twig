@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Praticien{% endblock %}
+{% block title %}Modifier praticien{% endblock %}
 
 {% block body %}
-    <h1>Edit Praticien</h1>
+    <h1>Modifier le praticien</h1>
 
-    {{ include('praticien/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('praticien/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_praticien_index') }}">back to list</a>
+    <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
 
     {{ include('praticien/_delete_form.html.twig') }}
 {% endblock %}

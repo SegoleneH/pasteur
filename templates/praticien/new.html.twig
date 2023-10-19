@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Praticien{% endblock %}
+{% block title %}Nouveau Praticien{% endblock %}
 
 {% block body %}
-    <h1>Create new Praticien</h1>
+    <h1>Creer un nouveau Praticien</h1>
 
     {{ include('praticien/_form.html.twig') }}
 
-    <a href="{{ path('app_praticien_index') }}">back to list</a>
+    <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
 {% endblock %}
