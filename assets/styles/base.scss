@@ -79,6 +79,12 @@ h1 {
 .pure-menu-link{
     color: black;
 }
+
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media (max-width: 47.999em) {
 
     .custom-menu-3 {
