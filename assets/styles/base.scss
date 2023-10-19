@@ -38,7 +38,9 @@ h1 {
     right: 0;
     display: none;
 }
-
+.custom-brand {
+    width: 50px;
+}
 .custom-toggle .bar {
     background-color: #777;
     display: block;
@@ -74,7 +76,9 @@ h1 {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-
+.pure-menu-link{
+    color: black;
+}
 @media (max-width: 47.999em) {
 
     .custom-menu-3 {
