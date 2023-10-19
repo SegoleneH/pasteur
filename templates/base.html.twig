@@ -45,14 +45,21 @@
                         <a href="{{ path('app_user_index') }}" class="pure-menu-link">Users</a>
                     </li>
                 </ul>
+
+                {% if app.user %}
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">LOGIN</a>
-                    </li>
-                    <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">LOGOUT</a>
+                       <a href="{{ path('app_logout') }}" class="pure-menu-link"> {{ app.user.userIdentifier }} - Deconnexion</a>
                     </li>
                 </ul>
+                {% else %}
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a href="{{ path('app_login') }}" class="pure-menu-link">Connexion</a>
+                    </li>
+                </ul>
+                {% endif %} 
+
             </nav>
 {% endblock %}
         {% block body %}{% endblock %}
