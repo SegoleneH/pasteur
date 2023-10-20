@@ -18,7 +18,6 @@ class EditeurType extends AbstractType
                 'label_attr' => ['class' => 'labelForm'],
 
                 'help' => 'Entrez ici votre nom de famille.',
-                'help_attr' => ['class' => 'helpForm'],
 
                 'attr' => ['placeholder' => 'Votre nom ici'],
 
@@ -30,7 +29,6 @@ class EditeurType extends AbstractType
                 'label_attr' => ['class' => 'labelForm'],
 
                 'help' => 'Entrez ici votre prénom.',
-                'help_attr' => ['class' => 'helpForm'],
 
                 'attr' => ['placeholder' => 'Votre prénom ici'],
 

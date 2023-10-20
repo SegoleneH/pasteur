@@ -14,11 +14,6 @@ h1 {
     text-align: center;
 }
 
-.menuLogin {
-    display: flex;
-    justify-content: flex-end;    
-}
-
 td {
     max-width: 20vw;
 }
@@ -36,6 +31,7 @@ textarea {
     margin-bottom: 1em;
     height: 2.1em;
     overflow: hidden;
+    width: 100vw;
 }
 
 .custom-wrapper.open {
@@ -59,10 +55,14 @@ textarea {
     justify-content: space-between;
 }
 .liensMenu {
-    margin: 0 auto;
+    margin: 0 0 0 2vw;
 }
 #menu ul {
     position: relative;
+}
+.menuLogin {
+    display: flex;
+    justify-content: flex-end;
 }
 @media (max-width: 1024px) {
 
