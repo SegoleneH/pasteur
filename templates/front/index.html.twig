@@ -3,6 +3,16 @@
 {% block title %}Hello FrontController!{% endblock %}
 
 {% block body %}
-<a href="{{ path('app_login') }}">LOGIN</a>
-<a href="" >LOGOUT</a>
+
+<section>
+{% for faq in faqs %}
+
+    <div>
+        <p>{{ faq.question }}</p>
+        <p>{{ faq.reponse }}</p>
+    </div>
+
+{% endfor %}
+</section>
+
 {% endblock %}
