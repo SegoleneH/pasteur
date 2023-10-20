@@ -1,4 +1,22 @@
-{{ form_start(form, {'attr': {'class' : 'pure-form'}}) }}
+{# {{ form_start(form, {'attr': {'class' : 'pure-form'}}) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }} #}
+
+{{ form_start(form, {'attr': {'id' : 'faqForm'}}) }}
+
+    {{form_errors(form)}}
+
+    {{ form_label(form.question) }}
+    {{ form_widget(form.question, {'attr' : {"class" : 'zoneDeTexte', 'spellcheck' : 'false'} } ) }}
+    {{ form_help(form.question) }}
+
+    {{ form_label(form.reponse) }}
+    {{ form_widget(form.reponse, {'attr' : {"class" : 'zoneDeTexte', 'spellcheck' : 'false'} } ) }}
+    {{ form_help(form.reponse) }}
+
+    {{ form_rest(form) }}
+
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+
 {{ form_end(form) }}
