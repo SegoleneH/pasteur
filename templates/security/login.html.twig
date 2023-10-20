@@ -28,6 +28,14 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
+    {# 
+https://symfony.com/doc/current/form/form_customization.html#form-rendering-functions
+
+form_rest(form_view, variables)
+This renders all fields that have not yet been rendered for the given form. It's a good idea to always have this somewhere inside your form as it'll render hidden fields for you and make any fields you forgot to render easier to spot (since it'll render the field for you).
+{{ form_rest(form) }} #}
+
+
 
     <button class="btn btn-lg btn-primary" type="submit">
         Connexion

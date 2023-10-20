@@ -23,7 +23,8 @@
         {% endblock %}
 
         {% block javascripts %}
-            <script src="/../assets/app.js"></script>
+            {# <script src="/../assets/app.js"></script> #}
+            <script src="https://kit.fontawesome.com/fc1b66a4cc.js" crossorigin="anonymous"></script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
@@ -33,7 +34,6 @@
                 <div class="pure-u-1 pure-u-md-1-6">
                     <div class="pure-menu">
                         <a href="{{ path('app_front') }}" class="pure-menu-heading pure-menu-link custom-brand">LOGO</a>
-                        <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-md-5-6">
@@ -61,21 +61,22 @@
                                     <a href="{{ path('app_user_index') }}" class="pure-menu-link">Users</a>
                                 </li>
                             </ul>
-                        {% if app.user %}
-                            <ul class="pure-menu-list">
-                                <li class="pure-menu-item">
-                                <a href="{{ path('app_logout') }}" class="pure-menu-link"> {{ app.user.userIdentifier }} - Deconnexion</a>
-                                </li>
-                            </ul>
-                        {% else %}
-                            <div class="pure-u-1 pure-u-md-1-6 menuLogin">
+                       
+                            <div class="pure-u-1 pure-u-md-2-6 menuLogin">
+                                {% if app.user %}
                                 <ul class="pure-menu-list">
                                     <li class="pure-menu-item">
-                                        <a href="{{ path('app_login') }}" class="pure-menu-link">Connexion</a>
+                                    <a href="{{ path('app_logout') }}" class="pure-menu-link"> {{ app.user.userIdentifier }} - Deconnexion</a>
                                     </li>
                                 </ul>
+                                {% else %}
+                                    <ul class="pure-menu-list">
+                                        <li class="pure-menu-item">
+                                            <a href="{{ path('app_login') }}" class="pure-menu-link">Connexion</a>
+                                        </li>
+                                    </ul>
+                                {% endif %} 
                             </div>
-                        {% endif %} 
                     </div>
                 </div>
             </div>
@@ -83,6 +84,12 @@
         {% endblock %}
 
         {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+        <footer>
+            <p>Footer</p>
+        </footer>
         {% endblock %}
 
 

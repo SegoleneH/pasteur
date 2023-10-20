@@ -7,6 +7,9 @@ html{
 body {
     background-color: lightgray;
 }
+html, body, h1, .custom-wrapper, footer {
+    width: 100vw;
+}
 
 h1 {
     margin: 5vh auto;
@@ -14,21 +17,27 @@ h1 {
 }
 
 .menuLogin {
-    margin-left: 70vw;
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;    
 }
 
+td {
+    max-width: 20vw;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+textarea {
+    width: 200px;
+    height: 100px;
+}
 // MENU RESPONSIVE
 .custom-wrapper {
     background-color: rgb(25, 156, 113);
     margin-bottom: 1em;
-    -webkit-font-smoothing: antialiased;
     height: 2.1em;
     overflow: hidden;
-    -webkit-transition: height 0.5s;
-    -moz-transition: height 0.5s;
-    -ms-transition: height 0.5s;
-    transition: height 0.5s;
 }
 
 .custom-wrapper.open {
@@ -56,35 +65,37 @@ h1 {
     width: 20px;
     height: 2px;
     border-radius: 100px;
-    position: absolute;
-    top: 18px;
-    right: 7px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
+    // position: absolute;
+    // top: 18px;
+    // right: 7px;
+    // -webkit-transition: all 0.5s;
+    // -moz-transition: all 0.5s;
+    // -ms-transition: all 0.5s;
+    // transition: all 0.5s;
 }
+.pure-g {
+    flex-flow: row nowrap;
+}
+// .custom-toggle .bar:first-child {
+//     -webkit-transform: translateY(-6px);
+//     -moz-transform: translateY(-6px);
+//     -ms-transform: translateY(-6px);
+//     transform: translateY(-6px);
+// }
 
-.custom-toggle .bar:first-child {
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-}
+// .custom-toggle.x .bar {
+//     -webkit-transform: rotate(45deg);
+//     -moz-transform: rotate(45deg);
+//     -ms-transform: rotate(45deg);
+//     transform: rotate(45deg);
+// }
 
-.custom-toggle.x .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.custom-toggle.x .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
+// .custom-toggle.x .bar:first-child {
+//     -webkit-transform: rotate(-45deg);
+//     -moz-transform: rotate(-45deg);
+//     -ms-transform: rotate(-45deg);
+//     transform: rotate(-45deg);
+// }
 .pure-menu-link{
     color: black;
 }
@@ -99,12 +110,8 @@ h1 {
 }
 @media (max-width: 768px) {
 
-    .custom-menu-3 {
-        text-align: left;
-    }
-
-    .custom-toggle {
-        display: block;
+    .custom-wrapper {
+        overflow: scroll;
     }
 
 }

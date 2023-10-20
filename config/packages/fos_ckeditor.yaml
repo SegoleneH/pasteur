@@ -10,9 +10,10 @@ twig:
 fos_ck_editor:
     configs:
         my_config:
-            uiColor: "#3E59AD"
+            uiColor: "#168a63"
             # height: 500 # Hauteur
             # width: 1000 # Largeur
+            font_style: 'Inclusive Sans'
             toolbar:
             - {
                     name: "styles",
