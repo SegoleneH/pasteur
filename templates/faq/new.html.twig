@@ -22,11 +22,11 @@
         {{form_errors(form)}}
 
         {{ form_label(form.question) }}
-        {{ form_widget(form.question, {'attr' : {"class" : 'zoneDeTexte', 'spellcheck' : 'false'} } ) }}
+        {{ form_widget(form.question, {'attr' : {"class" : 'zoneDeTexte'}}) }}
         {{ form_help(form.question) }}
 
         {{ form_label(form.reponse) }}
-        {{ form_widget(form.reponse, {'attr' : {"class" : 'zoneDeTexte', 'spellcheck' : 'false'} } ) }}
+        {{ form_widget(form.reponse, {'attr' : {"class" : 'zoneDeTexte'}}) }}
         {{ form_help(form.reponse) }}
 
         {{ form_rest(form) }}
