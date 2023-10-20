@@ -7,7 +7,7 @@ html{
 body {
     background-color: lightgray;
 }
-html, body, h1, .custom-wrapper, footer {
+html, body, h1, .custom-wrapper {
     width: 100vw;
 }
 
@@ -108,7 +108,7 @@ textarea {
 #menu ul {
     position: relative;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .custom-wrapper {
         overflow-x: scroll;
