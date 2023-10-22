@@ -6,8 +6,4 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-<<<<<<< HEAD
 import './styles/base.scss';
-=======
-import './styles/base.scss';
->>>>>>> 393a524cc830044490ff9d56f7be98f7fdab9b62

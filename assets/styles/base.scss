@@ -1,76 +1,80 @@
 @import 'app.scss';
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-html{
+// TO DO : 
+//   - icônes + display .column 
+//   - créer "cartes" praticiens
+//   - créer "cartes" métiers ?
+// 
+// 
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:root {
     font-family: 'Inclusive Sans', sans-serif;
 }
 
 body {
-    background-color: lightgray;
+    background-color: rgb(198, 242, 224);
+
+    h1 {
+        margin: 5vh auto;
+        text-align: center;
+    }
+    
+    td {
+        max-width: 20vw;
+    }
+    
+    textarea {
+        width: 200px;
+        height: 100px;
+    }
 }
 
 
-h1 {
-    margin: 5vh auto;
-    text-align: center;
-}
-
-td {
-    max-width: 20vw;
-}
-.column{
-    display: flex;
-    flex-direction: column;
-}
-textarea {
-    width: 200px;
-    height: 100px;
-}
 // MENU RESPONSIVE
 .custom-wrapper {
     background-color: rgb(25, 156, 113);
-    margin-bottom: 1em;
-    height: 2.1em;
-    overflow: hidden;
-    width: 100vw;
-}
+    margin-bottom: 1.5em;
+    // min-width: 1605px;
+    // overflow-x: scroll;
+    height: 3em;
+    display: flex;
+    flex-flow: row nowrap;
 
-.custom-wrapper.open {
-    height: 14em;
-}
+    .ctnListesNav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
 
-.custom-menu-3 {
-    text-align: right;
+        .liensMenu {
+            display: flex;
+        }
+    }
+    
+    .menuLogin {
+        display: flex;
+        justify-content: flex-end;
+
+        .logoutIcon{
+            display: none;
+        }
+    }
 }
 
 .pure-g {
+    display: flex;
     flex-flow: row nowrap;
 }
 
-.pure-menu-link{
+.pure-menu-link {
     color: black;
+    padding: 0.94em 0.5em 0.94em 0.5em;
+}
+.fa-power-off {
+    margin: 0 0.3em 0 0.1em;
 }
 
-.spaceBetween {
-    display: flex;
-    justify-content: space-between;
-}
-.liensMenu {
-    margin: 0 0 0 2vw;
-}
-#menu ul {
-    position: relative;
-}
-.menuLogin {
-    display: flex;
-    justify-content: flex-end;
-}
-@media (max-width: 1024px) {
-
-    .custom-wrapper {
-        overflow-x: scroll;
-    }
-
-}
 // TABLEAUX
 
 .pure-table-horizontal,
@@ -84,9 +88,35 @@ tbody {
         height: 80px;
     }
 }
-th{
+
+th {
     text-align: center;
 }
-// textarea::placeholder, input::placeholder{
-//     color: blue;
-// }
+.pure-table thead {
+    background-color: rgba(25, 156, 113, 0.8);
+}
+
+
+@media (max-width: 1600px) {
+
+    .custom-wrapper {
+        overflow-x: scroll;
+    }
+    .logoutIcon {
+        display: block;
+        position: absolute;
+    }
+    // .pure-table-horizontal {
+    //     display: flex;
+    // }
+    .custom-wrapper .ctnListesNav {
+        justify-content: flex-start;
+    }
+    // TABLEAU
+    .column {
+        display: flex;
+        flex-direction: column;
+        border-bottom: transparent;
+    }
+
+}
