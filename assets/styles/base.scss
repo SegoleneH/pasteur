@@ -97,14 +97,10 @@ th {
 }
 
 
-@media (max-width: 1600px) {
+@media (max-width: 1023px) {
 
     .custom-wrapper {
         overflow-x: scroll;
-    }
-    .logoutIcon {
-        display: block;
-        position: absolute;
     }
     // .pure-table-horizontal {
     //     display: flex;
