@@ -48,6 +48,7 @@ class ArticleType extends AbstractType
             ->add('contenu', CKEditorType::class, [
                 'label' => 'Votre Article',
                 'label_attr' => ['class' => 'labelForm'],
+                'purify_html' => true,
             ])
             ->add('imageFile', VichImageType::class, 
             ['required' => false,
@@ -64,7 +65,6 @@ class ArticleType extends AbstractType
                 'attr' => ['placeholder' => 'Votre description ici'],
 
                 'invalid_message' => 'Veuillez entrer un texte alternatif pour l\'image.',
-                'required' => true,
             ])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
