@@ -22,6 +22,8 @@
         </tbody>
     </table>
 
+    <img src="{{ vich_uploader_asset(praticien, 'imageFile') }}" alt="{{ praticien.imageName }}">
+
     <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
 
     <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">Modifier</a>
