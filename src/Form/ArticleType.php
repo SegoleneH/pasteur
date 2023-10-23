@@ -11,6 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ArticleType extends AbstractType
 {
@@ -48,6 +49,11 @@ class ArticleType extends AbstractType
                 'label' => 'Votre Article',
                 'label_attr' => ['class' => 'labelForm'],
             ])
+            ->add('imageFile', VichImageType::class, 
+            ['required' => false,
+            'download_uri' => false,
+            ])
+            ->add('alt')
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'choice_label' => 'nom',
