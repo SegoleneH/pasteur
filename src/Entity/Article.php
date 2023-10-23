@@ -48,15 +48,18 @@ class Article
     #[ORM\ManyToMany(targetEntity: Editeur::class, mappedBy: 'articles')]
     private Collection $editeurs;
 
+    #[Assert\Image]
     #[Vich\UploadableField(mapping: 'images', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
     private ?string $imageName = null;
 
+
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
-
+    
+    #[Assert\Length(max: 190)]
     #[ORM\Column(length: 190, nullable: true)]
     private ?string $alt = null;
 
@@ -213,4 +216,5 @@ class Article
 
         return $this;
     }
+
 }

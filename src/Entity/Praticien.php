@@ -44,6 +44,7 @@ class Praticien
     #[ORM\ManyToMany(targetEntity: Metier::class, inversedBy: 'praticiens')]
     private Collection $metiers;
 
+    #[Assert\Image]
     #[Vich\UploadableField(mapping: 'images', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 

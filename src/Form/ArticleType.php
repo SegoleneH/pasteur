@@ -53,7 +53,19 @@ class ArticleType extends AbstractType
             ['required' => false,
             'download_uri' => false,
             ])
-            ->add('alt')
+            ->add('alt', null, [
+                'label' => 'Description de l\'image',
+
+                'help' => 'Veuillez entrer dans le champ ci-dessus une description de l\'image, 
+                destinée aux utilisateurs qui ne peuvent pas la voir, comme les utilisateurs 
+                d\'un lecteur d\'écran ou les utilisateurs qui naviguent sur un réseau bas débit.
+                LAISSER VIDE SI L\'IMAGE EST PUREMENT DÉCORATIVE.',
+
+                'attr' => ['placeholder' => 'Votre description ici'],
+
+                'invalid_message' => 'Veuillez entrer un texte alternatif pour l\'image.',
+                'required' => true,
+            ])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'choice_label' => 'nom',
@@ -92,9 +104,9 @@ class ArticleType extends AbstractType
                     ])
                     ],
                     'by_reference' => false,
-            ])
-        ;
-    }
+                    ])
+            ;
+        }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
