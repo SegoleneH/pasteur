@@ -57,6 +57,9 @@ class Article
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
+    #[ORM\Column(length: 190, nullable: true)]
+    private ?string $alt = null;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -197,5 +200,17 @@ class Article
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getAlt(): ?string
+    {
+        return $this->alt;
+    }
+
+    public function setAlt(?string $alt): static
+    {
+        $this->alt = $alt;
+
+        return $this;
     }
 }
