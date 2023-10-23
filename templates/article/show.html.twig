@@ -22,7 +22,11 @@
         </tbody>
     </table>
 
+    {% if article.imageName %}
+
     <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+
+    {% endif %}
 
     <a href="{{ path('app_article_index') }}">Précédent</a>
 
