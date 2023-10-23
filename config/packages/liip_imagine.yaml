@@ -10,5 +10,5 @@ liip_imagine:
         my_thumb:
             quality: 75
             filters:
-                thumbnail: { size: [80, 80], mode: ineset }
-                background: { size: [82, 82], position: center, color: '#000000' }
+                thumbnail: { size: [240, 180], mode: ineset }
+                background: { size: [248, 188], position: center, color: '#000000' }
