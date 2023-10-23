@@ -22,7 +22,7 @@
         </tbody>
     </table>
 
-    <img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="{{ praticien.imageName }}">
+    <img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticien.nom }} {{ praticien.prenom }}">
 
     <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
 
