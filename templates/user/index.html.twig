@@ -5,7 +5,9 @@
 {% block body %}
     <h1>Liste des users</h1>
 
-    <a href="{{ path('app_user_new') }}">Creer un nouvel admin</a>
+    <a href="{{ path('app_user_new') }}">
+        <button>Creer un nouvel admin</button>
+    </a>
 
     <table class="table pure-table pure-table-horizontal">
         <thead>

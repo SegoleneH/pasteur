@@ -12,8 +12,18 @@ class TagType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('description')
+            ->add('nom', null, [
+                'attr' => ['placeholder' => 'Le nom de votre catégorie '],
+
+                'help' => 'Saisissez le nom de votre nouvelle catégorie',
+                'help_attr' => ['class' => 'helpForm'],
+            ])
+            ->add('description', null, [
+                'attr' => ['placeholder' => 'Votre description ici'],
+
+                'help' => 'Saisissez une brève description de la catégorie à créer',
+                'help_attr' => ['class' => 'helpForm'],
+            ])
         ;
     }
 

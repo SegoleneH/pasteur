@@ -15,7 +15,7 @@ class FaqType extends AbstractType
             ->add('question', null, [
                 'label' => 'Question',
                 'label_attr' => [ 'class' => 'labelForm'],
-                'help' => 'Saisissez la question qui apparraitra dans la section FAQ',
+                'help' => 'Saisissez la question qui apparaîtra dans la section FAQ',
                 'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
                     'placeholder' => 'Saisissez la question',
@@ -24,7 +24,7 @@ class FaqType extends AbstractType
             ->add('reponse', null, [
                 'label' => 'Reponse',
                 'label_attr' => [ 'class' => 'labelForm'],
-                'help' => 'Saisissez la reponse qui apparaitra dans la section FAQ',
+                'help' => 'Saisissez la reponse qui apparaîtra dans la section FAQ',
                 'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
                     'placeholder' => 'Saisissez la réponse',

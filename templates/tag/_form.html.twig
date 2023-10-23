@@ -1,4 +1,20 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }} #}
+{{ form_start(form, {'attr': {'id' : 'tagForm'}}) }}
+
+    {{form_errors(form)}}
+
+    {{ form_label(form.nom) }}
+    {{ form_widget(form.nom) }}
+    {{ form_help(form.nom, {'attr' : {"class" : 'helpForm'} }) }}
+    
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description, {'attr' : {"class" : 'zoneDeTexte', 'spellcheck' : 'false'} } ) }}
+    {{ form_help(form.description) }}
+    {{ form_rest(form) }}
+
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+
 {{ form_end(form) }}

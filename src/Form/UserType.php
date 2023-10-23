@@ -53,10 +53,7 @@ class UserType extends AbstractType
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Confirmer le mot de passe'],
 
-                'label' => 'Mot de Passe',
-                'label_attr' => ['class' => 'labelForm'],
-
-                'help' => 'Entrez ici votre nouveau mot de passe.',
+                'help' => 'Entrez votre mot de passe dans les deux champs ci-contre.',
                 'help_attr' => ['class' => 'helpForm'],
                 
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
