@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PraticienType extends AbstractType
 {
@@ -51,6 +52,10 @@ class PraticienType extends AbstractType
                 'help' => 'Indiquer au moins 1 métier pour le praticien',
                 'help_attr' => [ 'class' => 'helpForm'],
                 'invalid_message' => 'Veuillez indiquer au moins 1 métier',
+            ])
+            ->add('imageFile', VichImageType::class, 
+            ['required' => false,
+            'download_uri' => false,
             ])
         ;
     }
