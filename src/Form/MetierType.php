@@ -20,6 +20,7 @@ class MetierType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez le nom du métier',
                 ],
+                'purify_html' => true,
             ])
             ->add('description', null, [
                 'label' => 'Description',
@@ -29,6 +30,7 @@ class MetierType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez la description du métier',
                 ],
+                'purify_html' => true,
             ])
         ;
     }

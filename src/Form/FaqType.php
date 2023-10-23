@@ -20,6 +20,7 @@ class FaqType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez la question',
                 ],
+                'purify_html' => true,
             ])
             ->add('reponse', null, [
                 'label' => 'Reponse',
@@ -28,7 +29,8 @@ class FaqType extends AbstractType
                 'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
                     'placeholder' => 'Saisissez la réponse',
-                ]
+                ],
+                'purify_html' => true,
             ])
         ;
     }

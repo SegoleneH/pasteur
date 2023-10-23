@@ -17,12 +17,14 @@ class TagType extends AbstractType
 
                 'help' => 'Saisissez le nom de votre nouvelle catégorie',
                 'help_attr' => ['class' => 'helpForm'],
+                'purify_html' => true,
             ])
             ->add('description', null, [
                 'attr' => ['placeholder' => 'Votre description ici'],
 
                 'help' => 'Saisissez une brève description de la catégorie à créer',
                 'help_attr' => ['class' => 'helpForm'],
+                'purify_html' => true,
             ])
         ;
     }

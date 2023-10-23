@@ -29,6 +29,7 @@ class ArticleType extends AbstractType
 
                 'invalid_message' => 'Veuillez entrer un titre.',
                 'required' => true,
+                'purify_html' => true,
             ])
             ->add('resume', null, [
                 'label' => 'Message destiné à la page d\'accueil',
@@ -44,6 +45,7 @@ class ArticleType extends AbstractType
 
                 'invalid_message' => 'Veuillez entrer un message.',
                 'required' => true,
+                'purify_html' => true,
             ])
             ->add('contenu', CKEditorType::class, [
                 'label' => 'Votre Article',
@@ -65,6 +67,7 @@ class ArticleType extends AbstractType
                 'attr' => ['placeholder' => 'Votre description ici'],
 
                 'invalid_message' => 'Veuillez entrer un texte alternatif pour l\'image.',
+                'purify_html' => true,
             ])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,

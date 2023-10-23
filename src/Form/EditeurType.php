@@ -23,6 +23,7 @@ class EditeurType extends AbstractType
 
                 'invalid_message' => 'Veuillez entrer un nom.',
                 'required' => true,
+                'purify_html' => true,
             ])
             ->add('prenom', null, [
                 'label' => 'Prénom',
@@ -34,6 +35,7 @@ class EditeurType extends AbstractType
 
                 'invalid_message' => 'Veuillez entrer un prénom.',
                 'required' => true,
+                'purify_html' => true,
             ])
             ->add('user', UserType::class, [
                 'label' => false,

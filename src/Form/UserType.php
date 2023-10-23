@@ -43,6 +43,7 @@ class UserType extends AbstractType
 
                 'invalid_message' => 'Veuillez entrer une adresse email.',
                 'required' => true,
+                'purify_html' => true,
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -67,7 +68,8 @@ class UserType extends AbstractType
                         'max'=> 191,
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                     ])
-                ]
+                    ],
+                'purify_html' => true,
                 ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'Actif',

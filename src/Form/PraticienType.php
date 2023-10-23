@@ -23,6 +23,7 @@ class PraticienType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez le nom du praticien',
                 ],
+                'purify_html' => true,
             ])
             ->add('prenom', null, [
                 'label' => 'Prenom',
@@ -32,6 +33,7 @@ class PraticienType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez le prenom du praticien',
                 ],
+                'purify_html' => true,
             ])
             ->add('lienRdv', null, [
                 'label' => 'Lien de rdv',
@@ -41,6 +43,7 @@ class PraticienType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Saisissez le lien de rdv du praticien',
                 ],
+                'purify_html' => true,
             ])
             ->add('metiers', EntityType::class, [
                 'class' => Metier::class,
