@@ -7,7 +7,9 @@
 
     {{ include('praticien/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
+    <a href="{{ path('app_praticien_index') }}">
+        <button>Retour à la liste des praticiens</button>
+    </a>
 
     {{ include('praticien/_delete_form.html.twig') }}
 {% endblock %}

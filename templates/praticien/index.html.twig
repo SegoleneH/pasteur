@@ -5,7 +5,9 @@
 {% block body %}
     <h1>Liste des praticiens</h1>
 
-        <a href="{{ path('app_praticien_new') }}">Creer un nouveau praticien</a>
+        <a href="{{ path('app_praticien_new') }}">
+            <button>Creer un nouveau praticien</button>
+        </a>
 
 
     <table class="table pure-table pure-table-horizontal">
@@ -24,10 +26,14 @@
                 <td>{{ praticien.nom }}</td>
                 <td>{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
                 <td>
-                    <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">Afficher</a>
+                    <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">
+                        <button>Afficher</button>
+                    </a>
                 </td>
                 <td>
-                    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">Modifier</a>
+                    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
+                        <button>Modifier</button>
+                    </a>
                 </td>
             </tr>
         {% else %}
