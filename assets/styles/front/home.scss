@@ -10,5 +10,10 @@
 
 
 .containerPraticien {
-    width: 25%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    flex-basis: 25%;
+    height: 500px;
 }
