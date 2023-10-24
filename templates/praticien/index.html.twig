@@ -5,10 +5,11 @@
 {% block body %}
     <h1>Liste des praticiens</h1>
 
+    <div class="newBtn">
         <a href="{{ path('app_praticien_new') }}">
             <button>Creer un nouveau praticien</button>
         </a>
-
+    </div>
 
     <table class="table pure-table pure-table-horizontal">
         <thead>
@@ -25,15 +26,20 @@
                 <td>{{ praticien.prenom }}</td>
                 <td>{{ praticien.nom }}</td>
                 <td>{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
+        
+                {# <td>{{ metiers.nom }}</td>
+                <td>{{ metiers.description }}</td> #}
                 <td>
-                    <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">
-                        <button>Afficher</button>
-                    </a>
+                    <button>
+                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">Afficher</a>
+                    </button>
                 </td>
                 <td>
-                    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
-                        <button>Modifier</button>
-                    </a>
+                    <button>
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">Modifier</a>
+                    </button>
                 </td>
             </tr>
         {% else %}

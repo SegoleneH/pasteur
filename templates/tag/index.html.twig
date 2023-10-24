@@ -5,10 +5,13 @@
 {% block body %}
     <h1>Liste des Catégories</h1>
 
+    <div class="newBtn">
+        <a href="{{ path('app_tag_new') }}">
+            <button>Créer une nouvelle Catégorie</button>
+        </a>
+    </div>
+
     <table class="table pure-table pure-table-horizontal">
-    <a href="{{ path('app_tag_new') }}">
-        <button>Créer une nouvelle Catégorie</button>
-    </a>
         <thead>
             <tr>
                 <th>Nom</th>
@@ -21,12 +24,20 @@
             <tr>
                 <td>{{ tag.nom }}</td>
                 <td>{{ tag.description }}</td>
-                <td>
-                    <a href="{{ path('app_tag_show', {'id': tag.id}) }}">Afficher</a>
-                </td>
-                <td>
-                    <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">Modifier</a>
-                </td>
+                <div class="row">
+                    <td class="column">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            <a href="{{ path('app_tag_show', {'id': tag.id}) }}">Afficher</a>
+                        </button>
+                    </td>
+                    <td class="column">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">Modifier</a>
+                        </button>
+                    </td>
+                </div>
             </tr>
         {% else %}
             <tr>

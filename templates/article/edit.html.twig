@@ -7,7 +7,9 @@
 
     {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_article_index') }}">Précédent</a>
+    <a href="{{ path('app_article_index') }}">
+        <button>Précédent</button>
+    </a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

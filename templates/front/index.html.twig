@@ -35,8 +35,7 @@
     {% for praticiensMetiers in praticiensMetiers %}
         <div class="containerPraticien">
             {% if praticiensMetiers.praticien.imageName %}
-            <img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
-            {% else %}
+<img src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">            {% else %}
             <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg">
             <style type="text/css">.st0{fill:#00A5CB;} .st1{fill:#0190B0;} .st2{fill:#FFFFFF;} .st3{fill:#F2F2F2;}</style>
             <path class="st0" d="M19,37.8C8.6,37.8,0.2,29.4,0.2,19S8.6,0.1,19,0.1"/>

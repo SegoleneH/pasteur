@@ -4,10 +4,12 @@
 
 {% block body %}
     <h1>Liste des FAQ</h1>
-
-    <a href="{{ path('app_faq_new') }}">
-        <button>Creer une nouvelle FAQ</button>
-    </a>
+   
+    <div class="newBtn">
+        <a href="{{ path('app_faq_new') }}">
+            <button>Creer une nouvelle FAQ</button>
+        </a>
+    </div>
 
     <table class="table pure-table pure-table-horizontal">
         <thead>
@@ -23,10 +25,16 @@
                 <td>{{ faq.question }}</td>
                 <td>{{ faq.reponse }}</td>
                 <td>
-                    <a href="{{ path('app_faq_show', {'id': faq.id}) }}">Afficher</a>
+                    <button>
+                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_faq_show', {'id': faq.id}) }}">Afficher</a>
+                    </button>
                 </td>
                 <td>
-                    <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">Modifier</a>
+                    <button>
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">Modifier</a>
+                    </button>
                 </td>
             </tr>
         {% else %}

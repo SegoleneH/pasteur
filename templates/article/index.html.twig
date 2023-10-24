@@ -5,8 +5,12 @@
 {% block body %}
     <h1>Liste de vos Articles</h1>
 
+    <div class="newBtn">
+        <a href="{{ path('app_article_new') }}">
+            <button>Créer Nouvel Article</button>
+        </a>
+    </div>
     <table class="table pure-table pure-table-horizontal">
-    <a href="{{ path('app_article_new') }}">Créer Nouvel Article</a>
         <thead>
             <tr>
                 <th>Titre</th>
@@ -23,12 +27,16 @@
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <div class="row">
                     <td class="column">
-                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_article_show', {'id': article.id}) }}">Afficher</a>
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            <a href="{{ path('app_article_show', {'id': article.id}) }}">Afficher</a>
+                        </button>
                     </td>
                     <td class="column">
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
+                        </button>
                     </td>
                 </div>
             </tr>

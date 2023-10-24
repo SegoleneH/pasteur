@@ -35,7 +35,7 @@ class UserType extends AbstractType
             ->add('email', null, [
                 'label' => 'Email * ',
 
-                'help' => 'Entrez ici votre adresse email.',
+                'help' => 'Entrez votre adresse email dans le champ ci-dessus.',
 
                 'attr' => ['placeholder' => 'Votre mail ici'],
 
@@ -53,7 +53,7 @@ class UserType extends AbstractType
                 'first_options' => ['label' => 'Mot de passe * '],
                 'second_options' => ['label' => 'Confirmer le mot de passe * '],
 
-                'help' => 'Entrez votre mot de passe dans les deux champs ci-contre.',
+                'help' => 'Entrez votre mot de passe dans les deux champs ci-dessus.',
                 
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
                 'required' => true,

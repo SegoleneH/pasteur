@@ -39,7 +39,7 @@ class ArticleType extends AbstractType
 
                 'attr' => ['placeholder' => 'Votre message ici'],
 
-                'invalid_message' => 'Veuillez entrer un message.',
+                'invalid_message' => 'Veuillez entrer un message dans le champ ci-dessus.',
                 'required' => true,
                 'purify_html' => true,
             ])

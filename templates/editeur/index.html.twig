@@ -4,11 +4,13 @@
 
 {% block body %}
     <h1>Liste des Éditeurs</h1>
-
+    <div class="newBtn">
+        <a href="{{ path('app_editeur_new') }}">
+            <button>Créer Nouvel Éditeur</button>
+        </a>
+    </div>
+    
     <table class="table pure-table pure-table-horizontal">
-    <a href="{{ path('app_editeur_new') }}">
-        <button>Créer Nouvel Éditeur</button>
-    </a>
         <thead>
             <tr>
                 <th>Nom</th>
@@ -24,12 +26,16 @@
                 <td>{{ editeur.prenom }}</td>
                 <td>{{ editeur.user.email }}</td>
                 <td class="column">
-                    <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                    <a href="{{ path('app_editeur_show', {'id': editeur.id}) }}">Afficher</a>
+                    <button>
+                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_editeur_show', {'id': editeur.id}) }}">Afficher</a>
+                    </button>
                 </td>
                 <td class="column">
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                    <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">Modifier</a>
+                    <button>
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">Modifier</a>
+                    </button>                
                 </td>
             </tr>
         {% else %}

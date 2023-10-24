@@ -5,9 +5,11 @@
 {% block body %}
     <h1>Liste des métiers</h1>
 
-    <a href="{{ path('app_metier_new') }}">
-        <button>Creer un nouveau métier</button>
-    </a>
+    <div class="newBtn">
+        <a href="{{ path('app_metier_new') }}">
+            <button>Creer un nouveau métier</button>
+        </a>
+    </div>
 
     <table class="table pure-table pure-table-horizontal">
         <thead>
@@ -24,10 +26,16 @@
                 <td>{{ metier.nom }}</td>
                 <td>{{ metier.description }}</td>
                 <td>
-                    <a href="{{ path('app_metier_show', {'id': metier.id}) }}">Afficher</a>
+                    <button>
+                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_metier_show', {'id': metier.id}) }}">Afficher</a>
+                    </button>
                 </td>
                 <td>
-                    <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">Modifier</a>
+                    <button>
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                        <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">Modifier</a>
+                    </button>
                 </td>
             </tr>
         {% else %}

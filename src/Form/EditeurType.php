@@ -16,7 +16,7 @@ class EditeurType extends AbstractType
             ->add('nom', null, [
                 'label' => 'Nom * ',
 
-                'help' => 'Entrez ici votre nom de famille.',
+                'help' => 'Entrez votre nom de famille dans le champ ci-dessus.',
 
                 'attr' => ['placeholder' => 'Votre nom ici'],
 
@@ -26,7 +26,7 @@ class EditeurType extends AbstractType
             ])
             ->add('prenom', null, [
                 'label' => 'Prénom * ',
-                'help' => 'Entrez ici votre prénom.',
+                'help' => 'Entrez votre prénom dans le champ ci-dessus.',
 
                 'attr' => ['placeholder' => 'Votre prénom ici'],
 

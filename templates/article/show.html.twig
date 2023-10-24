@@ -28,9 +28,13 @@
 
     {% endif %}
 
-    <a href="{{ path('app_article_index') }}">Précédent</a>
+    <a href="{{ path('app_article_index') }}">
+        <button>Précédent</button>
+    </a>
 
-    <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
+    <a href="{{ path('app_article_edit', {'id': article.id}) }}">
+        <button>Modifier</button>
+    </a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
