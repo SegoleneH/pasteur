@@ -1,10 +1,8 @@
 #sectionPraticien {
     display: flex;
     flex-wrap: wrap;
-    gap: 10%;
     justify-content: center;
     align-items: flex-start;
-    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -13,7 +11,11 @@
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    border: solid 1px black;
     flex-basis: 25%;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
     height: 500px;
+    padding: 20px;
+    margin: 20px;
 }
