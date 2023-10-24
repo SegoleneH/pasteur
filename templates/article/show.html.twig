@@ -5,6 +5,10 @@
 {% block body %}
     <h1>{{ article.titre }}</h1>
 
+    <a href="{{ path('app_article_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
+    
     <table class="table">
         <tbody>
             <tr>
@@ -28,13 +32,14 @@
 
     {% endif %}
 
-    <a href="{{ path('app_article_index') }}">
-        <button>Précédent</button>
-    </a>
+    <div class="btnRow">
+        <div class="btnContainer">
+            <a href="{{ path('app_article_edit', {'id': article.id}) }}">
+                <button>Modifier</button>
+            </a>
+        </div>
+        
+        {{ include('article/_delete_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('app_article_edit', {'id': article.id}) }}">
-        <button>Modifier</button>
-    </a>
-
-    {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

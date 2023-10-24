@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste de vos Articles</h1>
 
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_article_new') }}">
             <button>Créer Nouvel Article</button>
         </a>
@@ -27,16 +27,20 @@
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <div class="row">
                     <td class="column">
-                        <button>
-                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                            <a href="{{ path('app_article_show', {'id': article.id}) }}">Afficher</a>
-                        </button>
+                        <a href="{{ path('app_article_show', {'id': article.id}) }}">
+                            <button>
+                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                                Afficher
+                            </button>
+                        </a>
                     </td>
                     <td class="column">
-                        <button>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                            <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
-                        </button>
+                        <a href="{{ path('app_article_edit', {'id': article.id}) }}">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                                Modifier
+                            </button>
+                        </a>
                     </td>
                 </div>
             </tr>

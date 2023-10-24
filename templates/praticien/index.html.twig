@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des praticiens</h1>
 
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_praticien_new') }}">
             <button>Creer un nouveau praticien</button>
         </a>
@@ -30,16 +30,20 @@
                 {# <td>{{ metiers.nom }}</td>
                 <td>{{ metiers.description }}</td> #}
                 <td>
-                    <button>
-                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">Afficher</a>
-                    </button>
+                    <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
                 </td>
                 <td>
-                    <button>
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">Modifier</a>
-                    </button>
+                    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
                 </td>
             </tr>
         {% else %}

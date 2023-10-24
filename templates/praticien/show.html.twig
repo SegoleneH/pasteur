@@ -5,6 +5,10 @@
 {% block body %}
     <h1>Praticien</h1>
 
+    <a href="{{ path('app_praticien_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
+
     <table class="table pure-table pure-table-horizontal">
         <tbody>
             <tr>
@@ -41,13 +45,13 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_praticien_index') }}">
-        <button>Retour à la liste des praticiens</button>
-    </a>
+    <div class="btnRow">
+        <div class="btnContainer">
+            <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
+                <button>Modifier</button>
+            </a>
+        </div>
 
-    <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
-        <button>Modifier</button>
-    </a>
-
-    {{ include('praticien/_delete_form.html.twig') }}
+        {{ include('praticien/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

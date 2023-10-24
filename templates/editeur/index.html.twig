@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Liste des Éditeurs</h1>
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_editeur_new') }}">
             <button>Créer Nouvel Éditeur</button>
         </a>
@@ -26,16 +26,20 @@
                 <td>{{ editeur.prenom }}</td>
                 <td>{{ editeur.user.email }}</td>
                 <td class="column">
-                    <button>
-                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_editeur_show', {'id': editeur.id}) }}">Afficher</a>
-                    </button>
+                    <a href="{{ path('app_editeur_show', {'id': editeur.id}) }}">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
                 </td>
                 <td class="column">
-                    <button>
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">Modifier</a>
-                    </button>                
+                    <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>   
+                    </a>             
                 </td>
             </tr>
         {% else %}

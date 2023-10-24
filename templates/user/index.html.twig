@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des users</h1>
 
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_user_new') }}">
             <button>Creer un nouvel admin</button>
         </a>
@@ -27,16 +27,20 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.enabled ? 'Yes' : 'No' }}</td>
                 <td class="column">
-                    <button>
-                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_user_show', {'id': user.id}) }}">Afficher</a>
-                    </button>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}"> 
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
                 </td>
                 <td class="column">
-                    <button>
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
-                    </button>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
                 </td>
             </tr>
         {% else %}

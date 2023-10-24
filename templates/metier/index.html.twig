@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des métiers</h1>
 
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_metier_new') }}">
             <button>Creer un nouveau métier</button>
         </a>
@@ -26,16 +26,20 @@
                 <td>{{ metier.nom }}</td>
                 <td>{{ metier.description }}</td>
                 <td>
-                    <button>
-                        <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_metier_show', {'id': metier.id}) }}">Afficher</a>
-                    </button>
+                    <a href="{{ path('app_metier_show', {'id': metier.id}) }}">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
                 </td>
                 <td>
-                    <button>
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                        <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">Modifier</a>
-                    </button>
+                    <a href="{{ path('app_metier_edit', {'id': metier.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
                 </td>
             </tr>
         {% else %}

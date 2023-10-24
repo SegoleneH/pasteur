@@ -5,11 +5,11 @@
 {% block body %}
     <h1>Modifier un Editeur</h1>
 
+    <a href="{{ path('app_editeur_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
     {{ include('editeur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_editeur_index') }}">
-        <button>Précédent</button>
-    </a>
 
     {{ include('editeur/_delete_form.html.twig') }}
 {% endblock %}

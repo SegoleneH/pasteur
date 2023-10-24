@@ -5,11 +5,10 @@
 {% block body %}
     <h1>Modifier l'Article</h1>
 
-    {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
-
     <a href="{{ path('app_article_index') }}">
-        <button>Précédent</button>
+        <button class="previousBtn">Précédent</button>
     </a>
-
+    
+    {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

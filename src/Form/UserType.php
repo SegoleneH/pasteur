@@ -48,12 +48,14 @@ class UserType extends AbstractType
                 'options' => ['attr' => [
                         'class' => 'password-field',
                         'autocomplete' => 'new-password',
-                        'purify_html' => true
+                        'purify_html' => true,
                 ]],
                 'first_options' => ['label' => 'Mot de passe * '],
                 'second_options' => ['label' => 'Confirmer le mot de passe * '],
 
                 'help' => 'Entrez votre mot de passe dans les deux champs ci-dessus.',
+                
+                'attr' => ['class' => 'passwDoubleField'],
                 
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
                 'required' => true,

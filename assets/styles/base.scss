@@ -1,13 +1,16 @@
-@import 'app.scss';
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// TO DO : 
-//   - icônes + display .column 
-//   - créer "cartes" praticiens
-//   - créer "cartes" métiers ?
-// 
-// 
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//* TO DO : 
+//*   - icônes + display .column 
+//*   - créer "cartes" praticiens
+//*   - créer "cartes" métiers ?
+//* 
+//* 
+//* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+@import 'app.scss';
+
+//&:::::::::::::::::::::::::GENERAL:::::::::::::::::::::
 
 :root {
     font-family: 'Inclusive Sans', sans-serif;
@@ -20,19 +23,16 @@ body {
         margin: 5vh auto;
         text-align: center;
     }
-    
+
     td {
-        max-width: 20vw;
-    }
-    
-    textarea {
-        width: 200px;
-        height: 100px;
+        max-width: 30vw;
+        overflow: scroll;
     }
 }
 
 
-// MENU RESPONSIVE
+//&:::::::::::::::::::::::::MENU HEADER:::::::::::::::::::::
+
 .custom-wrapper {
     background-color: rgb(25, 156, 113);
     margin-bottom: 1.5em;
@@ -51,12 +51,12 @@ body {
             display: flex;
         }
     }
-    
+
     .menuLogin {
         display: flex;
         justify-content: flex-end;
 
-        .logoutIcon{
+        .logoutIcon {
             display: none;
         }
     }
@@ -71,11 +71,13 @@ body {
     color: black;
     padding: 0.94em 0.5em 0.94em 0.5em;
 }
+
 .fa-power-off {
     margin: 0 0.3em 0 0.1em;
 }
 
-// TABLEAUX
+
+//&:::::::::::::::::::::::::TABLEAUX::::::::::::::::::::::::::
 
 .pure-table-horizontal,
 tr {
@@ -92,55 +94,50 @@ tbody {
 th {
     text-align: center;
 }
+
 .pure-table thead {
     background-color: rgba(25, 156, 113, 0.8);
 }
 
+//&:::::::::::::::::::::::::FORMULAIRES::::::::::::::::::::::::::
 
-@media (max-width: 1023px) {
-    // button {
-    //     margin: 10px 30vw;
-    // }
-    .custom-wrapper {
-        overflow-x: scroll;
-    }
-    // .pure-table-horizontal {
-    //     display: flex;
-    // }
-    .custom-wrapper .ctnListesNav {
-        justify-content: flex-start;
-    }
-    // TABLEAU
-    .column {
-        display: flex;
-        flex-direction: column;
-        border-bottom: transparent;
-    }
-
-}
-
-
-// FORMULAIRES
 form {
+
+    // label{
+    //     margin: 20px 0 5px 0;
+    // }
     div {
         display: flex;
         flex-direction: column;
     }
+
+    textarea {
+        margin: 10px auto 0 auto;
+        width: 500px;
+        height: 100px;
+    }
+
+    input {
+        padding: 5px 0;
+        margin: 5px 0;
+        overflow: scroll;
+    }
 }
-input{
-    padding: 5px 0;
-    margin: 5px 0;
-}
-//---------champs Password---------
-#user_password, #editeur_user_password_first {
+
+
+//&:::::::::::::::champs Password:::::::::::::::::
+#user_password,
+#editeur_user,
+#editeur_user_password_first {
     div {
         label {
             margin: 20px 0 5px 0;
         }
     }
 }
-//------------Boutons--------------
-a{
+
+//&:::::::::::::::Boutons:::::::::::::::
+a {
     color: black;
     text-decoration: none;
 }
@@ -149,7 +146,7 @@ button {
     background-color: rgba(220, 74, 22, 1);
     border: solid 2px rgba(220, 74, 22, 1);
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     margin: 10px auto;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(151, 51, 15, 0.8);
@@ -159,7 +156,12 @@ button {
         box-shadow: inset 0 0 3px rgba(192, 66, 21, 0.8), 0 1px 3px 2px rgba(151, 51, 15, 0.8);
     }
 }
-.newBtn {
+.btnRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.btnContainer {
 
     button {
         display: flex;
@@ -167,37 +169,97 @@ button {
         padding: 10px 15px;
     }
 }
+
 .supprBtn {
     background-color: rgb(235, 31, 27);
     border: solid 2px rgb(235, 31, 27);
+    margin: 30px auto;
+
     &:hover {
-            background-color: rgb(255, 38, 34);
-        }
+        background-color: rgb(255, 38, 34);
+    }
 }
+
 .enabled,
 #editeur_user_enabled {
     display: none;
 }
 
-//-------Help messages------------ 
-#editeur_prenom_help, #editeur_nom_help, #editeur_user_email_help, #user_email_help, #user_password_help, #faq_question_help, #faq_reponse_help, 
-#tag_nom_help, #tag_description_help, #article_titre_help, #article_resume_help, #article_alt_help, #metier_nom_help, 
-#metier_description_help, #praticien_nom_help, #praticien_prenom_help, #praticien_lienRdv_help, #praticien_metiers_help,
+.previousBtn {
+    margin-left: 20px;
+}
+
+//&:::::::::::::::Help messages:::::::::::::::
+
+#editeur_prenom_help,
+#editeur_nom_help,
+#editeur_user_email_help,
+#user_email_help,
+#user_password_help,
+#faq_question_help,
+#faq_reponse_help,
+#tag_nom_help,
+#tag_description_help,
+#article_titre_help,
+#article_resume_help,
+#article_alt_help,
+#metier_nom_help,
+#metier_description_help,
+#praticien_nom_help,
+#praticien_prenom_help,
+#praticien_lienRdv_help,
+#praticien_metiers_help,
 #praticien_imageFile_help {
     color: rgb(37, 37, 37);
     font-style: italic;
     margin: 5px 0 30px 0;
 }
-//--------Error messages----------
+
+//&:::::::::::::::Error messages:::::::::::::::
+
 form {
 
-    margin: 2vh 30vw;
     display: flex;
     flex-direction: column;
-
 
     li {
         color: red;
     }
 }
-//---------------------------------
+
+#articleForm,
+#editeurForm,
+#faqForm,
+#tagForm,
+#metierForm,
+#praticienForm {
+    margin: 2vh 30vw;
+}
+
+#praticienForm {
+    margin: 2vh 15vw;
+}
+
+//&:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+@media (max-width: 1023px) {
+
+    // button {
+    //     margin: 10px 30vw;
+    // }
+    .custom-wrapper {
+        overflow-x: scroll;
+    }
+
+    .custom-wrapper .ctnListesNav {
+        justify-content: flex-start;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        border-bottom: transparent;
+    }
+
+}

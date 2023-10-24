@@ -5,6 +5,10 @@
 {% block body %}
     <h1>{{ editeur.nom }} {{ editeur.prenom }}</h1>
 
+    <a href="{{ path('app_editeur_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
+    
     <table class="table pure-table pure-table-horizontal">
         <tbody>
             <tr>
@@ -14,13 +18,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_editeur_index') }}">
-        <button>Précédent</button>
-    </a>
-
-    <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">
-        <button>Modifier</button>
-    </a>
+    <div class="btnContainer">
+        <a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}">
+            <button >Modifier</button>
+        </a>
+    </div>
 
     {{ include('editeur/_delete_form.html.twig') }}
 {% endblock %}

@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des Catégories</h1>
 
-    <div class="newBtn">
+    <div class="btnContainer">
         <a href="{{ path('app_tag_new') }}">
             <button>Créer une nouvelle Catégorie</button>
         </a>
@@ -26,16 +26,20 @@
                 <td>{{ tag.description }}</td>
                 <div class="row">
                     <td class="column">
-                        <button>
-                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                            <a href="{{ path('app_tag_show', {'id': tag.id}) }}">Afficher</a>
-                        </button>
+                        <a href="{{ path('app_tag_show', {'id': tag.id}) }}">
+                            <button>
+                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                                Afficher
+                            </button>
+                        </a>
                     </td>
                     <td class="column">
-                        <button>
-                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                            <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">Modifier</a>
-                        </button>
+                        <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                                Modifier
+                            </button>
+                        </a>
                     </td>
                 </div>
             </tr>

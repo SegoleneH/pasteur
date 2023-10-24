@@ -17,11 +17,11 @@
 {% block body %}
     <h1>Ajouter une FAQ</h1>
 
+    <a href="{{ path('app_faq_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
 
-        {{ include('faq/_form.html.twig') }}
+    {{ include('faq/_form.html.twig') }}
         
 
-    <a href="{{ path('app_faq_index') }}">
-        <button>Retour à la liste des FAQ</button>
-    </a>
 {% endblock %}

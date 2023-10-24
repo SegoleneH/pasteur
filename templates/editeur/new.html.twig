@@ -5,9 +5,10 @@
 {% block body %}
     <h1>Créer un nouvel Éditeur</h1>
 
+    <a href="{{ path('app_editeur_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
+    
     {{ include('editeur/_form.html.twig') }}
 
-    <a href="{{ path('app_editeur_index') }}">
-        <button>Précédent</button>
-    </a>
 {% endblock %}
