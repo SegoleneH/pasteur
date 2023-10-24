@@ -202,8 +202,6 @@ class TestController extends AbstractController
         $articles = $articleRepository->findAll();
         $articlesEditeur = $articleRepository->findByEditeurNotNull();
 
-        $articlesEditeur = 
-
         // SHOW : one article
         $article1 = $articleRepository->find(1);
 
@@ -279,46 +277,46 @@ class TestController extends AbstractController
         ]);
     }
 
-    // #[Route('/user', name: 'app_test_user')]
-    // public function user(ManagerRegistry $doctrine): Response {
+    #[Route('/user', name: 'app_test_user')]
+    public function user(ManagerRegistry $doctrine): Response {
         
-    //     $em = $doctrine->getManager();
-    //     $userRepository = $em->getRepository(User::class);
+        $em = $doctrine->getManager();
+        $userRepository = $em->getRepository(User::class);
 
-    //     // NEW : nouvel utilisateur
-    //     $newUser = new User();
-    //     //* newUser a le même email que le précédent : erreur SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry
-    //     $newUser->setEmail('foobarressdssses@example.com');
-    //     $newUser->setPassword('123');
-    //     $newUser->setEnabled(true);
-    //     $newUser->setRoles(['ROLE_USER']);
-    //     $em->persist($newUser);
-    //     $em->flush();
+        // NEW : nouvel utilisateur
+        $newUser = new User();
+        //* newUser a le même email que le précédent : erreur SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry
+        $newUser->setEmail('foobarressdssses@example.com');
+        $newUser->setPassword('123');
+        $newUser->setEnabled(true);
+        $newUser->setRoles(['ROLE_USER']);
+        $em->persist($newUser);
+        $em->flush();
 
-    //     // SHOW : all users
-    //     $users = $userRepository->findAll();
-    //     // SHOW : one user
-    //     $user1 = $userRepository->find(1);
+        // SHOW : all users
+        $users = $userRepository->findAll();
+        // SHOW : one user
+        $user1 = $userRepository->find(1);
 
-    //     // UPDATE : edit user
-    //     $user2 = $userRepository->find(2);
-    //     if ($user2) {
-    //         $user2->setEmail('foobarbaz@example.com');
-    //         $em->flush();
-    //     }
+        // UPDATE : edit user
+        $user2 = $userRepository->find(2);
+        if ($user2) {
+            $user2->setEmail('foobarbaz@example.com');
+            $em->flush();
+        }
 
-    //     // DELETE : delete user
-    //     if ($user2) {
-    //         $em->remove($user2);
-    //     }
-    //     $em->flush();
+        // DELETE : delete user
+        if ($user2) {
+            $em->remove($user2);
+        }
+        $em->flush();
 
-    //     return $this->render('test/user.html.twig', [
-    //         'controller_name' => 'TestController',
-    //         'newUser' => $newUser,
-    //         'users' => $users,
-    //         'user1' => $user1,
-    //         'user2' => $user2,
-    //     ]);
-    // }
+        return $this->render('test/user.html.twig', [
+            'controller_name' => 'TestController',
+            'newUser' => $newUser,
+            'users' => $users,
+            'user1' => $user1,
+            'user2' => $user2,
+        ]);
+    }
 }

@@ -26,7 +26,14 @@
 
     <img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticien.nom }} {{ praticien.prenom }}">
 
+    {% else %}
+
+    {# {% if praticien.imageFile is empty %} #}
+
+    <img src="/home/segolene/a-projects/stage/pasteur/public/default_image/stethoscope-icon-2316460.svg" alt="image par defaut" > 
+
     {% endif %}
+
 
     <a href="{{ path('app_praticien_index') }}">Retour à la liste des praticiens</a>
 
