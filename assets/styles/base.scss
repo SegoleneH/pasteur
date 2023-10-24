@@ -10,7 +10,7 @@
 
 @import 'app.scss';
 
-//&:::::::::::::::::::::::::GENERAL:::::::::::::::::::::
+//&::::::::::::::::::::::::::::::::::GENERAL::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :root {
     font-family: 'Inclusive Sans', sans-serif;
@@ -24,23 +24,14 @@ body {
         text-align: center;
     }
 
-    td {
-        max-width: 20vw;
-    }
-    
-    textarea {
-        height: 100px;
-    }
 }
 
 
-//&:::::::::::::::::::::::::MENU HEADER:::::::::::::::::::::
+//&::::::::::::::::::::::::::::::MENU HEADER:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .custom-wrapper {
     background-color: rgb(25, 156, 113);
     margin-bottom: 1.5em;
-    // min-width: 1605px;
-    // overflow-x: scroll;
     height: 3em;
     display: flex;
     flex-flow: row nowrap;
@@ -80,7 +71,7 @@ body {
 }
 
 
-//&:::::::::::::::::::::::::TABLEAUX::::::::::::::::::::::::::
+//&:::::::::::::::::::::::::::::::::::TABLEAUX:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .pure-table-horizontal,
 tr {
@@ -92,6 +83,15 @@ tbody {
     tr {
         height: 80px;
     }
+    
+    .btnTdIndex {
+        width: 30vw;
+    }
+
+    .tdIndex {
+        max-width: 25vw;
+        overflow: scroll;
+    }
 }
 
 th {
@@ -102,13 +102,11 @@ th {
     background-color: rgba(25, 156, 113, 0.8);
 }
 
-//&:::::::::::::::::::::::::FORMULAIRES::::::::::::::::::::::::::
+
+//&:::::::::::::::::::::::::::::::::::FORMULAIRES:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 form {
 
-    // label{
-    //     margin: 20px 0 5px 0;
-    // }
     div {
         display: flex;
         flex-direction: column;
@@ -128,7 +126,7 @@ form {
 }
 
 
-//&:::::::::::::::champs Password:::::::::::::::::
+//&::::::::::::::::::::::::::::champs Password:::::::::::::::::::::::::::
 #user_password,
 #editeur_user,
 #editeur_user_password_first {
@@ -139,7 +137,7 @@ form {
     }
 }
 
-//&:::::::::::::::Boutons:::::::::::::::
+//&:::::::::::::::::::::::::::::::::Boutons::::::::::::::::::::::::::::::
 a {
     color: black;
     text-decoration: none;
@@ -192,7 +190,7 @@ button {
     margin-left: 20px;
 }
 
-//&:::::::::::::::Help messages:::::::::::::::
+//&::::::::::::::::::::::::::::::::Help messages::::::::::::::::::::::::::::::
 
 #editeur_prenom_help,
 #editeur_nom_help,
@@ -218,7 +216,7 @@ button {
     margin: 5px 0 30px 0;
 }
 
-//&:::::::::::::::Error messages:::::::::::::::
+//&::::::::::::::::::::::::::::Error messages::::::::::::::::::::::::::::::
 
 form {
 
@@ -243,7 +241,7 @@ form {
     margin: 2vh 15vw;
 }
 
-//&:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//&:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 @media (max-width: 1023px) {
@@ -262,7 +260,8 @@ form {
     .column {
         display: flex;
         flex-direction: column;
-        border-bottom: transparent;
+        border: none;
+        border-bottom: none;
     }
 
 }

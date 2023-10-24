@@ -22,17 +22,18 @@
         <tbody>
         {% for faq in faqs %}
             <tr>
-                <td>{{ faq.question }}</td>
-                <td>{{ faq.reponse }}</td>
-                <td>
+                <td class="tdIndex" >{{ faq.question }}</td>
+                <td class="tdIndex" >{{ faq.reponse }}</td>
+                {#* Test : mettre tdIndex avec width : 25vw et btnTdIndex avec width : 30vw #}
+                {#* but :  découper une colonne de la taille qu'on veut pour les boutons #}
+                <td class="btnTdIndex">
                     <a href="{{ path('app_faq_show', {'id': faq.id}) }}">
                         <button>
                             <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
                             Afficher
                         </button>
                     </a>
-                </td>
-                <td>
+                    {#* Test : mettre 2 liens dans 1 même <td> pour résoudre pb de bordure coriace  #}
                     <a href="{{ path('app_faq_edit', {'id': faq.id}) }}">
                         <button>
                             <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
