@@ -18,13 +18,22 @@ class FrontController extends AbstractController
         $faqRepository = $em->getRepository(Faq::class);
         $articleRepository = $em->getRepository(Article::class);
 
+        //liste des 3 derniers articles pour news ac tags associés
         $news = $articleRepository->findLastArticles(3);
+        $newsTags = [];
+        foreach ($news as $new) {
+            $newsTags[] = [
+                'new' => $new,
+                'tags' => $new->getTags()
+            ];
+        }
 
         $faqs = $faqRepository->findAll();
 
         return $this->render('front/index.html.twig', [
             'faqs' => $faqs,
             'news' => $news,
+            'newsTags' => $newsTags,
         ]);
     }
 }
