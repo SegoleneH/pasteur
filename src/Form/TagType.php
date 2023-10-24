@@ -14,16 +14,15 @@ class TagType extends AbstractType
         $builder
             ->add('nom', null, [
                 'attr' => ['placeholder' => 'Le nom de votre catégorie '],
+                'label' => 'Nom * ',
 
                 'help' => 'Saisissez le nom de votre nouvelle catégorie',
-                'help_attr' => ['class' => 'helpForm'],
                 'purify_html' => true,
             ])
             ->add('description', null, [
                 'attr' => ['placeholder' => 'Votre description ici'],
-
+                'label' => 'Description',
                 'help' => 'Saisissez une brève description de la catégorie à créer',
-                'help_attr' => ['class' => 'helpForm'],
                 'purify_html' => true,
             ])
         ;

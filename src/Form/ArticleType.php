@@ -19,11 +19,9 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('titre', null, [
-                'label' => 'Titre de votre article',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Titre de votre article * ',
 
                 'help' => 'Veuillez entrer un titre pour votre article.',
-                'help_attr' => ['class' => 'helpForm'],
 
                 'attr' => ['placeholder' => 'Votre titre ici'],
 
@@ -32,14 +30,12 @@ class ArticleType extends AbstractType
                 'purify_html' => true,
             ])
             ->add('resume', null, [
-                'label' => 'Message destiné à la page d\'accueil',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Message destiné à la page d\'accueil * ',
 
                 'help' => 'Veuillez entrer dans le champ ci-contre une brève description du contenu de
                  l\'article, qui apparaîtra dans la banderole d\'actualités sur la page d\'accueil. 
                 Exemple : si votre article contient une information sur l\'actualité du cabinet, résumez
                 cette information ici.',
-                'help_attr' => ['class' => 'helpForm'],
 
                 'attr' => ['placeholder' => 'Votre message ici'],
 
@@ -48,7 +44,7 @@ class ArticleType extends AbstractType
                 'purify_html' => true,
             ])
             ->add('contenu', CKEditorType::class, [
-                'label' => 'Votre Article',
+                'label' => 'Votre Article * ',
                 'label_attr' => ['class' => 'labelForm'],
                 'purify_html' => true,
             ])
@@ -65,8 +61,6 @@ class ArticleType extends AbstractType
                 LAISSER VIDE SI L\'IMAGE EST PUREMENT DÉCORATIVE.',
 
                 'attr' => ['placeholder' => 'Votre description ici'],
-
-                'invalid_message' => 'Veuillez entrer un texte alternatif pour l\'image.',
                 'purify_html' => true,
             ])
             ->add('tags', EntityType::class, [
@@ -77,12 +71,11 @@ class ArticleType extends AbstractType
                 'attr' => [
                     'class' => 'checkbox',
                 ],
-                'label' => 'Catégorie(s)',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Catégorie(s) * ',
                 'constraints' => [
                     new Assert\Count([
                     'min' => 1,
-                    'minMessage' => 'Votre article doit contenir au moins {{ limit }} tag',
+                    'minMessage' => 'Votre article doit contenir au moins {{ limit }} catégories',
                     ])
                     ],
                 'by_reference' => false,
@@ -90,8 +83,7 @@ class ArticleType extends AbstractType
             ])
             ->add('editeurs', EntityType::class, [
                 'class' => Editeur::class,
-                'label' => 'Editeur(s)',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Editeur(s) * ',
                 'choice_label' => function ($editeur) {
                     return $editeur->getNom() . ' ' . $editeur->getPrenom();
                 },
@@ -107,7 +99,7 @@ class ArticleType extends AbstractType
                     ])
                     ],
                     'by_reference' => false,
-                    ])
+            ])
             ;
         }
 

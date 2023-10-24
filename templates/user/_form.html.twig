@@ -8,13 +8,11 @@
 
     {{ form_label(form.email) }}
     {{ form_widget(form.email) }}
-    {{ form_help(form.email, {'attr' : {"class" : 'helpForm'} } ) }}
+    {{ form_help(form.email) }}
 
     {{ form_label(form.password) }}
     {{ form_widget(form.password) }}
     {{ form_help(form.password) }}
-
-
 
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
 

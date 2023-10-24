@@ -1,4 +1,17 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_start(form, {'attr': {'id' : 'praticienForm'}}) }}
+
+    {{form_errors(form)}}
+
+    {{ form_label(form.nom) }}
+    {{ form_widget(form.nom) }}
+    {{ form_help(form.nom) }}
+
+    {{ form_label(form.prenom) }}
+    {{ form_widget(form.prenom) }}
+    {{ form_help(form.prenom) }}
+
+    {{ form_rest(form) }}
+
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+
 {{ form_end(form) }}
