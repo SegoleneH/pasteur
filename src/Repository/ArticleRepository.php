@@ -45,4 +45,21 @@ class ArticleRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    /**
+     * Find the last articles.
+     *
+     * @param mixed $value the maximum number of articles to return
+     * @throws \Doctrine\ORM\ORMException if an error occurs while executing the query
+     * @throws \Doctrine\ORM\OptimisticLockException if an optimistic lock error occurs
+     * @return array the last articles
+     */
+    public function findLastArticles($value): array
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.updatedAt', 'DESC')
+            ->setMaxResults($value)
+            ->getQuery()
+            ->getResult();
+    }
 }
