@@ -51,12 +51,12 @@
             </svg>
             {% endif %}
             <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
+            <p>{{ praticiensMetiers.metiers|join(', ')}} </p>
             {% if praticiensMetiers.praticien.lienRdv %}
                 <a href="{{ praticiensMetiers.praticien.lienRdv | e }}" target="_blank"><button>Prendre RDV</button></a>
             {% else %}
                 <p>03 21 75 94 84</p>
             {% endif %}
-            <p>{{ praticiensMetiers.metiers|join(', ')}} </p>
         </div>
     {% endfor %}
 </section>
