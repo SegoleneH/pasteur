@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello FrontController!{% endblock %}
+{% block title %}Maison médicale Pasteur-Santes{% endblock %}
 
 {% block body %}
 
 <section>
+<h2>Test section faq</h2>
 {% for faq in faqs %}
 
     <div>
@@ -13,6 +14,20 @@
     </div>
 
 {% endfor %}
+</section>
+
+<section>
+    <h2>Test section news</h2>
+    {% for newsTag in newsTags %}
+
+    <div>
+        <p>Date : {{ newsTag.new.updatedAt|date('d/m/Y') }}</p>
+        <p>Categorie : {{ newsTag.tags|join(', ') }}</p>
+        <p>{{ newsTag.new.resume }}</p>
+    </div>
+    <hr>
+
+    {% endfor %}
 </section>
 
 {% endblock %}
