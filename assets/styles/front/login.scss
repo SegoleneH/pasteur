@@ -1,0 +1,11 @@
+.pure-form-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80dvh;
+
+    #inputEmail, #inputPassword {
+        margin-bottom: 30px;
+        width: auto;
+    }
+}

@@ -25,8 +25,11 @@ body {
     }
 
     td {
-        max-width: 30vw;
-        overflow: scroll;
+        max-width: 20vw;
+    }
+    
+    textarea {
+        height: 100px;
     }
 }
 
