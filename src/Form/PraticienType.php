@@ -59,6 +59,10 @@ class PraticienType extends AbstractType
             ->add('imageFile', VichImageType::class, 
             ['required' => false,
             'download_uri' => false,
+            'label' => 'Photo du praticien',
+            'label_attr' => [ 'class' => 'labelForm'],
+            'help' => 'choisissez la photo du praticien, si aucune photo n\'est choisie, la photo par défaut sera utilisée',
+            'help_attr' => [ 'class' => 'helpForm'],
             ])
         ;
     }
