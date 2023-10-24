@@ -1,4 +1,22 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_start(form, {'attr': {'id' : 'praticienForm'}}) }}
+
+    {{form_errors(form)}}
+
+    {{ form_label(form.titre) }}
+    {{ form_widget(form.titre) }}
+    {{ form_help(form.titre) }}
+
+    {{ form_label(form.resume) }}
+    {{ form_widget(form.resume) }}
+    {{ form_help(form.resume) }}
+
+
+    {{ form_label(form.alt) }}
+    {{ form_widget(form.alt) }}
+    {{ form_help(form.alt) }}
+
+    {{ form_rest(form) }}
+
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+
 {{ form_end(form) }}

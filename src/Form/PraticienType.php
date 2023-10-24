@@ -16,28 +16,23 @@ class PraticienType extends AbstractType
     {
         $builder
             ->add('nom', null, [
-                'label' => 'Nom',
-                'label_attr' => [ 'class' => 'labelForm'],
+                'label' => 'Nom * ',
                 'help' => 'Saisissez le nom du praticien',
-                'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
                     'placeholder' => 'Saisissez le nom du praticien',
                 ],
                 'purify_html' => true,
             ])
             ->add('prenom', null, [
-                'label' => 'Prenom',
-                'label_attr' => [ 'class' => 'labelForm'],
+                'label' => 'Prenom * ',
                 'help' => 'Saisissez le prenom du praticien',
-                'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
                     'placeholder' => 'Saisissez le prenom du praticien',
                 ],
                 'purify_html' => true,
             ])
             ->add('lienRdv', null, [
-                'label' => 'Lien de rdv',
-                'label_attr' => [ 'class' => 'labelForm'],
+                'label' => 'Lien de rdv ',
                 'help' => 'Saisissez le lien de prise de rdv du praticien (doctissimo). Si aucune valeur n\'est saisie, le numéro du standard sera utilisé.',
                 'help_attr' => [ 'class' => 'helpForm'],
                 'attr' => [
@@ -50,19 +45,15 @@ class PraticienType extends AbstractType
                 'multiple' => true,
                 'required' => true,
                 'expanded' =>true,
-                'label' => 'Métiers',
-                'label_attr' => [ 'class' => 'labelForm'],
+                'label' => 'Métier(s) * ',
                 'help' => 'Indiquer au moins 1 métier pour le praticien',
-                'help_attr' => [ 'class' => 'helpForm'],
                 'invalid_message' => 'Veuillez indiquer au moins 1 métier',
             ])
             ->add('imageFile', VichImageType::class, 
             ['required' => false,
             'download_uri' => false,
             'label' => 'Photo du praticien',
-            'label_attr' => [ 'class' => 'labelForm'],
-            'help' => 'choisissez la photo du praticien, si aucune photo n\'est choisie, la photo par défaut sera utilisée',
-            'help_attr' => [ 'class' => 'helpForm'],
+            'help' => 'Choisissez la photo du praticien, si aucune photo n\'est choisie, la photo par défaut sera utilisée',
             ])
         ;
     }

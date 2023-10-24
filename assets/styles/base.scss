@@ -120,12 +120,24 @@ th {
 
 // FORMULAIRES
 
-.helpForm, #article_alt_help {
+#editeur_user_enabled{
+    display: none;
+}
+
+#editeur_prenom_help, #editeur_nom_help, #editeur_user_email_help, #user_email_help, #user_password_help, #faq_question_help, #faq_reponse_help, 
+#tag_nom_help, #tag_description_help, #article_titre_help, #article_resume_help, #article_alt_help, #metier_nom_help, 
+#metier_description_help, #praticien_nom_help, #praticien_prenom_help, #praticien_lienRdv_help, #praticien_metiers_help,
+#praticien_imageFile_help {
     color: rgb(37, 37, 37);
     font-style: italic;
 }
+//  Error messages
 form {
     li {
         color: red;
     }
+}
+
+.enabled {
+    display: none;
 }

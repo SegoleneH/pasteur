@@ -14,8 +14,7 @@ class EditeurType extends AbstractType
     {
         $builder
             ->add('nom', null, [
-                'label' => 'Nom',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Nom * ',
 
                 'help' => 'Entrez ici votre nom de famille.',
 
@@ -26,9 +25,7 @@ class EditeurType extends AbstractType
                 'purify_html' => true,
             ])
             ->add('prenom', null, [
-                'label' => 'Prénom',
-                'label_attr' => ['class' => 'labelForm'],
-
+                'label' => 'Prénom * ',
                 'help' => 'Entrez ici votre prénom.',
 
                 'attr' => ['placeholder' => 'Votre prénom ici'],

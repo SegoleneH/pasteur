@@ -33,11 +33,9 @@ class UserType extends AbstractType
 
         $builder
             ->add('email', null, [
-                'label' => 'Email',
-                'label_attr' => ['class' => 'labelForm'],
+                'label' => 'Email * ',
 
                 'help' => 'Entrez ici votre adresse email.',
-                'help_attr' => ['class' => 'helpForm'],
 
                 'attr' => ['placeholder' => 'Votre mail ici'],
 
@@ -49,13 +47,13 @@ class UserType extends AbstractType
                 'type' => PasswordType::class,
                 'options' => ['attr' => [
                         'class' => 'password-field',
-                        'autocomplete' => 'new-password'
+                        'autocomplete' => 'new-password',
+                        'purify_html' => true
                 ]],
-                'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Confirmer le mot de passe'],
+                'first_options' => ['label' => 'Mot de passe * '],
+                'second_options' => ['label' => 'Confirmer le mot de passe * '],
 
                 'help' => 'Entrez votre mot de passe dans les deux champs ci-contre.',
-                'help_attr' => ['class' => 'helpForm'],
                 
                 'invalid_message' => 'Les deux mots de passe doivent être identiques.',
                 'required' => true,
@@ -69,12 +67,13 @@ class UserType extends AbstractType
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                     ])
                     ],
-                'purify_html' => true,
                 ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'Actif',
+                'label_attr' => ['class' => 'enabled'],
                 'required' => false,
                 'data' => true,
+                'attr' => ['class' => 'enabled'],
             ])
             ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($hasher) {
                
