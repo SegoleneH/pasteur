@@ -7,7 +7,7 @@
 
     <div class="btnContainer">
         <a href="{{ path('app_praticien_new') }}">
-            <button>Creer un nouveau praticien</button>
+            <button>Créer un nouveau praticien</button>
         </a>
     </div>
 
@@ -23,21 +23,19 @@
         <tbody>
         {% for praticien in praticiens %}
             <tr>
-                <td>{{ praticien.prenom }}</td>
-                <td>{{ praticien.nom }}</td>
-                <td>{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
+                <td class="tdIndex">{{ praticien.prenom }}</td>
+                <td class="tdIndex">{{ praticien.nom }}</td>
+                <td class="tdIndex">{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
         
                 {# <td>{{ metiers.nom }}</td>
                 <td>{{ metiers.description }}</td> #}
-                <td>
+                <td class="column btnTdIndex">
                     <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">
                         <button>
                             <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
                             Afficher
                         </button>
                     </a>
-                </td>
-                <td>
                     <a href="{{ path('app_praticien_edit', {'id': praticien.id}) }}">
                         <button>
                             <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>

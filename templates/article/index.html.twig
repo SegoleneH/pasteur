@@ -22,27 +22,23 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.titre }}</td>
-                <td>{{ article.resume }}</td>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <div class="row">
-                    <td class="column">
-                        <a href="{{ path('app_article_show', {'id': article.id}) }}">
-                            <button>
-                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                                Afficher
-                            </button>
-                        </a>
-                    </td>
-                    <td class="column">
-                        <a href="{{ path('app_article_edit', {'id': article.id}) }}">
-                            <button>
-                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                                Modifier
-                            </button>
-                        </a>
-                    </td>
-                </div>
+                <td class="tdIndex">{{ article.titre }}</td>
+                <td class="tdIndex">{{ article.resume }}</td>
+                <td class="tdIndex">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="column btnTdIndex">
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
+                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% else %}
             <tr>

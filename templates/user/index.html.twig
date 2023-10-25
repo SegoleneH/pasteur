@@ -23,18 +23,16 @@
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.enabled ? 'Yes' : 'No' }}</td>
-                <td class="column">
+                <td class="tdIndex">{{ user.email }}</td>
+                <td class="tdIndex">{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td class="tdIndex">{{ user.enabled ? 'Yes' : 'No' }}</td>
+                <td class="column btnTdIndex">
                     <a href="{{ path('app_user_show', {'id': user.id}) }}"> 
                         <button>
                             <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
                             Afficher
                         </button>
                     </a>
-                </td>
-                <td class="column">
                     <a href="{{ path('app_user_edit', {'id': user.id}) }}">
                         <button>
                             <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>

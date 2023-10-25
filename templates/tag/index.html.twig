@@ -22,26 +22,22 @@
         <tbody>
         {% for tag in tags %}
             <tr>
-                <td>{{ tag.nom }}</td>
-                <td>{{ tag.description }}</td>
-                <div class="row">
-                    <td class="column">
-                        <a href="{{ path('app_tag_show', {'id': tag.id}) }}">
-                            <button>
-                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
-                                Afficher
-                            </button>
-                        </a>
-                    </td>
-                    <td class="column">
-                        <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">
-                            <button>
-                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
-                                Modifier
-                            </button>
-                        </a>
-                    </td>
-                </div>
+                <td class="tdIndex">{{ tag.nom }}</td>
+                <td class="tdIndex">{{ tag.description }}</td>
+                <td class="column btnTdIndex">
+                    <a href="{{ path('app_tag_show', {'id': tag.id}) }}">
+                        <button>
+                            <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
+                    <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">
+                        <button>
+                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% else %}
             <tr>

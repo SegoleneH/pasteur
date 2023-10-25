@@ -38,12 +38,16 @@ body {
 
 }
 
+
+
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-//* ::::::::::::::::::::::::::::::::::::::::::::::::::::::À FAIRE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//* ::::::::::::::::::::::::::::::::::::::::::::::::À FAIRE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //*   - créer "cartes" praticiens ?
 //*   - créer "cartes" métiers ?
 //*   - SCROLLBAR STYLE : https: //blog.logrocket.com/guide-styling-css-scrollbars/#introduction-scrollbars
+//*   - Responsive tableaux
+//*   - Boutons en bas des formulaires => les mettre en row ?
 //* 
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -58,7 +62,8 @@ body {
     flex-flow: row nowrap;
 
     .ctnListesNav {
-        @include disflex;        flex-flow: row nowrap;
+        @include disflex;        
+        flex-flow: row nowrap;
         justify-content: center;
 
         .liensMenu {
@@ -105,7 +110,7 @@ tbody {
     }
     
     .btnTdIndex {
-        width: 30vw;
+        width: 25vw;
     }
 
     .tdIndex {
@@ -122,44 +127,7 @@ th {
     background-color: $bleu-transparent-thead;
 }
 
-//&:::::::::::::::::::::::::::::::::::FORMULAIRES:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-form {
-
-    div {
-        @include flexColumn;
-    }
-
-    textarea {
-        margin: 10px auto 0 auto;
-        width: 500px;
-        height: 100px;
-    }
-
-    input {
-        padding: 5px 0;
-        margin: 5px 0;
-        overflow: scroll;
-    }
-}
-
-
-//&::::::::::::::::::::::::::::champs Password:::::::::::::::::::::::::::
-#user_password,
-#editeur_user,
-#editeur_user_password_first {
-    div {
-        label {
-            margin: 20px 0 5px 0;
-        }
-    }
-}
-
-//&:::::::::::::::::::::::::::::::::Boutons::::::::::::::::::::::::::::::
-a {
-    color: black;
-    text-decoration: none;
-}
+//&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 button {
     background-color: $orange;
@@ -175,15 +143,27 @@ button {
         box-shadow: inset 0 0 3px $orange-box-shadow-clair, 0 1px 3px 2px $orange-box-shadow;
     }
 }
+
+.previousBtn {
+    margin-left: 20px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
 .btnRow {
     @include disflex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .btnContainer {
+    @include disflex;
+    justify-content: center;
 
     button {
-        @include disflex;
         margin: 30px auto;
         padding: 10px 15px;
     }
@@ -199,13 +179,70 @@ button {
     }
 }
 
+td {
+    button {
+        margin: 0 10px;
+    }
+}
+
+
+//^ Trick pour aligner les boutons en bas du form edit
+.saveBtn,#deleteForm{
+    width: 50%;
+}
+#deleteForm {
+    margin: -3rem 0 0 25rem;
+}
+.saveBtn {
+    margin: 0 0 -2.7rem 10rem;
+}
+
+//&:::::::::::::::::::::::::::::::::::FORMULAIRES:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+form {
+    
+    div {
+        @include flexColumn;
+    }
+    
+    textarea {
+        margin: 10px auto 0 auto;
+        width: 500px;
+        height: 100px;
+    }
+    
+    input {
+        padding: 5px 0;
+        margin: 5px 0;
+        overflow: scroll;
+    }
+}
+#praticien_metiers, #article_tags {
+    @include disflex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 10px 0 0 0;
+    label {
+        width: 28%;
+    }
+    input{
+        width: 5%;
+    }
+}
 .enabled,
 #editeur_user_enabled {
     display: none;
 }
 
-.previousBtn {
-    margin-left: 20px;
+//&::::::::::::::::::::::::::::champs Password:::::::::::::::::::::::::::
+#user_password,
+#editeur_user,
+#editeur_user_password_first {
+    div {
+        label {
+            margin: 20px 0 5px 0;
+        }
+    }
 }
 
 //&::::::::::::::::::::::::::::::::Help messages::::::::::::::::::::::::::::::

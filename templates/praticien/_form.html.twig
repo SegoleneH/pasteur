@@ -15,6 +15,7 @@
     {{ form_help(form.lienRdv) }}
     {{ form_rest(form) }}
 
-    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
-
+    <div class="saveBtn">
+        <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
 {{ form_end(form) }}
