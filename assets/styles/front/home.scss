@@ -1,4 +1,40 @@
+//Section Acces, Map etc
+
+#sectionAcces {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: 0 auto;
+    gap: 5%;
+    iframe {
+        flex-basis: 40%;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+
+#sectionAccesText {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 40%;
+    margin-right: 20px;
+
+    i {
+        margin-right: 20px;
+    }
+}
+
+//section RDV, Equipe
+
 #sectionPraticien {
+    border: solid 1px black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
