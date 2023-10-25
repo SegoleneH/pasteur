@@ -1,3 +1,30 @@
+//section News
+
+#sectionNews {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: justify;
+    align-items: center;
+}
+
+.containerNews {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 80dvw;
+}
+
+.containerNewsInfos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 //Section Acces, Map etc
 
 #sectionAcces {

@@ -22,7 +22,7 @@ class FrontController extends AbstractController
         $praticienRepository = $em->getRepository(Praticien::class);
 
         //liste des 3 derniers articles pour news ac tags associés
-        $news = $articleRepository->findLastArticles(3);
+        $news = $articleRepository->findLastArticles(2);
         $newsTags = [];
         foreach ($news as $new) {
             $newsTags[] = [
