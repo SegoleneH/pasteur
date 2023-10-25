@@ -1,7 +1,78 @@
+//section Top
+
+#topSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+    max-width: 95dvw;
+}
+
+#topSectionTel, #topSectionAdresse {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media (max-width: 1023px) {
+    #topSectionTel, #topSectionAdresse {
+        display: none;
+    }
+}
+
+
+//navbar front
+
+.navbarFront {
+    position: sticky;
+    top: 0;
+}
+
+//section presentation
+
+#sectionPresentation {
+    border: 1px solid black;
+    scroll-margin-top: 3em;
+}
+
+//section News
+
+#sectionNews {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: justify;
+    align-items: center;
+    scroll-margin-top: 3em;
+}
+
+.containerNews {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 80dvw;
+}
+
+.containerNewsInfos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//section faq
+ #sectionFaq {
+    scroll-margin-top: 3em;
+    border: 1px solid black;
+ }
+
+
 //Section Acces, Map etc
 
 #sectionAcces {
     border: 1px solid black;
+    scroll-margin-top: 3em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -34,6 +105,7 @@
 //section RDV, Equipe
 
 #sectionPraticien {
+    scroll-margin-top: 3em;
     border: solid 1px black;
     display: flex;
     flex-wrap: wrap;
@@ -54,4 +126,12 @@
     height: 500px;
     padding: 20px;
     margin: 20px;
+}
+
+//Fluffy
+
+.scrollToTheTop {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
 }

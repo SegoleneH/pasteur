@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {# FONTS #}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+            {# CDN PureCss #}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+            {# grids-responsive.css PureCss #}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://kit.fontawesome.com/fc1b66a4cc.js" crossorigin="anonymous"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        
+        {% block topSection %}
+
+            <div id="topSection">
+                <h1>Maison Médicale Pasteur Santes</h1>
+                <div id="topSectionAdresse">
+                        <i class="fa-sharp fa-solid fa-house fa-2xl"></i>
+                    <p>
+                        33B avenue Albert Bernard<br>
+                        59211 Santes
+                    </p>
+                </div>
+                <div id="topSectionTel">
+                        <i class="fa-sharp fa-solid fa-phone fa-2xl"></i>
+                    <p>
+                        03 21 75 94 84
+                    </p>
+                </div>
+                <button><a href="#sectionPraticien">Prendre RDV</a></button>
+            
+            </div>
+
+
+        {% endblock %}
+
+
+
+        {% block header %}
+            <div class="custom-wrapper pure-g navbarFront">
+                <div class="pure-menu pure-menu-horizontal ctnListesNav pure-u-1-2">
+                    <ul class="pure-menu-list liensMenu">
+                        <li class="pure-menu-item">
+                            <a href="#sectionPresentation" class="pure-menu-link">Acceuil</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#sectionNews" class="pure-menu-link">News</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#sectionFaq" class="pure-menu-link">Faq</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#sectionAcces" class="pure-menu-link">Accès</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#sectionPraticien" class="pure-menu-link">Prendre RDV</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+
+                <div class="menuLogin pure-menu-horizontal pure-u-md-1-4">
+                    {% if app.user %}
+                        <ul class="pure-menu-list">
+                            <li class="pure-menu-item">
+                                <a href="{{ path('app_logout') }}" class="pure-menu-link"> {{ app.user.userIdentifier }} >
+                                    <i class="fa-sharp fa-solid fa-power-off fa-lg" style="color: #000000;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="pure-menu-list">
+                            <li class="pure-menu-item">
+                                <a href="{{ path('app_login') }}" class="pure-menu-link">
+                                    Connexion > <i class="fa-sharp fa-solid fa-power-off fa-lg" style="color: #000000;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    {% endif %} 
+                </div>
+
+                <a href="#"><i class="fa-sharp fa-solid fa-angle-up fa-2xl scrollToTheTop" style="color: #878c97;"></i></a>
+
+        {% endblock %}
+
+
+    </body>
+</html>
