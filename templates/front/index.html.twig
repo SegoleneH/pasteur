@@ -24,13 +24,13 @@
         {% endfor %}
 </section>
 
+<h2>Section Faq</h2>
 <section id="sectionFaq">
-    <h2>Section Faq</h2>
         {% for faq in faqs %}
 
-            <div>
+            <div id="faqContainer{{faq.id}}">
                 <p>{{ faq.question }}</p>
-                <p>{{ faq.reponse }}</p>
+                <p class="reponseHide">{{ faq.reponse }}</p>
             </div>
 
         {% endfor %}

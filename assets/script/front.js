@@ -11,3 +11,12 @@ const observer = new IntersectionObserver(entries => {
 })
 
 observer.observe(topSection);
+
+//accordeon pour la section faq
+
+const containerFaq = sectionFaq.querySelectorAll('div');
+containerFaq.forEach(element => {
+    element.firstElementChild.addEventListener('click', () => {
+        element.lastElementChild.classList.toggle('reponseHide');
+    })
+})
