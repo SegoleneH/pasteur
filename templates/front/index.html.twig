@@ -30,10 +30,11 @@
 
 <h2>Section Faq</h2>
 <section id="sectionFaq">
+    <button id="faqExpand">Show all</button> 
         {% for faq in faqs %}
 
             <div id="faqContainer{{faq.id}}">
-                <p>{{ faq.question }}</p>
+                <p>{{ faq.question }} <button class="faqBtn">+</button></p>
                 <p class="reponseHide">{{ faq.reponse }}</p>
             </div>
 

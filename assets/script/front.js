@@ -14,9 +14,20 @@ observer.observe(topSection);
 
 //accordeon pour la section faq
 
+const sectionFaq = document.getElementById('sectionFaq');
 const containerFaq = sectionFaq.querySelectorAll('div');
-containerFaq.forEach(element => {
-    element.firstElementChild.addEventListener('click', () => {
+const expandAllFas = document.getElementById('faqExpand');
+const faqBtn = document.querySelectorAll('.faqBtn');
+
+//btn expand/close all
+faqExpand.addEventListener('click', () => {
+    containerFaq.forEach(element => {
         element.lastElementChild.classList.toggle('reponseHide');
+    })
+})
+//btn pr chaque faq
+faqBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.nextElementSibling.classList.toggle('reponseHide');
     })
 })
