@@ -19,6 +19,10 @@
                 <h3>{{ newsTag.new.titre }}</h2>
             </div>            
             <p><i>Le {{ newsTag.new.updatedAt|date('d/m/Y') }}</i> : {{ newsTag.new.resume }}</p>
+
+            <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }}'>
+                <button> Voir plus</button>
+            </a>
         </div>
 
         {% endfor %}

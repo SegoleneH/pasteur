@@ -1,0 +1,32 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <h1>{{ article.titre }}</h1>
+
+    {# <a href="{{ path('app_front_articles_index') }}">
+        <button class="previousBtn">Précédent</button>
+    </a> #}
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Contenu de l'Article</th>
+                <td>{{ article.contenu |raw }}</td>
+            </tr>
+            <tr>
+                <th>Créé le : </th>
+                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if article.imageName %}
+
+    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+
+    {% endif %}
+
+
+{% endblock %}

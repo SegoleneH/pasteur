@@ -1,0 +1,39 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_front') }}">
+        <button class="previousBtn">Précédent</button>
+    </a>
+
+    <h1>Articles</h1>
+
+    <table class="table pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Créé le</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td class="tdIndex">{{ article.titre }}</td>
+                <td class="tdIndex">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>            
+                    <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
+                        <button> Voir plus</button>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
