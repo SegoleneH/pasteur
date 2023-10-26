@@ -56,19 +56,22 @@
                 <div class="pure-menu pure-menu-horizontal ctnListesNav pure-u-1-2">
                     <ul class="pure-menu-list liensMenu">
                         <li class="pure-menu-item">
-                            <a href="#sectionPresentation" class="pure-menu-link">Acceuil</a>
+                            <a href="#sectionPresentation" class="pure-menu-link">Accueil</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionNews" class="pure-menu-link">News</a>
+                            <a href="#sectionNews" class="pure-menu-link">Actualités</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionFaq" class="pure-menu-link">Faq</a>
+                            <a href="#sectionFaq" class="pure-menu-link">FAQ</a>
                         </li>
                         <li class="pure-menu-item">
                             <a href="#sectionAcces" class="pure-menu-link">Accès</a>
                         </li>
                         <li class="pure-menu-item">
                             <a href="#sectionPraticien" class="pure-menu-link">Prendre RDV</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="{{ path('app_front_articles') }}" class="pure-menu-link">Articles</a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +85,7 @@
 
         {% block footer %}
 
-                <div class="menuLogin pure-menu-horizontal pure-u-md-1-4">
+                {# <div class="menuLogin pure-menu-horizontal pure-u-md-1-4">
                     {% if app.user %}
                         <ul class="pure-menu-list">
                             <li class="pure-menu-item">
@@ -100,7 +103,7 @@
                             </li>
                         </ul>
                     {% endif %} 
-                </div>
+                </div> #}
 
                 <a href="#"><i class="fa-sharp fa-solid fa-angle-up fa-2xl scrollToTheTop" style="color: #878c97;"></i></a>
 
