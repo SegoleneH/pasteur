@@ -57,20 +57,20 @@ class FrontController extends AbstractController
         ]);
     }
 
-    // #[Route('/front_articles', name: 'app_front_articles')]
-    // public function frontArticleIndex(ManagerRegistry $doctrine): Response
-    // {
-    //     $em = $doctrine->getManager();
-    //     $articleRepository = $em->getRepository(Article::class);
+    #[Route('/front_articles', name: 'app_front_articles')]
+    public function frontArticleIndex(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $articleRepository = $em->getRepository(Article::class);
 
-    //     $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findAll();
 
 
-    //     return $this->render('front_articles/index.html.twig', [
-    //         'articles' => $articles,
+        return $this->render('front_articles/index.html.twig', [
+            'articles' => $articles,
             
-    //     ]);
-    // }
+        ]);
+    }
 
     #[Route('/front_articles/{id}', name: 'app_front_articles_show')]
     public function frontArticleshow(Article $article): Response
