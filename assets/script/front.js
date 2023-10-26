@@ -24,6 +24,7 @@ faqExpand.addEventListener('click', () => {
     containerFaq.forEach(element => {
         element.lastElementChild.classList.toggle('reponseHide');
     })
+    faqExpand.textContent = faqExpand.textContent === 'ouvrir toutes les faq' ? 'fermer toutes les faq' : 'ouvrir toutes les faq';
 })
 //btn pr chaque faq
 faqBtn.forEach(btn => {
