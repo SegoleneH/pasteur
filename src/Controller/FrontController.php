@@ -21,15 +21,19 @@ class FrontController extends AbstractController
         $articleRepository = $em->getRepository(Article::class);
         $praticienRepository = $em->getRepository(Praticien::class);
 
+
         //liste des 3 derniers articles pour news ac tags associés
         $news = $articleRepository->findLastArticles(2);
         $newsTags = [];
         foreach ($news as $new) {
             $newsTags[] = [
                 'new' => $new,
-                'tags' => $new->getTags()
+                'tags' => $new->getTags(),
+
+                
             ];
         }
+        // dd($newsTags);
 
         //liste des praticiens ac metiers e infos pour section RDV/equipe
         $praticiens = $praticienRepository->findAll();
@@ -49,6 +53,29 @@ class FrontController extends AbstractController
             'news' => $news,
             'newsTags' => $newsTags,
             'praticiensMetiers' => $praticiensMetiers,
+        ]);
+    }
+
+    #[Route('/front_articles', name: 'app_front_articles')]
+    public function frontArticleIndex(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $articleRepository = $em->getRepository(Article::class);
+
+        $articles = $articleRepository->findAll();
+
+
+        return $this->render('front_articles/index.html.twig', [
+            'articles' => $articles,
+            
+        ]);
+    }
+
+    #[Route('/{id}', name: 'app_front_articles_show')]
+    public function frontArticleshow(Article $article): Response
+    {
+        return $this->render('front_articles/show.html.twig', [
+            'article' => $article,
         ]);
     }
 }
