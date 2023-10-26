@@ -72,7 +72,7 @@ class FrontController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/{id}', name: 'app_front_articles_show')]
+    #[Route('/front_articles/{id}', name: 'app_front_articles_show')]
     public function frontArticleshow(Article $article): Response
     {
         return $this->render('front_articles/show.html.twig', [
