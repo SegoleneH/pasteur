@@ -128,10 +128,15 @@
     margin: 20px;
 }
 
-//Fluffy
+//btn pr scroll en haut de page
 
 .scrollToTheTop {
     position: fixed;
     bottom: 60px;
     right: 30px;
+    opacity: 1;
+    transition: 500ms;
+}
+.hide {
+    opacity: 0;
 }
