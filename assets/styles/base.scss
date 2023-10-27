@@ -2,12 +2,15 @@
 @import 'app.scss';
 
 //&::::::::::::::::::::::::::::::::::GENERAL::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-$bleu-base: rgb(25, 156, 113);
+$bleu-box-shadow: rgba(21, 139, 100, 0.8);
+$bleu-fonce-box-shadow: rgba(17, 107, 73, 0.8);
 $bleu-transparent-thead: rgba(25, 156, 113, 0.8);
 $bleu-transparent-bordures: rgba(25, 156, 113, 0.3);
-$orange-clair: rgba(235, 86, 27, 1);
-$orange: rgba(220, 74, 22, 1);
+
+$bleu-base: rgb(25, 156, 113);
+$bleu-clair: rgba(0, 199, 132, 1);
+
+
 $orange-box-shadow-clair: rgba(192, 66, 21, 0.8);
 $orange-box-shadow: rgba(98, 32, 4, 0.8);
 $rouge: rgb(235, 31, 27);
@@ -131,17 +134,17 @@ th {
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 button {
-    background-color: $orange;
-    border: solid 2px $orange;
+    background-color: $bleu-clair;
+    border: solid 2px $bleu-clair;
     border-radius: 20px;
     padding: 10px 15px;
     margin: 10px auto;
     cursor: pointer;
-    box-shadow: 0 2px 4px $orange-box-shadow;
+    box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
 
     &:hover {
-        background-color: $orange-clair;
-        box-shadow: inset 0 0 3px $orange-box-shadow-clair, 0 1px 3px 2px $orange-box-shadow;
+        background-color: $bleu-clair;
+        box-shadow: inset 0 0 3px $bleu-box-shadow, 0 1px 3px 2px $bleu-fonce-box-shadow;
     }
 }
 
