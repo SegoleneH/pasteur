@@ -128,6 +128,19 @@ $background: rgb(255, 248, 239);
     display: none;
 }
 
+#faqExpandDiv {
+    width: 80dvw;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+#faqExpand {
+    background-color: transparent;
+    margin: 0;
+}
+
 
 //Section Acces, Map etc
 
