@@ -33,7 +33,7 @@
     <button id="faqExpand">ouvrir toutes les faq</button> 
         {% for faq in faqs %}
 
-            <div id="faqContainer{{faq.id}}">
+            <div id="faqContainer{{faq.id}}" aria-expanded="false">
                 <p>{{ faq.question }} <button class="faqBtn">+</button></p>
                 <p class="reponseHide">{{ faq.reponse }}</p>
             </div>
