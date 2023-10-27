@@ -204,8 +204,8 @@ form {
     }
     
     textarea {
-        margin: 10px auto 0 auto;
-        width: 500px;
+        margin: 10px 0;
+        width: 40vw;
         height: 100px;
     }
     
@@ -214,6 +214,21 @@ form {
         margin: 5px 0;
     }
 }
+
+#articleForm,
+#editeurForm,
+#faqForm,
+#tagForm,
+#metierForm,
+#userForm {
+    margin: 2vh 30vw;
+}
+
+#praticienForm {
+    margin: 2vh 15vw;
+}
+
+//&::::::::::::::::::::::::::::checkboxes:::::::::::::::::::::::::::
 #praticien_metiers, #article_tags, #article_editeurs {
     @include disflex;
     flex-wrap: wrap;
@@ -255,25 +270,7 @@ form {
 
 //&::::::::::::::::::::::::::::::::Help messages::::::::::::::::::::::::::::::
 
-#editeur_prenom_help,
-#editeur_nom_help,
-#editeur_user_email_help,
-#user_email_help,
-#user_password_help,
-#faq_question_help,
-#faq_reponse_help,
-#tag_nom_help,
-#tag_description_help,
-#article_titre_help,
-#article_resume_help,
-#article_alt_help,
-#metier_nom_help,
-#metier_description_help,
-#praticien_nom_help,
-#praticien_prenom_help,
-#praticien_lienRdv_help,
-#praticien_metiers_help,
-#praticien_imageFile_help {
+.help-text {
     color: $texte-gris;
     font-style: italic;
     margin: 5px 0 30px 0;
@@ -288,19 +285,6 @@ form {
     li {
         color: $rouge;
     }
-}
-
-#articleForm,
-#editeurForm,
-#faqForm,
-#tagForm,
-#metierForm,
-#praticienForm {
-    margin: 2vh 30vw;
-}
-
-#praticienForm {
-    margin: 2vh 15vw;
 }
 
 //&:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
