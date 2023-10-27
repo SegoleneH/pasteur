@@ -33,12 +33,12 @@
 
 <h2>Section Faq</h2>
 <section id="sectionFaq">
-    <span id="faqExpandDiv"><button id="faqExpand">ouvrir toutes les faq</button> </span>
+    <span id="faqExpandDiv"><button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq">ouvrir toutes les faq</button> </span>
         {% for faq in faqs %}
 
-            <div id="faqContainer{{faq.id}}" aria-expanded="false">
-                <p class="faqQuestion">{{ faq.question }} <button class="faqBtn">+</button></p>
-                <p class="reponseHide faqReponse">{{ faq.reponse }}</p>
+            <div>
+                <p class="faqQuestion">{{ faq.question }} <button class="faqBtn" aria-expanded="false" aria-controls="faqReponse{{faq.id}}" role="button">+</button></p>
+                <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true">{{ faq.reponse }}</p>
             </div>
 
         {% endfor %}
