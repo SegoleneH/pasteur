@@ -46,7 +46,12 @@ class ArticleType extends AbstractType
             ->add('contenu', CKEditorType::class, [
                 'label' => 'Votre Article * ',
                 'label_attr' => ['class' => 'labelForm'],
+                'help' => 'Veuillez entrer du contenu pour votre article.',
+                'invalid_message' => 'Veuillez entrer du contenu pour votre article.',
+
+                'required' => true,
                 'purify_html' => true,
+
             ])
             ->add('imageFile', VichImageType::class, 
             ['required' => false,

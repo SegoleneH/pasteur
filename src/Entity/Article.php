@@ -37,6 +37,7 @@ class Article
     #[ORM\Column(length: 190)]
     private ?string $resume = null;
 
+    #[Assert\NotBlank]
     #[Assert\Length(max: 10000)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $contenu = null;
