@@ -34,8 +34,8 @@
         {% for faq in faqs %}
 
             <div id="faqContainer{{faq.id}}" aria-expanded="false">
-                <p>{{ faq.question }} <button class="faqBtn">+</button></p>
-                <p class="reponseHide">{{ faq.reponse }}</p>
+                <p class="faqQuestion">{{ faq.question }} <button class="faqBtn">+</button></p>
+                <p class="reponseHide faqReponse">{{ faq.reponse }}</p>
             </div>
 
         {% endfor %}
