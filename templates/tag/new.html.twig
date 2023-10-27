@@ -3,11 +3,13 @@
 {% block title %}Créer Catégorie{% endblock %}
 
 {% block body %}
-    <h1>Créer une nouvelle Catégorie</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_tag_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+        <h1>Créer une nouvelle Catégorie</h1>
+    </div>
 
-    <a href="{{ path('app_tag_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
     
     {{ include('tag/_form.html.twig') }}
 

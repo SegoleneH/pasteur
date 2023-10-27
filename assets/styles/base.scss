@@ -6,15 +6,9 @@ $bleu-box-shadow: rgba(21, 139, 100, 0.8);
 $bleu-fonce-box-shadow: rgba(17, 107, 73, 0.8);
 $bleu-transparent-thead: rgba(25, 156, 113, 0.8);
 $bleu-transparent-bordures: rgba(25, 156, 113, 0.3);
-
 $bleu-base: rgb(25, 156, 113);
 $bleu-clair: rgba(0, 199, 132, 1);
-
-
-$orange-box-shadow-clair: rgba(192, 66, 21, 0.8);
-$orange-box-shadow: rgba(98, 32, 4, 0.8);
 $rouge: rgb(235, 31, 27);
-
 $texte-gris: rgb(37, 37, 37);
 $background: rgb(255, 248, 239);
 
@@ -36,13 +30,11 @@ body {
     background-color: $background;
 
     h1 {
-        margin: 5vh auto;
+        margin: 5dvh 30dvw;
         text-align: center;
     }
 
 }
-
-
 
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::À FAIRE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -51,7 +43,6 @@ body {
 //*   - créer "cartes" métiers ?
 //*   - SCROLLBAR STYLE : https: //blog.logrocket.com/guide-styling-css-scrollbars/#introduction-scrollbars
 //*   - Responsive tableaux
-//*   - Boutons en bas des formulaires => les mettre en row ?
 //* 
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -114,11 +105,15 @@ tbody {
     }
     
     .btnTdIndex {
-        width: 25vw;
+        width: 260px;
+
+        .afficherBtn{
+            margin-right: 10px;
+        }
     }
 
     .tdIndex {
-        max-width: 25vw;
+        max-width: 25dvw;
         // overflow: scroll;
     }
 }
@@ -168,8 +163,7 @@ a {
     justify-content: center;
 
     button {
-        margin: 30px auto;
-        padding: 10px 15px;
+        margin: 30px auto 60px auto;
     }
 }
 
@@ -183,11 +177,11 @@ a {
     }
 }
 
-td {
-    button {
-        margin: 0 10px;
-    }
-}
+// td {
+//     button {
+//         margin: 0 10px;
+//     }
+// }
 
 
 //^ Trick pour aligner les boutons en bas du form edit
@@ -221,7 +215,7 @@ form {
         margin: 5px 0;
     }
 }
-#praticien_metiers, #article_tags {
+#praticien_metiers, #article_tags, #article_editeurs {
     @include disflex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -236,6 +230,17 @@ form {
 .enabled,
 #editeur_user_enabled {
     display: none;
+}
+
+.topContainer {
+    @include disflex;
+    height: 100px;
+    width: 90%;
+    justify-content: space-between;
+
+    h1 {
+        margin: 5dvh auto;
+    }
 }
 
 //&::::::::::::::::::::::::::::champs Password:::::::::::::::::::::::::::

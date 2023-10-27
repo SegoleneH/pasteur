@@ -3,11 +3,14 @@
 {% block title %}Modification métier{% endblock %}
 
 {% block body %}
-    <h1>Modifier métier</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_metier_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
 
-    <a href="{{ path('app_metier_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <h1>Modifier métier</h1>
+    </div>
+
     
     {{ include('metier/_form.html.twig', {'button_label': 'Modifier'}) }}
     {{ include('metier/_delete_form.html.twig') }}

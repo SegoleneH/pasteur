@@ -3,11 +3,13 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_user_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+        <h1>User</h1>
+    </div>
 
-    <a href="{{ path('app_user_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
 
     <table class="table pure-table pure-table-horizontal">
         <tbody>

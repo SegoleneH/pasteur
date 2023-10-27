@@ -3,11 +3,13 @@
 {% block title %}Créer Éditeurs{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouvel Éditeur</h1>
+    <div class="topContainer">
+        <h1>Créer un nouvel Éditeur</h1>
 
-    <a href="{{ path('app_editeur_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <a href="{{ path('app_editeur_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+    </div>
     
     {{ include('editeur/_form.html.twig') }}
 

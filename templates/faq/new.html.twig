@@ -15,11 +15,14 @@
 {% block title %}Nouvelle FAQ{% endblock %}
 
 {% block body %}
-    <h1>Ajouter une FAQ</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_faq_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
 
-    <a href="{{ path('app_faq_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <h1>Ajouter une FAQ</h1>
+    </div>
+
 
     {{ include('faq/_form.html.twig') }}
         

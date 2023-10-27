@@ -3,11 +3,14 @@
 {% block title %}Éditeur{% endblock %}
 
 {% block body %}
-    <h1>{{ editeur.nom }} {{ editeur.prenom }}</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_editeur_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
 
-    <a href="{{ path('app_editeur_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <h1>{{ editeur.nom }} {{ editeur.prenom }}</h1>
+    </div>
+
     
     <table class="table pure-table pure-table-horizontal">
         <tbody>

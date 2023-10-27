@@ -3,11 +3,14 @@
 {% block title %}Modifier praticien{% endblock %}
 
 {% block body %}
-    <h1>Modifier le praticien</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_praticien_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+        
+        <h1>Modifier le praticien</h1>
+    </div>
 
-    <a href="{{ path('app_praticien_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
     
     {{ include('praticien/_form.html.twig') }}
     {{ include('praticien/_delete_form.html.twig') }}

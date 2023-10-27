@@ -3,11 +3,13 @@
 {% block title %}Modifier Faq {{ faq.id }}{% endblock %}
 
 {% block body %}
-    <h1>Modifier Faq {{ faq.id }}</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_faq_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
 
-    <a href="{{ path('app_faq_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <h1>Modifier Faq {{ faq.id }}</h1>
+    </div>
     
 
     {{ include('faq/_form.html.twig', {'button_label': 'Modifier'}) }}

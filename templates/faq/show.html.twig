@@ -3,11 +3,14 @@
 {% block title %}Faq {{ faq.id }}{% endblock %}
 
 {% block body %}
-    <h1>Faq {{ faq.id }}</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_faq_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
 
-    <a href="{{ path('app_faq_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
+        <h1>Faq {{ faq.id }}</h1>
+    </div>
+
 
     <table class="table pure-table pure-table-horizontal">
         <tbody>

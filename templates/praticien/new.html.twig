@@ -3,11 +3,13 @@
 {% block title %}Nouveau Praticien{% endblock %}
 
 {% block body %}
-    <h1>Creer un nouveau Praticien</h1>
+    <div class="topContainer">
+        <a href="{{ path('app_praticien_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+        <h1>Creer un nouveau Praticien</h1>
+    </div>
     
-    <a href="{{ path('app_praticien_index') }}">
-        <button class="previousBtn">Précédent</button>
-    </a>
 
     {{ include('praticien/_form.html.twig') }}
 

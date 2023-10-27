@@ -27,7 +27,7 @@
                 <td class="tdIndex">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td class="column btnTdIndex">
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">
-                        <button>
+                        <button class="afficherBtn">
                             <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
                             Afficher
                         </button>
