@@ -53,7 +53,7 @@ class UserType extends AbstractType
                 'first_options' => ['label' => 'Mot de passe * '],
                 'second_options' => ['label' => 'Confirmer le mot de passe * '],
 
-                'help' => 'Entrez votre mot de passe dans les deux champs ci-dessus.',
+                'help' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule, 1 chiffre et 1 des caractères spéciaux suivants : @ # % & + = _ ! . $ -',
                 
                 'attr' => ['class' => 'passwDoubleField'],
                 
@@ -70,7 +70,7 @@ class UserType extends AbstractType
                     ]),
                     new Assert\Regex([
                         'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@#%&+=_!.$-])[A-Za-z0-9@#%&+=._!$-]{8,}$/',
-                        'message' => 'Le mot de passe doit contenir 1 minuscule, 1 majuscule, 1 chiffre, 1 caractère spécial',
+                        'message' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule, 1 chiffre et 1 des caractères spéciaux suivants : @ # % & + = _ ! . $ -',
                     ])
                     ],
                 ])

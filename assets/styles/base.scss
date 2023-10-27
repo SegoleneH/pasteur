@@ -240,6 +240,12 @@ form {
     input{
         width: 5%;
     }
+
+}
+div{
+    .required{
+        margin: 20px 0 5px 0;
+    }
 }
 .enabled,
 #editeur_user_enabled {
