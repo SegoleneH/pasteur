@@ -88,7 +88,7 @@
                 {% if praticiensMetiers.praticien.lienRdv %}
                     <a href="{{ praticiensMetiers.praticien.lienRdv | e }}" target="_blank"><button>Prendre RDV</button></a>
                 {% else %}
-                    <p>03 21 75 94 84</p>
+                    <a href="tel:{{ praticiensMetiers.praticien.lienRdv | e }}"><button>Prendre RDV</button></a>
                 {% endif %}
             </div>
         {% endfor %}
