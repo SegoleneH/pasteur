@@ -195,35 +195,13 @@ a {
     }
 }
 
-//* td {
-//*     button {
-//*         margin: 0 10px;
-//*     }
-//* }
-
 #praticien_imageFile_file, 
 #article_imageFile_file {
     width: 40%;
-
 }
 
-// //^ Trick pour aligner les boutons en bas du form edit
-// .saveBtn,#deleteForm{
-//     width: 50%;
-// }
-// #deleteForm {
-//     margin: -3.1em 0 0.1em 25em;
-//     padding: 0.1em 0;
-// }
-// .saveBtn {
-//     margin: 0 0 -2.7em 10em;
-//     padding: 10px 35px
-// }
-
 //&:::::::::::::::::::::::::::::::::::FORMULAIRES:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 form {
-    
     
     textarea {
         margin: 10px 0;
@@ -261,13 +239,14 @@ form {
     input{
         width: 5%;
     }
-
 }
+
 div{
     .required{
         margin: 20px 0 5px 0;
     }
 }
+
 .enabled,
 #editeur_user_enabled {
     display: none;
@@ -329,15 +308,13 @@ form {
     .column {
         @include flexColumn;
     }
-
-        // border: none;
-        // border-bottom: none;
-        // ^ Impossible de ré-écrire sur ce code : 
-            // .pure-table-horizontal td,
-            // .pure-table-horizontal th {
-            //     border-width: 0 0 1px 0;
-            //     border-bottom-width: 1px;
-            //     border-bottom: 1px solid #cbcbcb;
-            // }
-
+    // border: none;
+    // border-bottom: none;
+    // ^ Impossible de ré-écrire sur ce code : 
+        // .pure-table-horizontal td,
+        // .pure-table-horizontal th {
+        //     border-width: 0 0 1px 0;
+        //     border-bottom-width: 1px;
+        //     border-bottom: 1px solid #cbcbcb;
+        // }
 }
