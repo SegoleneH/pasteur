@@ -53,7 +53,7 @@ body {
     #article_editeurs, .topContainer {
         @include disflex;
     }
-    form, form div, .column  {
+    form, form div {
         @include flexColumn;
     }
 }
@@ -326,7 +326,9 @@ form {
     .custom-wrapper .ctnListesNav {
         justify-content: flex-start;
     }
-
+    .column {
+        @include flexColumn;
+    }
 
         // border: none;
         // border-bottom: none;
