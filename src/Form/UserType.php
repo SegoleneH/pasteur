@@ -73,7 +73,7 @@ class UserType extends AbstractType
                         'message' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule, 1 chiffre et 1 des caractères spéciaux suivants : @ # % & + = _ ! . $ -',
                     ])
                     ],
-                ])
+            ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'Actif',
                 'label_attr' => ['class' => 'enabled'],

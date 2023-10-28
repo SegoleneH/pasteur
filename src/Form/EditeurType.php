@@ -36,7 +36,7 @@ class EditeurType extends AbstractType
             ])
             ->add('user', UserType::class, [
                 'label' => false,
-                // 'message' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule, 1 chiffre et 1 des caractères spéciaux suivants : @ # % & + = _ ! . $ -',
+                'help' => 'Le mot de passe doit contenir au moins 8 caractères, dont 1 majuscule, 1 minuscule, 1 chiffre et 1 des caractères spéciaux suivants : @ # % & + = _ ! . $ -'
             ])
         ;
     }

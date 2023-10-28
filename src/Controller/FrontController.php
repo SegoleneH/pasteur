@@ -65,7 +65,6 @@ class FrontController extends AbstractController
 
         $articles = $articleRepository->findAll();
 
-
         return $this->render('front_articles/index.html.twig', [
             'articles' => $articles,
             

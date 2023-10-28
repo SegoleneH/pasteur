@@ -56,6 +56,7 @@ class ArticleType extends AbstractType
             ->add('imageFile', VichImageType::class, 
             ['required' => false,
             'download_uri' => false,
+            'label' => 'Importer une image',
             ])
             ->add('alt', null, [
                 'label' => 'Description de l\'image',

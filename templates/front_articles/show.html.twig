@@ -3,24 +3,23 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>{{ article.titre }}</h1>
-
-    {# <a href="{{ path('app_front_articles') }}">
-        <button class="previousBtn">Précédent</button>
-    </a> #}
+    <div class="topContainer">
+        <a href="{{ path('app_front_articles') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+        <h1>{{ article.titre }}</h1>
+    </div>
     
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Contenu de l'Article</th>
-                <td>{{ article.contenu |raw }}</td>
-            </tr>
-            <tr>
-                <th>Créé le : </th>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <section>
+        <article>
+            {{ article.contenu |raw }}
+        </article>
+        
+        <p>Créé le :{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+    </section>
+
+ 
 
     {% if article.imageName %}
 

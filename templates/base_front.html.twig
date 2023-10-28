@@ -28,7 +28,7 @@
         {% block topSection %}
 
             <div id="topSection">
-                <h1>Maison Médicale Pasteur Santes</h1>
+                <a href="{{ path('app_front') }}"><h1>Maison Médicale Pasteur Santes</h1></a>
                 <div id="topSectionAdresse">
                         <i class="fa-sharp fa-solid fa-house fa-2xl"></i>
                     <p>
@@ -39,10 +39,10 @@
                 <div id="topSectionTel">
                         <i class="fa-sharp fa-solid fa-phone fa-2xl"></i>
                     <p>
-                        03 21 75 94 84
+                        <a href="tel:+33632147594">+33632147594</a>
                     </p>
                 </div>
-                <button><a href="#sectionPraticien">Prendre RDV</a></button>
+                <a href="#sectionPraticien"><button>Prendre RDV</button></a>
             
             </div>
 
@@ -70,9 +70,9 @@
                         <li class="pure-menu-item">
                             <a href="#sectionPraticien" class="pure-menu-link">Prendre RDV</a>
                         </li>
-                        {# <li class="pure-menu-item">
-                            <a href="{{ path('app_front_articles_index') }}" class="pure-menu-link">Articles</a>
-                        </li> #}
+                        <li class="pure-menu-item">
+                            <a href="{{ path('app_front_articles') }}" class="pure-menu-link">Articles</a>
+                        </li>
                     </ul>
                 </div>
 

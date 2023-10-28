@@ -41,6 +41,6 @@ fos_ck_editor:
                         "BGColor",
                         "HorizontalRule",
                         "/",
-                        "Format", "FontSize",
+                        "FontSize",
                       ]
                   }
