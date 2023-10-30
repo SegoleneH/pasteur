@@ -24,7 +24,7 @@
             <tr>
                 <td class="tdIndex">{{ article.titre }}</td>
                 <td class="tdIndex">{{ article.resume }}</td>
-                <td class="tdIndex">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="tdIndex">{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td class="column btnTdIndex">
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">
                         <button class="afficherBtn">

@@ -1,13 +1,36 @@
-.articleCard {
-    border: solid 2px $bleu-base;
-    width: 20dvw;
-    height: fit-content;
+#sectionArticles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 
-    .articleCardImg {
-        width: 40%;
-    }
+    .articleCard {
+        border: solid 2px $bleu-transparent-bordures;
+        border-radius: 20px;
+        width: 25vw;
+        height: fit-content;
+        margin: 2.5dvw;
+    
+        #cardContainer {
+            display: flex;
+            flex-direction: column;
 
-    .articleCardTxt {
-        width: 80%;
+            .articleCardImg {
+                margin: 40px auto;    
+            }
+        
+            .articleCardTxt {
+                height: 100px;
+                text-align: center;
+                p{
+                    height: 50px;
+                }
+            }
+        
+            a {
+                height: 50px;
+                margin: 20px auto 40px auto;
+            }
+        }
     }
 }
