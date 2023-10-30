@@ -65,7 +65,6 @@ i{
 //section presentation
 
 #sectionPresentation {
-    border: 1px solid black;
     scroll-margin-top: 3em;
     height: 350px;
     overflow: hidden;
@@ -84,21 +83,31 @@ i{
 //section News
 
 #sectionNews {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     padding: 0 20px;
     text-align: justify;
     align-items: center;
     scroll-margin-top: 3em;
+    margin: 30px 0;
 }
 
 .containerNews {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 0 20px;
     width: 80dvw;
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: #BFF1E0
+        ;
+    }
 }
 
 .containerNewsInfos {
@@ -109,8 +118,9 @@ i{
 
 //section faq
  #sectionFaq {
+    margin: 30px 0;
+    background-color: #BFF1E0;
     scroll-margin-top: 3em;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     padding: 0 20px;
@@ -174,13 +184,12 @@ i{
 //Section Acces, Map etc
 
 #sectionAcces {
-    border: 1px solid black;
     scroll-margin-top: 3em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 20px;
-    margin: 0 auto;
+    margin: 30px auto;
     gap: 5%;
     iframe {
         flex-basis: 40%;
@@ -208,13 +217,13 @@ i{
 //section RDV, Equipe
 
 #sectionPraticien {
+    background-color: #BFF1E0;
     scroll-margin-top: 3em;
-    border: solid 1px black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 
@@ -225,7 +234,6 @@ i{
     flex-basis: 25%;
     align-items: center;
     justify-content: center;
-    border: solid 1px black;
     height: 500px;
     padding: 20px;
     margin: 20px;
@@ -244,5 +252,4 @@ i{
     opacity: 0;
 }
 
-//faq accordeon
 

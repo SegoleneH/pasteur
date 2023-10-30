@@ -10,7 +10,7 @@
 </section>
 
 
-<section id="sectionNews">
+{# <section id="sectionNews">
         {% for newsTag in newsTags %}
 
         <div class="containerNews">
@@ -27,6 +27,21 @@
                 </a>
             </div>
         </div>
+
+        {% endfor %}
+</section> #}
+
+<section id="sectionNews">
+        {% for newsTag in newsTags %}
+
+        <div class="containerNews">
+        <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }}'>
+            
+            <h3>{{ newsTag.new.titre }}</h3>         
+            <p>{{ newsTag.new.resume }}</p>
+
+        </a>
+        </div> 
 
         {% endfor %}
 </section>
