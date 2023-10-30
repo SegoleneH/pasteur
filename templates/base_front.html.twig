@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=" Maison médicale à Santes. Médecins généralistes, kinésithérapeute, orthophoniste ">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -42,7 +43,7 @@
                         <a href="tel:+33632147594">+33632147594</a>
                     </p>
                 </div>
-                <a href="#sectionPraticien"><button>Prendre RDV</button></a>
+                <a href="{{ path('app_front') }}#sectionPraticien"><button>Prendre RDV</button></a>
             
             </div>
 
@@ -58,16 +59,16 @@
                             <a href="{{ path('app_front') }}" class="pure-menu-link">Accueil</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionNews" class="pure-menu-link">Actualités</a>
+                            <a href="{{ path('app_front') }}#sectionNews" class="pure-menu-link">Actualités</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionFaq" class="pure-menu-link">FAQ</a>
+                            <a href="{{ path('app_front') }}#sectionFaq" class="pure-menu-link">FAQ</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionAcces" class="pure-menu-link">Accès</a>
+                            <a href="{{ path('app_front') }}#sectionAcces" class="pure-menu-link">Accès</a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#sectionPraticien" class="pure-menu-link">Prendre RDV</a>
+                            <a href="{{ path('app_front') }}#sectionPraticien" class="pure-menu-link">Prendre RDV</a>
                         </li>
                         <li class="pure-menu-item">
                             <a href="{{ path('app_front_articles') }}" class="pure-menu-link">Articles</a>

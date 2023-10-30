@@ -9,8 +9,7 @@
 </section>
 
 
-<h2>Section News</h2>
-<section id="sectionNews">
+{# <section id="sectionNews">
         {% for newsTag in newsTags %}
 
         <div class="containerNews">
@@ -29,9 +28,23 @@
         </div>
 
         {% endfor %}
+</section> #}
+
+<section id="sectionNews">
+        {% for newsTag in newsTags %}
+
+        <div class="containerNews">
+        <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }}'>
+            
+            <h3>{{ newsTag.new.titre }}</h3>         
+            <p>{{ newsTag.new.resume }}</p>
+
+        </a>
+        </div> 
+
+        {% endfor %}
 </section>
 
-<h2>Section Faq</h2>
 <section id="sectionFaq">
     <span id="faqExpandDiv"><button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq">ouvrir toutes les faq</button> </span>
         {% for faq in faqs %}
@@ -62,7 +75,6 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
 </section>
 
-<h2>Section Prendre RDV</h2>
 <section id="sectionPraticien">
         {% for praticiensMetiers in praticiensMetiers %}
             <div class="containerPraticien">
