@@ -56,6 +56,23 @@ body {
     form, form div {
         @include flexColumn;
     }
+
+    section {
+        .imgContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        article {
+            margin: 40px;
+
+            div {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 40px;
+            }
+        }
+    }
 }
 
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -137,6 +154,7 @@ tbody {
 .pure-table thead {
     background-color: $bleu-transparent-thead;
 }
+
 
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -256,9 +274,10 @@ div{
     height: 100px;
     width: 90%;
     justify-content: space-between;
+    padding-top: 20px;
 
     h1 {
-        margin: 2dvh auto;
+        margin: 3dvh auto;
     }
 }
 

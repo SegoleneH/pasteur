@@ -11,28 +11,30 @@
         <h1>{{ article.titre }}</h1>
     </div>
     
-    <table class="table">
+    {# <table class="table">
         <tbody>
             <tr>
-                <th>Message destiné à la page d'accueil</th>
-                <td>{{ article.resume }}</td>
-            </tr>
-            <tr>
-                <th>Contenu de l'Article</th>
                 <td>{{ article.contenu |raw }}</td>
             </tr>
             <tr>
-                <th>Créé le : </th>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
-    </table>
+    </table> #}
 
-    {% if article.imageName %}
+    <section>
+        {% if article.imageName %}
+            <div class="imgContainer">
+                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+            </div>
+        {% endif %}
 
-    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+        <article>
+            {{ article.contenu |raw }}
+            <div>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</div>
+        </article>
+    </section>
 
-    {% endif %}
 
     <div class="btnRow">
         <div class="btnContainer">

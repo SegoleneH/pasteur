@@ -1,0 +1,13 @@
+.articleCard {
+    border: solid 2px $bleu-base;
+    width: 20dvw;
+    height: fit-content;
+
+    .articleCardImg {
+        width: 40%;
+    }
+
+    .articleCardTxt {
+        width: 80%;
+    }
+}

@@ -165,11 +165,7 @@ class Article
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->titre;
-    }
-
+    
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
@@ -214,8 +210,12 @@ class Article
     public function setAlt(?string $alt): static
     {
         $this->alt = $alt;
-
+        
         return $this;
     }
-
+    
+    public function __toString()
+    {
+        return $this->titre;
+    }
 }

@@ -12,20 +12,17 @@
     
 
     <section>
+        {% if article.imageName %}
+            <div class="imgContainer">
+                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+            </div>
+        {% endif %}
+
         <article>
             {{ article.contenu |raw }}
+            <div>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</div>
         </article>
-        
-        <p>Créé le :{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</p>
     </section>
-
- 
-
-    {% if article.imageName %}
-
-    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
-
-    {% endif %}
 
 
 {% endblock %}
