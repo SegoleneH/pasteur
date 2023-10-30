@@ -72,7 +72,7 @@
         TER : Gare de Santes (8min de Lille)</p>
 
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="true" tabindex="-1"></iframe>    
 </section>
 
 <section id="sectionPraticien">
@@ -97,9 +97,9 @@
                 <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
                 <p>{{ praticiensMetiers.metiers|join(', ')}} </p>
                 {% if praticiensMetiers.praticien.lienRdv %}
-                    <a href="{{ praticiensMetiers.praticien.lienRdv | e }}" target="_blank"><button>Prendre RDV</button></a>
+                    <button onclick="window.location.href = '{{ praticiensMetiers.praticien.lienRdv | e }}'" aria-label="prendre rdv avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Prendre RDV en ligne</button>
                 {% else %}
-                    <a href="tel:{{ praticiensMetiers.praticien.lienRdv | e }}"><button>Prendre RDV</button></a>
+                    <button onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rdv avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
                 {% endif %}
             </div>
         {% endfor %}
