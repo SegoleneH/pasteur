@@ -48,10 +48,12 @@ i{
 //section presentation
 
 #sectionPresentation {
-    height: 350px;
+    max-height: 350px;
+    max-width: 100dvw;
     background-image: url(../../images/billets.jpg);
     background-repeat: no-repeat;
     object-fit: contain;
+    height: 350px;
 }
 
 //section News
