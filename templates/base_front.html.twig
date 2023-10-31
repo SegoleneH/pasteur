@@ -83,28 +83,26 @@
         {% endblock %}
 
         {% block footer %}
+            <footer>
+                <div id="footerAdresse">
+                        <i class="fa-sharp fa-solid fa-house fa-2xl" aria-hidden="true"></i>
+                    <p>
+                        33B avenue Albert Bernard<br>
+                        59211 Santes
+                    </p>
+                </div>
 
-                {# <div class="menuLogin pure-menu-horizontal pure-u-md-1-4">
-                    {% if app.user %}
-                        <ul class="pure-menu-list">
-                            <li class="pure-menu-item">
-                                <a href="{{ path('app_logout') }}" class="pure-menu-link"> {{ app.user.userIdentifier }} >
-                                    <i class="fa-sharp fa-solid fa-power-off fa-lg" style="color: #000000;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    {% else %}
-                        <ul class="pure-menu-list">
-                            <li class="pure-menu-item">
-                                <a href="{{ path('app_login') }}" class="pure-menu-link">
-                                    Connexion > <i class="fa-sharp fa-solid fa-power-off fa-lg" style="color: #000000;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    {% endif %} 
-                </div> #}
-
-                <a href="#" class="scrollToTheTop"  aria-label="Retour en haut de page"><i class="fa-sharp fa-solid fa-angle-up fa-2xl " style="color: #878c97;"></i></a>
+                <div id="footerTel">
+                        <i class="fa-sharp fa-solid fa-phone fa-2xl" aria-hidden="true"></i>
+                    <p>
+                        <a href="tel:+33632147594">+33632147594</a>
+                    </p>
+                </div>
+                <div id="mentionsLeg">
+                    <a href="#">Mentions Légales</a>
+                </div>
+            </footer>
+            <a href="#" class="scrollToTheTop"  aria-label="Retour en haut de page"><i class="fa-sharp fa-solid fa-angle-up fa-2xl " style="color: #878c97;"></i></a>
 
         {% endblock %}
 

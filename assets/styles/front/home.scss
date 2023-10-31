@@ -229,3 +229,39 @@ i{
 }
 
 
+//footer
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+#footerTel, #footerAdresse, #mentionsLeg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+@media (max-width: 435px) {
+    #footerTel, #footerAdresse, #mentionsLeg {
+        justify-content: flex-start;
+        min-width: 70dvw
+    }
+
+    #mentionsLeg {
+       margin-top: 20px;
+    }
+
+    footer {
+        width: 70dvw;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+}
