@@ -51,7 +51,7 @@
 
 
 
-        {% block header %}
+        {# {% block header %}
             <div class="custom-wrapper pure-g navbarFront">
                 <div class="pure-menu pure-menu-horizontal ctnListesNav pure-u-1-2">
                     <ul class="pure-menu-list liensMenu">
@@ -77,6 +77,40 @@
                 </div>
 
             </div>
+        {% endblock %} #}
+
+        {% block header %}
+            <nav class="navbarFront">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ path('app_front') }}" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_front') }}#sectionNews" class="nav-link">Actualités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_front') }}#sectionFaq" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_front') }}#sectionAcces" class="nav-link">Accès</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_front') }}#sectionPraticien" class="nav-link">Prendre RDV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_front_articles') }}" class="nav-link">Articles</a>
+                    </li>                                                                                                    
+                
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+
+            </nav>
         {% endblock %}
 
         {% block body %}

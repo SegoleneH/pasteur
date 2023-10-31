@@ -35,3 +35,18 @@ faqBtn.forEach(btn => {
         btn.parentElement.nextElementSibling.getAttribute('aria-hidden') === 'true' ? btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'false') : btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'true');
     })
 })
+
+//hamburger
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+})
+
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}))

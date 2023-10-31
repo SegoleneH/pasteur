@@ -7,28 +7,6 @@
 <section id="sectionPresentation">
 </section>
 
-
-{# <section id="sectionNews">
-        {% for newsTag in newsTags %}
-
-        <div class="containerNews">
-            
-            <div class="containerNewsInfos">
-                <h3>{{ newsTag.new.titre }}</h2>
-            </div>            
-            <p><span>Le {{ newsTag.new.updatedAt|date('d/m/Y') }}</span> : {{ newsTag.new.resume }}</p>
-
-            <div class="btnContainer">
-
-                <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }}'>
-                    <button> Voir plus</button>
-                </a>
-            </div>
-        </div>
-
-        {% endfor %}
-</section> #}
-
 <section id="sectionNews">
         {% for newsTag in newsTags %}
 
