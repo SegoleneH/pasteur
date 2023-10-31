@@ -30,6 +30,9 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 //accordeon pour la section faq
 
 const sectionFaq = document.getElementById('sectionFaq');
+
+if (sectionFaq) {
+
 const containerFaq = sectionFaq.querySelectorAll('div');
 const faqExpand = document.getElementById('faqExpand');
 const faqBtn = document.querySelectorAll('.faqBtn');
@@ -50,4 +53,4 @@ faqBtn.forEach(btn => {
         btn.parentElement.nextElementSibling.getAttribute('aria-hidden') === 'true' ? btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'false') : btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'true');
     })
 })
-
+}
