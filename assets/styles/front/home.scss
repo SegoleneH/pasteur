@@ -70,6 +70,10 @@ a {
     background-color: rgb(25, 156, 113);
 }
 
+.nav-item {
+    font-size: 1.5rem;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -181,7 +185,7 @@ a {
     align-items: center;
 
     p {
-        margin: 0;
+        margin: 10px;
         height: clamp(30px, auto, 80px);
 
     }
@@ -196,7 +200,7 @@ a {
      justify-content: space-between;
      align-items: center;
     padding: 5px 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     &:hover {
         background-color: #BFF1E0
@@ -205,16 +209,17 @@ a {
  }
 
  .faqReponse {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #2f2f2f;
     display: flex;
     align-items: center;
     padding: 0 5px;
-
  }
 
  .faqBtn {
     margin: 0;
     background-color: transparent;
+    margin-left: 10px;
+    align-self: baseline;
  }
 
  .reponseHide {
@@ -245,6 +250,7 @@ a {
     padding: 20px;
     margin: 30px auto;
     gap: 5%;
+    width: 80dvw;
     iframe {
         flex-basis: 40%;
         flex-grow: 1;
