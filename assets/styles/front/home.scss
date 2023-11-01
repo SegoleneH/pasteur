@@ -72,6 +72,10 @@ a {
 
 .nav-item {
     font-size: 1.5rem;
+
+    &:hover {
+        background-color: #BFF1E0;
+    }
 }
 
 .hamburger {
@@ -213,6 +217,7 @@ a {
     display: flex;
     align-items: center;
     padding: 0 5px;
+    padding-bottom: 10px;
  }
 
  .faqBtn {
