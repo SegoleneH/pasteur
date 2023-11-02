@@ -44,7 +44,7 @@ i{
 .navbarFront {
     position: sticky;
     top: 0;
-    min-height: 80px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,10 +72,7 @@ a {
 
 .nav-item {
     font-size: 1.5rem;
-
-    &:hover {
-        background-color: #BFF1E0;
-    }
+    padding: 0 20px;
 }
 
 .hamburger {
@@ -118,16 +115,33 @@ a {
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        height: calc(100% - 80px )
     }
 
     .nav-item {
-        margin: 16px 0;
+        margin: 0;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #2f2f2f;
+        border-top: 1px solid #2f2f2f;
+        width: 90%;
     }
 
     .nav-menu.active {
         left: 0;
+        background-color: rgba(25, 156, 113, 0.8);
     }
 
+    .navbarFront.active {
+        background-color: rgba(25, 156, 113, 0.8);
+    }
+
+}
+
+.backdropBlur {
+    backdrop-filter: blur(8px);
 }
 
 
@@ -378,3 +392,35 @@ footer {
     }
 
 }
+
+//animation hover lien
+
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #000000;
+    height: 2px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+  }

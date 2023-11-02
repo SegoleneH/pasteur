@@ -16,15 +16,23 @@ observer.observe(topSection);
 
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navbarFront = document.querySelector('.navbarFront');
+const sectionPresentation = document.getElementById('sectionPresentation');
+const sectionNews = document.getElementById('sectionNews');
+const sectionAcces = document.getElementById('sectionAcces');
+const sectionPraticien = document.getElementById('sectionPraticien');
+
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navMenu.classList.toggle('backdropBlur');
 })
 
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navMenu.classList.toggle('backdropBlur');
 }))
 
 //accordeon pour la section faq
