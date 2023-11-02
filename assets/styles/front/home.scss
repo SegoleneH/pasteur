@@ -70,6 +70,14 @@ a {
     background-color: rgb(25, 156, 113);
 }
 
+.nav-item {
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: #BFF1E0;
+    }
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -142,7 +150,7 @@ a {
     padding: 0 20px;
     text-align: justify;
     align-items: center;
-    scroll-margin-top: 3em;
+    scroll-margin-top: 80px;
     margin: 30px 0;
 }
 
@@ -174,14 +182,14 @@ a {
  #sectionFaq {
     margin: 30px 0;
     background-color: #BFF1E0;
-    scroll-margin-top: 3em;
+    scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
     align-items: center;
 
     p {
-        margin: 0;
+        margin: 10px;
         height: clamp(30px, auto, 80px);
 
     }
@@ -196,7 +204,7 @@ a {
      justify-content: space-between;
      align-items: center;
     padding: 5px 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     &:hover {
         background-color: #BFF1E0
@@ -205,16 +213,18 @@ a {
  }
 
  .faqReponse {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #2f2f2f;
     display: flex;
     align-items: center;
     padding: 0 5px;
-
+    padding-bottom: 10px;
  }
 
  .faqBtn {
     margin: 0;
     background-color: transparent;
+    margin-left: 10px;
+    align-self: baseline;
  }
 
  .reponseHide {
@@ -227,6 +237,7 @@ a {
     justify-content: flex-end;
     margin-bottom: 5px;
     height: auto;
+    margin-right: 10px;
 }
 
 #faqExpand {
@@ -238,13 +249,14 @@ a {
 //Section Acces, Map etc
 
 #sectionAcces {
-    scroll-margin-top: 3em;
+    scroll-margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 20px;
     margin: 30px auto;
     gap: 5%;
+    width: 80dvw;
     iframe {
         flex-basis: 40%;
         flex-grow: 1;
@@ -272,7 +284,7 @@ a {
 
 #sectionPraticien {
     background-color: #BFF1E0;
-    scroll-margin-top: 3em;
+    scroll-margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -291,6 +303,29 @@ a {
     height: 500px;
     padding: 20px;
     margin: 20px;
+    border: 1px solid #2f2f2f;
+
+    img, svg {
+        height: 60%;
+    }
+}
+
+.containerPraticienText {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    :first-child {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    :nth-child(2) {
+        font-size: 20px;
+        margin-top: 0;
+    }
 }
 
 //btn pr scroll en haut de page

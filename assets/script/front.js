@@ -12,9 +12,27 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(topSection);
 
+//hamburger
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+})
+
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}))
+
 //accordeon pour la section faq
 
 const sectionFaq = document.getElementById('sectionFaq');
+
+if (sectionFaq) {
+
 const containerFaq = sectionFaq.querySelectorAll('div');
 const faqExpand = document.getElementById('faqExpand');
 const faqBtn = document.querySelectorAll('.faqBtn');
@@ -35,18 +53,4 @@ faqBtn.forEach(btn => {
         btn.parentElement.nextElementSibling.getAttribute('aria-hidden') === 'true' ? btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'false') : btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'true');
     })
 })
-
-//hamburger
-
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-})
-
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-}))
+}
