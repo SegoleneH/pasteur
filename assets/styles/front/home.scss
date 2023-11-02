@@ -44,7 +44,7 @@ i{
 .navbarFront {
     position: sticky;
     top: 0;
-    min-height: 80px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,17 +118,28 @@ a {
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        height: calc(100% - 80px )
     }
 
     .nav-item {
-        margin: 16px 0;
+        margin: 0;
     }
 
     .nav-menu.active {
         left: 0;
+        background-color: rgba(25, 156, 113, 0.5);
+    }
+
+    .navbarFront.active {
+        background-color: rgba(25, 156, 113, 0.5);
     }
 
 }
+
+.backdropBlur {
+    backdrop-filter: blur(4px);
+}
+
 
 
 //section presentation
