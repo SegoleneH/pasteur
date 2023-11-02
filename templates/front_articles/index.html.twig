@@ -4,30 +4,38 @@
 
 {% block body %}
     <div class="topContainer">
-        <a href="{{ path('app_front') }}">
-            <button class="previousBtn">Précédent</button>
-        </a>
+        <div><button class="previousBtn" onclick="window.location.href ='{{ path('app_front') }}'" aria-label="Précédent">Précédent</button></div>
 
         <h1>Articles</h1>
     </div>
 
     <section id="sectionArticles">
         {% for article in articles %}
-            <div class="articleCard">
-                <div id="cardContainer">
-                    <div class="articleCardImg">
+            <div  role="link" class="articleCard">
+                <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
+                    <div id="cardContainer">
                         {% if article.imageName %}
-                            <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('my_thumb') }}" alt="{{ article.alt }} "/>
+                            <div class="articleCardImg">
+                                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+                            </div>
+                        <div class="articleCardTxt">
+                            <p>{{ article.titre }}</p>
+                            <p>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
+                        </div>
+                        {% endif %}
+                        {% if not article.imageName %}
+                            <div class="articleCardWithoutImg">
+                                <p>{{ article.titre }}</p>
+                                <p>{{ article.resume | u.truncate(30, '...') }}</p>
+                                <p>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
+                            </div>
                         {% endif %}
                     </div>
-                    <div class="articleCardTxt">
-                        <p>{{ article.titre }}</p>
-                        <p>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</p>    
-                    </div>
-                    <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
-                        <button> Voir plus</button>
-                    </a>
-                </div>
+                </a>
             </div>
         {% else %}
                 <p colspan="8">Aucun article n'a été trouvé</p>

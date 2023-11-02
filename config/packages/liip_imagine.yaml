@@ -8,7 +8,7 @@ liip_imagine:
     filter_sets:
         cache: ~
         my_thumb:
-            quality: 75
+            quality: 100
             filters:
-                thumbnail: { size: [240, 180], mode: ineset }
-                background: { size: [248, 188], position: center, color: '#000000' }
+                thumbnail: { size: [400, 180], mode: ineset }
+                background: { size: [400, 180], position: center, color: '$background' }
