@@ -7,16 +7,20 @@
     .articleCard {
         background-color:  $bleu-transparent-bordures;
         border-radius: 20px;
-        width: 25dvw;
-        margin: 2.5dvw;
+        width: 350px;
+        margin: 30px;
         overflow: hidden;
-    
+        
         .articleCard, .articleCardWithoutImg, #cardContainer {
             height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         #cardContainer {
             display: flex;
+            justify-content: space-around;
             flex-direction: column;
             
             img {
@@ -32,24 +36,19 @@
                     font-size: 1.3em;
                     height: 50px;
                     max-height: 50px;
+                    margin-block: 0;
                 }
             }
+
             .articleCardTxt {
-                :nth-child(3){
-                    margin: 40px auto 20px auto;
+                :nth-child(1){
+                    margin-top: 20px;
                 }
             }
             .articleCardWithoutImg {
-                margin: 40px;
-
-                :nth-child(3) {
-                    margin: 110px auto 30px auto;
+                :nth-child(1){
+                    margin-top: 40px;
                 }
-            }
-        
-            a {
-                height: 50px;
-                margin: 20px auto 40px auto;
             }
         }
     }

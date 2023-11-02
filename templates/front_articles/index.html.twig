@@ -15,13 +15,13 @@
                 <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
                     <div id="cardContainer">
                         {% if article.imageName %}
-                                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
-                        <div class="articleCardTxt">
-                            <p>{{ article.titre }}</p>
-                            <p>
-                            <i class="fa-regular fa-calendar-days"></i>
-                            {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
-                        </div>
+                            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+                            <div class="articleCardTxt">
+                                <p>{{ article.titre }}</p>
+                                <p>
+                                <i class="fa-regular fa-calendar-days"></i>
+                                {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
+                            </div>
                         {% endif %}
                         {% if not article.imageName %}
                             <div class="articleCardWithoutImg">
