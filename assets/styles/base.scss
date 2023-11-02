@@ -134,7 +134,7 @@ button {
     margin: 10px auto;
     cursor: pointer;
     box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
-    // @include btnDelay;
+    @include btnDelay;
     
     &:hover {
         background-color: $bleu-clair2;
@@ -166,7 +166,6 @@ a {
     button {
         margin: 30px auto 60px auto;
         padding: 10px 30px;
-        @include btnDelay;
     }
 }
 
@@ -176,7 +175,6 @@ a {
     margin: 30px auto;
     padding: 10px 30px;
     box-shadow: 0 2px 4px $orange-box-shadow;
-    @include btnDelay;
     &:hover {
         background-color: $rouge-clair;
         border: solid 2px $rouge-clair;
