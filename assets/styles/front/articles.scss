@@ -19,15 +19,9 @@
             display: flex;
             flex-direction: column;
             
-            .articleCardImg {
-                height: 170px;
-                width: 325px;
-                
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 170px;
-                }
+            img {
+                object-fit: cover;
+                height: 60%;
             }
             
             .articleCardTxt, .articleCardWithoutImg {

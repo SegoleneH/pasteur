@@ -15,9 +15,7 @@
                 <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
                     <div id="cardContainer">
                         {% if article.imageName %}
-                            <div class="articleCardImg">
                                 <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
-                            </div>
                         <div class="articleCardTxt">
                             <p>{{ article.titre }}</p>
                             <p>
