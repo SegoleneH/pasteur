@@ -27,14 +27,12 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
-
 })
 
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
-
 }))
 
 //accordeon pour la section faq
