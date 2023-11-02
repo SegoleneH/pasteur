@@ -160,6 +160,7 @@ a {
     background-repeat: no-repeat;
     object-fit: contain;
     height: 350px;
+    margin-bottom: 30px;
 }
 
 //section News
@@ -201,7 +202,6 @@ a {
 //section faq
  #sectionFaq {
     margin: 30px 0;
-    background-color: #BFF1E0;
     scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -209,7 +209,7 @@ a {
     align-items: center;
 
     p {
-        margin: 10px;
+        margin: 10px 0 10px 10px;
         height: clamp(30px, auto, 80px);
 
     }
@@ -303,7 +303,6 @@ a {
 //section RDV, Equipe
 
 #sectionPraticien {
-    background-color: #BFF1E0;
     scroll-margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
@@ -314,6 +313,7 @@ a {
 
 
 .containerPraticien {
+    background-color: #BFF1E0;
     min-width: 300px;
     display: flex;
     flex-direction: column;
@@ -323,7 +323,7 @@ a {
     height: 500px;
     padding: 20px;
     margin: 20px;
-    border: 1px solid #2f2f2f;
+    border-radius: 20px ;
 
     img, svg {
         height: 60%;
@@ -371,6 +371,7 @@ footer {
     flex-wrap: wrap;
     margin: 0 20px;
     margin-bottom: 20px;
+    border-top: 1px solid #BFF1E0;
 }
 
 #footerTel, #footerAdresse, #mentionsLeg {
