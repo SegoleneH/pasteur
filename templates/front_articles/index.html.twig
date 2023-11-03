@@ -14,29 +14,27 @@
         {% for article in articles %}
             <a aria-label="vers article : {{ article.titre }}" role="link" tabindex="0" class="articleCard" onclick="window.location.href ='{{ path('app_front_articles_show', {'id': article.id}) }}'"
                 onkeydown="if (event.key === 'Enter') window.location.href ='{{ path('app_front_articles_show', {'id': article.id}) }}'" target="_blank">
-                {# <a tabindex="0" href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank"> #}
-                    <div id="cardContainer">
-                        {% if article.imageName %}
-                                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+                <div id="cardContainer">
+                    {% if article.imageName %}
+                            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
                         <div class="articleCardTxt">
                             <p>{{ article.titre }}</p>
                             <p>
                             <i class="fa-regular fa-calendar-days"></i>
                             {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
                         </div>
-                        {% endif %}
-                        {% if not article.imageName %}
-                            <div class="articleCardWithoutImg">
-                                <p>{{ article.titre }}</p>
-                                <p>{{ article.resume | u.truncate(30, '...') }}</p>
-                                <p>
-                                    <i class="fa-regular fa-calendar-days"></i>
-                                    {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
-                            </div>
-                        {% endif %}
-                    </div>
-                {# </a> #}
-            </div>
+                    {% endif %}
+                    {% if not article.imageName %}
+                        <div class="articleCardWithoutImg">
+                            <p>{{ article.titre }}</p>
+                            <p>{{ article.resume | u.truncate(30, '...') }}</p>
+                            <p>
+                                <i class="fa-regular fa-calendar-days"></i>
+                                {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
+                        </div>
+                    {% endif %}
+                </div>
+            </a>
         {% else %}
                 <p colspan="8">Aucun article n'a été trouvé</p>
         {% endfor %}
