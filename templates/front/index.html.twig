@@ -23,15 +23,17 @@
 </section>
 
 <section id="sectionFaq">
-    <span id="faqExpandDiv"><button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq">ouvrir toutes les faq</button> </span>
-        {% for faq in faqs %}
+    <span id="faqExpandDiv">
+        <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq">Ouvrir toutes les questions</button>
+    </span>
+    {% for faq in faqs %}
 
-            <div>
-                <p class="faqQuestion">{{ faq.question }} <button class="faqBtn" aria-expanded="false" aria-controls="faqReponse{{faq.id}}" role="button">+</button></p>
-                <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true">{{ faq.reponse }}</p>
-            </div>
+        <div>
+            <p class="faqQuestion">{{ faq.question }} <button class="faqBtn" aria-expanded="false" aria-controls="faqReponse{{faq.id}}" role="button">Ouvrir</button></p>
+            <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true">{{ faq.reponse }}</p>
+        </div>
 
-        {% endfor %}
+    {% endfor %}
 </section>
 
 <section id="sectionAcces">
