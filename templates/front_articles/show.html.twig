@@ -3,6 +3,7 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
+<main id="main">
     <div class="topContainer">
         <a href="{{ path('app_front_articles') }}">
             <button class="previousBtn">Précédent</button>
@@ -23,6 +24,6 @@
             <div>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</div>
         </article>
     </section>
-
+</main>
 
 {% endblock %}

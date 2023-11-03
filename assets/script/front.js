@@ -62,3 +62,16 @@ faqBtn.forEach(btn => {
     })
 })
 }
+
+//skip to main
+
+const skipToContent = document.getElementById('skipToContent');
+
+skipToContent.addEventListener('focus', () => {
+    skipToContent.classList.toggle('skipHidden')
+    skipToContent.classList.toggle('skipShow')   
+});
+skipToContent.addEventListener('blur', () => {
+    skipToContent.classList.toggle('skipHidden')
+    skipToContent.classList.toggle('skipShow')   
+})

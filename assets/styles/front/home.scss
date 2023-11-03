@@ -1,5 +1,33 @@
+//main
+
+#main {
+    scroll-margin-top: 80px;
+}
+
 
 //section Top
+
+.skipHidden {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.skipShow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+}
 
 #topSection {
     display: flex;
