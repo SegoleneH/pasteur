@@ -3,6 +3,7 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
+<main id="main">
     <div class="topContainer">
         <div><button class="previousBtn" onclick="window.location.href ='{{ path('app_front') }}'" aria-label="Retour à la page d'accueil">Précédent</button></div>
 
@@ -40,5 +41,5 @@
                 <p colspan="8">Aucun article n'a été trouvé</p>
         {% endfor %}
     </section>
-
+</main>
 {% endblock %}
