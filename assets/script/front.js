@@ -48,7 +48,13 @@ const faqBtn = document.querySelectorAll('.faqBtn');
 //btn expand/close all
 faqExpand.addEventListener('click', () => {
     containerFaq.forEach(element => {
-        element.lastElementChild.classList.toggle('reponseHide');
+        if (faqExpand.textContent === 'ouvrir toutes les faq') {
+            element.lastElementChild.setAttribute('aria-hidden', 'false');
+            element.lastElementChild.classList.remove('reponseHide');
+        } else {
+            element.lastElementChild.setAttribute('aria-hidden', 'true');
+            element.lastElementChild.classList.add('reponseHide');
+        }
     })
     faqExpand.textContent = faqExpand.textContent === 'ouvrir toutes les faq' ? 'fermer toutes les faq' : 'ouvrir toutes les faq';
     faqExpand.getAttribute('aria-expanded') === 'false' ? faqExpand.setAttribute('aria-expanded', 'true') : faqExpand.setAttribute('aria-expanded', 'false');
