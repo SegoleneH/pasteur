@@ -4,24 +4,25 @@
 
 {% block body %}
     <div class="topContainer">
-        <div><button class="previousBtn" onclick="window.location.href ='{{ path('app_front') }}'" aria-label="Précédent">Précédent</button></div>
+        <div><button class="previousBtn" onclick="window.location.href ='{{ path('app_front') }}'" aria-label="Retour à la page d'accueil">Précédent</button></div>
 
         <h1>Articles</h1>
     </div>
 
     <section id="sectionArticles">
         {% for article in articles %}
-            <div  role="link" class="articleCard">
-                <a href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank">
+            <a aria-label="vers article : {{ article.titre }}" role="link" tabindex="0" class="articleCard" onclick="window.location.href ='{{ path('app_front_articles_show', {'id': article.id}) }}'"
+                onkeydown="if (event.key === 'Enter') window.location.href ='{{ path('app_front_articles_show', {'id': article.id}) }}'" target="_blank">
+                {# <a tabindex="0" href="{{ path('app_front_articles_show', {'id': article.id}) }}" target="_blank"> #}
                     <div id="cardContainer">
                         {% if article.imageName %}
-                            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
-                            <div class="articleCardTxt">
-                                <p>{{ article.titre }}</p>
-                                <p>
-                                <i class="fa-regular fa-calendar-days"></i>
-                                {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
-                            </div>
+                                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+                        <div class="articleCardTxt">
+                            <p>{{ article.titre }}</p>
+                            <p>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            {{ article.createdAt ? article.createdAt|date('d M y') : '' }}</p>    
+                        </div>
                         {% endif %}
                         {% if not article.imageName %}
                             <div class="articleCardWithoutImg">
@@ -33,7 +34,7 @@
                             </div>
                         {% endif %}
                     </div>
-                </a>
+                {# </a> #}
             </div>
         {% else %}
                 <p colspan="8">Aucun article n'a été trouvé</p>

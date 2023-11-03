@@ -4,20 +4,22 @@
     flex-direction: row;
     justify-content: center;
 
+    .articleCard, .articleCardWithoutImg, #cardContainer {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
     .articleCard {
-        background-color:  $bleu-transparent-bordures;
+        background-color: $bleu-transparent-bordures;
         border-radius: 20px;
         width: 350px;
         margin: 30px;
         overflow: hidden;
+        cursor: pointer;
         
-        .articleCard, .articleCardWithoutImg, #cardContainer {
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
         #cardContainer {
             display: flex;
             justify-content: space-around;
