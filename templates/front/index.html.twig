@@ -7,83 +7,97 @@
 <section id="sectionPresentation">
 </section>
 <main id="main">
-<section id="sectionNews">
-        {% for newsTag in newsTags %}
+    <section id="sectionNews">
+        <h2>Actualités</h2>
+            {% for newsTag in newsTags %}
+                <article class="containerNews">
+                    <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }} ' aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}">
+                        
+                        <p class="titreArticle">{{ newsTag.new.titre }}</p>
+                        <p>{{ newsTag.new.resume }}</p>
 
-        <div class="containerNews">
-        <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }}'>
-            
-            <h2>{{ newsTag.new.titre }}</h2>         
-            <p>{{ newsTag.new.resume }}</p>
+                    </a>
+                </article> 
+            {% endfor %}
+    </section>
 
-        </a>
-        </div> 
+    <section id="sectionFaq">
+        <h2>Foire Aux Questions</h2>
+        <span id="faqExpandDiv">
+            <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq" aria-label="Ouvrir toutes les questions">Ouvrir toutes les questions</button>
+        </span>
+        {% for faq in faqs %}
 
-        {% endfor %}
-</section>
-
-<section id="sectionFaq">
-    <span id="faqExpandDiv">
-        <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq">Ouvrir toutes les questions</button>
-    </span>
-    {% for faq in faqs %}
-
-        <div>
-            <p class="faqQuestion">{{ faq.question }} <button class="faqBtn" aria-expanded="false" aria-controls="faqReponse{{faq.id}}" role="button">Ouvrir</button></p>
-            <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true">{{ faq.reponse }}</p>
-        </div>
-
-    {% endfor %}
-</section>
-
-<section id="sectionAcces">
-    <div id="sectionAccesText">
-    
-        <h2><i class="fa-sharp fa-solid fa-map-location-dot fa-2xl" aria-hidden="true"></i>Accès</h2>
-        <p>Les médecins et infirmiers de la Maison médicale Pasteur Santes vous accueillent à l'adresse suivante</p>
-
-        <p><b>33B avenue Albert Bernard, 59211 Santes</b><br>
-        Centre ville, à 100 mètres de la mairie</p>
-
-        <p><b>Pour venir à votre rendez-vous</b><br>
-        Parking à proximité<br>
-        Bus : arrêt Hôtel de ville (ligne 58)<br>
-        TER : Gare de Santes (8min de Lille)</p>
-
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="true" tabindex="-1"></iframe>    
-</section>
-
-<section id="sectionPraticien">
-        {% for praticiensMetiers in praticiensMetiers %}
-            <div class="containerPraticien">
-                    {% if praticiensMetiers.praticien.imageName %}
-                    <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
-                    {% else %}
-                    <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
-                    <style type="text/css">.st0{fill:#00A5CB;} .st1{fill:#0190B0;} .st2{fill:#FFFFFF;} .st3{fill:#F2F2F2;}</style>
-                    <path class="st0" d="M19,37.8C8.6,37.8,0.2,29.4,0.2,19S8.6,0.1,19,0.1"/>
-                    <path class="st1" d="M19,0.1c10.4,0,18.8,8.4,18.8,18.8S29.4,37.8,19,37.8"/>
-                    <circle class="st2" cx="8.2" cy="27.5" r="2.7"/>
-                    <circle class="st2" cx="17.5" cy="3.2" r="1.1"/>
-                    <circle class="st2" cx="20.5" cy="3.2" r="1.1"/>
-                    <path class="st2" d="m14.3 13.7l0.2 1c0.5-0.2 0.9-0.4 1.4-0.6 2.5-0.8 5-0.6 7.3 0.6h0.1l0.2-1c-2.5-1.2-5.2-1.4-7.9-0.5-0.5 0.1-0.9 0.3-1.3 0.5z"/>
-                    <path class="st2" d="m18.1 2.2z"/>
-                    <path class="st2" d="m30 22.8c-0.4-3.2-2.3-6.2-5-8.1l-0.2 1.1c2.3 1.8 3.8 4.4 4.2 7.1 0.4 2.8-0.6 5.4-2.6 7.3-1.1 1-2.9 1.5-4.3 1.2-0.8-0.2-1.8-0.6-2.4-1.9-0.2-0.5-0.3-1-0.5-1.5-0.1-0.5-0.2-0.9-0.2-1.4 0.1-0.5 0.2-1.1 0.5-1.6 0.1-0.3 0.2-0.5 0.4-0.7 0.1-0.2 0.3-0.4 0.5-0.5 0.4-0.3 0.8-0.5 1.1-0.8 0.6-0.5 1-1.2 1.3-1.9 0.9-1.8 1.3-3.7 1.6-5.5l0.2-1.1c0.3-1.9 0.6-3.8 0.8-6.1v-0.3c0.2-1.6 0.3-3.5-0.9-4.8-0.8-0.9-2-1-3.1-0.9 0.3 0.2 0.4 0.5 0.4 0.9v0.1c0.8 0 1.5 0.1 2 0.6 1 1 0.8 2.6 0.7 4v0.3c-0.2 2.1-0.4 4-0.7 5.7l-0.2 1c-0.3 1.9-0.7 3.9-1.6 5.6-0.3 0.5-0.6 1.1-1.1 1.6-0.1 0.1-0.2 0.1-0.3 0.2-0.1 0-0.2 0.1-0.3 0.2-0.5 0.3-1.1 0.4-1.7 0.3-0.1 0-0.2 0-0.3-0.1-1.2-0.3-2.4-1.4-2.9-2.7-0.6-1.6-1-3.2-1.3-4.8l-0.2-1.4-0.3-2.1c-0.1-0.5-0.1-0.9-0.2-1.4-0.3-2-0.7-4.1 0.2-5.7 0.6-1.1 1.6-1.5 2.6-1.6v-0.1c0-0.4 0.2-0.7 0.5-0.9-1.8 0-3.3 0.8-4 2.2-1 2-0.6 4.3-0.3 6.4 0.1 0.5 0.2 0.9 0.2 1.4 0.1 0.8 0.2 1.6 0.4 2.5l0.2 1.1c0.3 1.7 0.7 3.3 1.3 4.9 0.2 0.6 0.6 1.1 1 1.6 0.2 0.2 0.5 0.4 0.7 0.7 0.3 0.3 0.7 0.5 0.9 0.9 0.3 0.4 0.7 0.9 0.9 1.5 0.2 0.7 0.2 1.5 0.3 2.2 0.1 0.9 0.3 1.7 0.7 2.5 0.6 1.3 1.7 2.2 3.1 2.5 0.4 0.1 0.7 0.1 1.1 0.1 1.4 0 2.9-0.6 4-1.5 2.2-2.3 3.3-5.2 2.8-8.3z"/>
-                    <path class="st2" d="m8.2 19.8c-0.7 1.5-1 3-0.9 4.4l1-0.1c-0.1-1.2 0.2-2.6 0.8-3.9 0.9-1.8 2.1-3.2 3.6-4.4l-0.2-1.1c-1.7 1.3-3.3 3-4.3 5.1z"/>
-                    </svg>
-                    {% endif %}
-                <div class="containerPraticienText">
-                    <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
-                    <p>{{ praticiensMetiers.metiers|join(', ')}} </p>
-                    {% if praticiensMetiers.praticien.lienRdv %}
-                        <button onclick="window.open('{{ praticiensMetiers.praticien.lienRdv | e }}', target='_blank')" aria-label="prendre rdv avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Prendre RDV en ligne</button>
-                    {% else %}
-                        <button onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rdv avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
-                    {% endif %}
-                </div>
+            <div>
+                <p class="faqQuestion">{{ faq.question }} 
+                    <button class="faqBtn" aria-expanded="false" aria-controls="faqReponse{{faq.id}}" role="button" aria-label="Afficher la réponse">
+                        Ouvrir
+                    </button>
+                </p>
+                <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true">{{ faq.reponse }}</p>
             </div>
+
         {% endfor %}
-</section>
+    </section>
+
+    <section id="sectionAcces">
+        <div id="sectionAccesText">
+        
+            <h3>
+                <i class="fa-sharp fa-solid fa-map-location-dot fa-2xl" aria-hidden="true"></i>
+                Accès
+            </h3>
+            <span>
+                <p>
+                    Les médecins et infirmiers de la Maison médicale Pasteur Santes vous accueillent à l'adresse suivante :
+                </p>
+
+                <address>
+                    <p>33B avenue Albert Bernard, 59211 Santes</p>
+                    <p>Centre ville, à 100 mètres de la mairie</p>
+                </address>
+            </span>
+            <span>
+                <p>Pour venir à votre rendez-vous</p>
+                <p>Parking à proximité<br>
+                Bus : arrêt Hôtel de ville (ligne 58)<br>
+                TER : Gare de Santes (8min de Lille)</p>
+            </span>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="true" tabindex="-1"></iframe>    
+    </section>
+
+    <section id="sectionPraticien">
+            <h4>Les Praticiens de la Maison Médicale</h4>
+            {% for praticiensMetiers in praticiensMetiers %}
+                <div class="containerPraticien">
+                    {% if praticiensMetiers.praticien.imageName %}
+                        <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
+                    {% else %}
+                        <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
+                            <style type="text/css">.st0{fill:#00A5CB;} .st1{fill:#0190B0;} .st2{fill:#FFFFFF;} .st3{fill:#F2F2F2;}</style>
+                            <path class="st0" d="M19,37.8C8.6,37.8,0.2,29.4,0.2,19S8.6,0.1,19,0.1"/>
+                            <path class="st1" d="M19,0.1c10.4,0,18.8,8.4,18.8,18.8S29.4,37.8,19,37.8"/>
+                            <circle class="st2" cx="8.2" cy="27.5" r="2.7"/>
+                            <circle class="st2" cx="17.5" cy="3.2" r="1.1"/>
+                            <circle class="st2" cx="20.5" cy="3.2" r="1.1"/>
+                            <path class="st2" d="m14.3 13.7l0.2 1c0.5-0.2 0.9-0.4 1.4-0.6 2.5-0.8 5-0.6 7.3 0.6h0.1l0.2-1c-2.5-1.2-5.2-1.4-7.9-0.5-0.5 0.1-0.9 0.3-1.3 0.5z"/>
+                            <path class="st2" d="m18.1 2.2z"/>
+                            <path class="st2" d="m30 22.8c-0.4-3.2-2.3-6.2-5-8.1l-0.2 1.1c2.3 1.8 3.8 4.4 4.2 7.1 0.4 2.8-0.6 5.4-2.6 7.3-1.1 1-2.9 1.5-4.3 1.2-0.8-0.2-1.8-0.6-2.4-1.9-0.2-0.5-0.3-1-0.5-1.5-0.1-0.5-0.2-0.9-0.2-1.4 0.1-0.5 0.2-1.1 0.5-1.6 0.1-0.3 0.2-0.5 0.4-0.7 0.1-0.2 0.3-0.4 0.5-0.5 0.4-0.3 0.8-0.5 1.1-0.8 0.6-0.5 1-1.2 1.3-1.9 0.9-1.8 1.3-3.7 1.6-5.5l0.2-1.1c0.3-1.9 0.6-3.8 0.8-6.1v-0.3c0.2-1.6 0.3-3.5-0.9-4.8-0.8-0.9-2-1-3.1-0.9 0.3 0.2 0.4 0.5 0.4 0.9v0.1c0.8 0 1.5 0.1 2 0.6 1 1 0.8 2.6 0.7 4v0.3c-0.2 2.1-0.4 4-0.7 5.7l-0.2 1c-0.3 1.9-0.7 3.9-1.6 5.6-0.3 0.5-0.6 1.1-1.1 1.6-0.1 0.1-0.2 0.1-0.3 0.2-0.1 0-0.2 0.1-0.3 0.2-0.5 0.3-1.1 0.4-1.7 0.3-0.1 0-0.2 0-0.3-0.1-1.2-0.3-2.4-1.4-2.9-2.7-0.6-1.6-1-3.2-1.3-4.8l-0.2-1.4-0.3-2.1c-0.1-0.5-0.1-0.9-0.2-1.4-0.3-2-0.7-4.1 0.2-5.7 0.6-1.1 1.6-1.5 2.6-1.6v-0.1c0-0.4 0.2-0.7 0.5-0.9-1.8 0-3.3 0.8-4 2.2-1 2-0.6 4.3-0.3 6.4 0.1 0.5 0.2 0.9 0.2 1.4 0.1 0.8 0.2 1.6 0.4 2.5l0.2 1.1c0.3 1.7 0.7 3.3 1.3 4.9 0.2 0.6 0.6 1.1 1 1.6 0.2 0.2 0.5 0.4 0.7 0.7 0.3 0.3 0.7 0.5 0.9 0.9 0.3 0.4 0.7 0.9 0.9 1.5 0.2 0.7 0.2 1.5 0.3 2.2 0.1 0.9 0.3 1.7 0.7 2.5 0.6 1.3 1.7 2.2 3.1 2.5 0.4 0.1 0.7 0.1 1.1 0.1 1.4 0 2.9-0.6 4-1.5 2.2-2.3 3.3-5.2 2.8-8.3z"/>
+                            <path class="st2" d="m8.2 19.8c-0.7 1.5-1 3-0.9 4.4l1-0.1c-0.1-1.2 0.2-2.6 0.8-3.9 0.9-1.8 2.1-3.2 3.6-4.4l-0.2-1.1c-1.7 1.3-3.3 3-4.3 5.1z"/>
+                        </svg>
+                    {% endif %}
+                    <div class="containerPraticienText">
+                        <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
+                        <p>{{ praticiensMetiers.metiers|join(', ')}}</p>
+                        {% if praticiensMetiers.praticien.lienRdv %}
+                            <button onclick="window.open('{{ praticiensMetiers.praticien.lienRdv | e }}', target='_blank')" aria-label="prendre rendez-vous en ligne avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Prendre R.D.V en ligne</button>
+                        {% else %}
+                            <button onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rendez-vous par téléphone avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+    </section>
 </main>
 {% endblock %}
