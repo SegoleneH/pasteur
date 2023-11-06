@@ -1,11 +1,14 @@
 //* ::::::::::::::::::::::::::::: RESET ::::::::::::::::::::::::::::::::::::::
 :root{
-    margin: 0;
+    // margin: 0;
     :focus {
         outline: inset 6px rgb(3, 104, 82);
         transition: 0.3s outline;
         border-radius: auto;
     }
+}
+h3, .nav-menu, .containerNews, .faqBtn, #faqExpand {
+    margin: 0;
 }
 li {
     list-style: none;
@@ -88,16 +91,6 @@ i{
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
     padding: 10px 0;    
 
-    h1,
-    i,
-    p,
-    a {
-        text-shadow: $bleu-fonce-box-shadow 2px 1px 2px;
-    }
-    p,
-    a{
-        text-shadow: $bleu-fonce-box-shadow 1px 1px 1px;
-    }
     h1 {
         width: 360px;
     }
@@ -130,7 +123,7 @@ i{
     align-items: center;
     flex-grow: 1;
     padding: 0;
-    margin: 0;
+
     background-color: rgb(25, 156, 113);
 }
 
@@ -219,9 +212,7 @@ i{
     padding: 50px 20px;
     width: 80dvw;
     text-align: center;
-    margin: 0;
     cursor: pointer;
-
     p {
         margin: 0;
     }
@@ -281,7 +272,6 @@ i{
  }
 
  .faqBtn {
-    margin: 0;
     background-color: transparent;
     margin-left: 10px;
     align-self: baseline;
@@ -302,7 +292,6 @@ i{
 
 #faqExpand {
     background-color: transparent;
-    margin: 0;
 }
 
 

@@ -61,7 +61,7 @@ body {
 }
 .custom-wrapper {
     background-color: $bleu-base;
-    height: 3em;    
+    height: 3.5em;    
 
     .ctnListesNav {     
         justify-content: center;
@@ -74,7 +74,11 @@ body {
             display: none;
         }
     }
-    .custom-brand p {
+    a{
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+    .custom-brand p, a {
         font-weight: 700;
         text-transform: uppercase;
         margin: 0;
