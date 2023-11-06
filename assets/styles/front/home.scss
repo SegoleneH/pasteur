@@ -87,7 +87,7 @@ i{
     justify-content: space-around;
     align-items: center;
     gap: 3%;
-    height: 80px;
+    height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
     padding: 10px 0;    
@@ -112,9 +112,9 @@ i{
     justify-content: space-between;
     align-items: center;
     padding: 0 24px 6px 24px;
-    background-color: $bleu-base;
+    background-color: $bleu-base
+    
 }
-
 .nav-menu {
     display: flex;
     justify-content: space-around;
@@ -122,8 +122,9 @@ i{
     flex-grow: 1;
     padding: 0;
 
-    background-color: rgb(25, 156, 113);
+    background-color: $bleu-base;
 }
+
 
 .nav-item {
     padding: 0 20px;
@@ -182,13 +183,12 @@ i{
 //section presentation
 
 #sectionPresentation {
-    max-height: 350px;
+    max-height: 385px;
     max-width: 100dvw;
-    background-image: url(../../images/billets.jpg);
+    background-image: url(../../images/maison-medicale-pasteur-santes.png);
     background-repeat: no-repeat;
     object-fit: contain;
-    height: 350px;
-    margin-bottom: 30px;
+    height: 385px;
 }
 
 //section News
@@ -200,7 +200,7 @@ i{
     text-align: justify;
     align-items: center;
     scroll-margin-top: 80px;
-    margin: 100px 0;
+    margin: -110px;
 }
 
 .containerNews {
@@ -232,12 +232,13 @@ i{
 
 //section faq
  #sectionFaq {
-    margin: 100px 0;
     scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
     align-items: center;
+    margin-top: 40px;
+    border-top: solid 20px rgba(0, 199, 132, 0.5);
 
     p {
         margin: 10px 0 10px 10px;
@@ -398,7 +399,6 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding: 40px 0;
-    border-top: 1px solid #BFF1E0;
 }
 
 #footerTel, #footerAdresse, #mentionsLeg {

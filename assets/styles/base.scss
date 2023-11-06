@@ -26,6 +26,9 @@ body {
     }
 
     section {
+
+        margin: 0 auto;
+
         .imgContainer {
             display: flex;
             justify-content: center;
@@ -43,14 +46,24 @@ body {
     }
 }
 
+//&:::::::::::::::::::::::::::::::::: FONTS & TEXTES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+.custom-brand p {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+li {
+    font-size: 1.2rem;
+}
+
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::À FAIRE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //*   - créer "cartes" praticiens ?
-//*   - créer "cartes" métiers ?
 //*   - SCROLLBAR STYLE : https: //blog.logrocket.com/guide-styling-css-scrollbars/#introduction-scrollbars
 //*   - Responsive tableaux
-//*   - .custom-brand p => remplacer par logo & supprimer le code
+//*   
 //* 
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -61,7 +74,7 @@ body {
 }
 .custom-wrapper {
     background-color: $bleu-base;
-    height: 3.5em;    
+    height: 60px;   
 
     .ctnListesNav {     
         justify-content: center;
@@ -74,25 +87,17 @@ body {
             display: none;
         }
     }
-    a{
-        font-size: 1rem;
-        padding: 20px 10px;
-    }
-    .custom-brand p, a {
-        font-weight: 700;
-        text-transform: uppercase;
+    .custom-brand p, li, a {
         margin: 0;
     }
-}
-
-
-.pure-menu-link {
-    color: black;
-    padding: 0.94em 0.5em 0.94em 0.5em;
-}
-
-.fa-power-off {
-    margin: 0 0.3em 0 0.1em;
+    .pure-menu-link {
+        color: black;
+        padding: 1em 0.5em;
+    }
+    
+    .fa-power-off {
+        margin: 0 0.3em 0 0.1em;
+    }
 }
 
 
@@ -110,7 +115,7 @@ tbody {
     }
     
     .btnTdIndex {
-        width: 260px;
+        width: 360px;
 
         .afficherBtn{
             margin-right: 10px;
@@ -281,6 +286,7 @@ form {
         color: $rouge;
     }
 }
+
 
 //&:::::::::::::::::::::::::::::::::::::: RESPONSIVE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

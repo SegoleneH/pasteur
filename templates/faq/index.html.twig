@@ -22,8 +22,8 @@
         <tbody>
         {% for faq in faqs %}
             <tr>
-                <td class="tdIndex" >{{ faq.question }}</td>
-                <td class="tdIndex" >{{ faq.reponse }}</td>
+                <td class="tdIndex" >{{ faq.question | u.truncate(60, '...')}}</td>
+                <td class="tdIndex" >{{ faq.reponse | u.truncate(30, '...')}}</td>
                 {#* Test : mettre tdIndex avec width : 25vw et btnTdIndex avec width : 30vw #}
                 {#* but :  découper une colonne de la taille qu'on veut pour les boutons #}
                 <td class="column btnTdIndex">

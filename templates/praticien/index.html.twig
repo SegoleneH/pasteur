@@ -17,6 +17,7 @@
                 <th>Prénom</th>
                 <th>Nom</th>
                 <th>LienRdv</th>
+                <th>Métier(s)</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
@@ -25,10 +26,22 @@
             <tr>
                 <td class="tdIndex">{{ praticien.prenom }}</td>
                 <td class="tdIndex">{{ praticien.nom }}</td>
-                <td class="tdIndex">{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
-        
-                {# <td>{{ metiers.nom }}</td>
-                <td>{{ metiers.description }}</td> #}
+
+                {% if praticien.lienRdv %}
+                    <td class="tdIndex">{{ praticien.lienRdv | u.truncate(20, '...') }}</td>
+                {% else %}
+                    <td class="tdIndex">{{ "03.21.75.94.84" }}</td>
+                {% endif %}
+
+{#* ::::::::::::::::::::::::::::::  LES METIERS S'AFFICHENT PAS ::::::::::::::::::::::::::::::::::  #}
+                <td class="tdIndex">
+                    {% for metiers in praticien %}
+                        {{ praticien.metiers.nom | u.truncate(20, '...') }}
+                    {% endfor %}
+                </td>
+{#* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  #}
+
+               {#  <td>{{ metiers.description }}</td> #}
                 <td class="column btnTdIndex">
                     <a href="{{ path('app_praticien_show', {'id': praticien.id}) }}">
                         <button class="afficherBtn">
