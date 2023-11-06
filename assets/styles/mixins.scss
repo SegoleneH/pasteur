@@ -2,6 +2,16 @@
     display: flex;
 }
 
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @mixin flexColumn {
     display: flex;
     flex-direction: column;

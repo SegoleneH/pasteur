@@ -1,19 +1,18 @@
 //* ::::::::::::::::::::::::::::: RESET ::::::::::::::::::::::::::::::::::::::
 :root{
-    // margin: 0;
     :focus {
         outline: inset 6px rgb(3, 104, 82);
         transition: 0.3s outline;
         border-radius: auto;
     }
 }
-h3, .nav-menu, .containerNews, .faqBtn, #faqExpand {
+body, h3, .nav-menu, .containerNews, .faqBtn, #faqExpand {
     margin: 0;
 }
 li {
     list-style: none;
 }
-a {
+a, .skipShow {
     text-decoration: none;
 }
 span {
@@ -21,12 +20,16 @@ span {
 }
 
 //* Fonts & Texte
-h1, .nav-menu li {
-    font-size: 2rem;
-}
+h1,
 h2,
 h3,
 h4 {
+    font-size: 2.5rem;
+}
+.containerNews, .skipShow, .nav-menu {
+    text-align: center;
+}
+.nav-menu li, .skipShow {
     font-size: 2rem;
 }
 
@@ -34,7 +37,6 @@ h2,
 h4 {
     width: 100vw;
     display: flex;
-    justify-content: center;
 }
 p, .titreArticle {
     font-size: 1.5rem;
@@ -47,44 +49,61 @@ button {
 i{
     margin-right: 10px;
     color: $bleu-base;
-    
         &::after {
-            color: $bleu-base;
+            color: $bleu-clair;
         }
 }
-
-#main {
+#sectionAcces, #sectionPraticien, footer {
+    @include flexWrap;
+}
+h2, h4, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse, #mentionsLeg {
+    @include flexCenter;
+}
+#main, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
     scroll-margin-top: 80px;
+}
+#topSection, #topSectionTel, #topSectionAdresse, .navbarFront, .nav-menu, #sectionNews, .containerNews,
+.containerNewsInfos, #sectionFaq, .faqQuestion, .faqReponse, .containerPraticien, .containerPraticienText,
+footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
+    align-items: center;    
+}
+#topSection, #topSectionTel, #topSectionAdresse, .faqQuestion, .faqReponse, #faqExpandDiv, #sectionAcces {
+    @include disflex;
+}
+#sectionNews, .containerNews, #sectionFaq, #sectionAccesText, .containerPraticien, .containerPraticienText, 
+.navbarFront, .nav-menu  {
+    @include flexColumn;
+}
+
+.containerNews, #sectionAcces, #faqExpandDiv {
+    width: 80dvw;
 }
 //*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
 //section Top
-
+.skipHidden, .skipShow {
+    position: absolute;
+}
 .skipHidden {
     border: 0;
     height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
-    position: absolute;
     width: 1px;
 }
 
 .skipShow {
-    position: absolute;
     top: 0;
     left: 0;
-    background-color: red;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
-    width: auto;
-    height: auto;
+    background-color: $bleu-clair;
+    color: black;
+    padding: 10px;
+    width: 100dvw;
+    height: fit-content;
 }
 
 #topSection {
-    display: flex;
-    align-items: center;
     gap: 3%;
     height: 110px;
     max-width: 100dvw;
@@ -99,34 +118,26 @@ i{
     }
 }
 #topSectionTel, #topSectionAdresse {
-    display: flex;
-    align-items: center;
     gap: 5px;
 }
 
 //navbar front
-
+.navbarFront, .nav-menu {
+    background-color: $bleu-base;
+}
 .navbarFront {
     position: sticky;
     top: 0;
     height: 80px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 24px 6px 24px;
-    background-color: $bleu-base
     
 }
 .nav-menu {
-    display: flex;
     justify-content: space-around;
-    align-items: center;
     flex-grow: 1;
     padding: 0;
-
-    background-color: $bleu-base;
 }
-
 
 .nav-item {
     padding: 0 20px;
@@ -196,22 +207,13 @@ i{
 //section News
 
 #sectionNews {
-    display: flex;
-    flex-direction: column;
     padding: 0 20px;
-    text-align: justify;
-    align-items: center;
-    scroll-margin-top: 80px;
-    margin: -110px;
+    text-align: justify; 
+    margin-top: -110px;
 }
 
 .containerNews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 50px 20px;
-    width: 80dvw;
-    text-align: center;
     cursor: pointer;
     p {
         margin: 0;
@@ -227,19 +229,12 @@ i{
 }
 
 .containerNewsInfos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexContent;
 }
 
 //section faq
  #sectionFaq {
-    scroll-margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px;
-    align-items: center;
-    margin-top: 40px;
+    padding: 100px 20px;
     border-top: solid 20px rgba(0, 199, 132, 0.5);
 
     p {
@@ -252,10 +247,8 @@ i{
     }
  }
 
- .faqQuestion {
-    display: flex;
+ .faqQuestion {    
     justify-content: space-between;
-    align-items: center;
     padding: 5px 5px;
     font-weight: bold;
     &:hover {
@@ -263,11 +256,8 @@ i{
         ;
     }
  }
-
  .faqReponse {
     border-bottom: 1px solid #2f2f2f;
-    display: flex;
-    align-items: center;
     padding: 0 5px;
     padding-bottom: 10px;
  }
@@ -281,10 +271,7 @@ i{
  .reponseHide {
     display: none;
 }
-
 #faqExpandDiv {
-    width: 80dvw;
-    display: flex;
     justify-content: flex-end;
     margin-bottom: 5px;
     height: auto;
@@ -297,16 +284,10 @@ i{
 
 
 //Section Acces, Map etc
-
 #sectionAcces {
-    scroll-margin-top: 80px;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 20px;
-    margin: 100px auto;
+    padding-bottom: 100px;
     gap: 5%;
-    width: 80dvw;
     iframe {
         flex-basis: 40%;
         flex-grow: 1;
@@ -316,9 +297,6 @@ i{
 
 #sectionAccesText {
     text-align: justify;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     gap: 5%;
     flex-grow: 1;
     flex-shrink: 1;
@@ -331,25 +309,17 @@ i{
 }
 
 //section RDV, Equipe
-
 #sectionPraticien {
-    scroll-margin-top: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: flex-start;
-    margin: 100px auto;
+    margin: -100px 0 100px 0;
+    h4 {
+        margin-bottom: 80px;
+    }
 }
-
-
 .containerPraticien {
     background-color: #BFF1E0;
     min-width: 300px;
-    display: flex;
-    flex-direction: column;
     flex-basis: 25%;
-    align-items: center;
-    justify-content: center;
     height: 500px;
     padding: 20px;
     margin: 20px;
@@ -359,13 +329,9 @@ i{
         height: 60%;
     }
 }
-
 .containerPraticienText {
     height: 40%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
 
     :first-child {
         font-size: 25px;
@@ -393,25 +359,15 @@ i{
 
 
 //footer
-
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    //* faire une mixin flexWrap ? et une noWrap ? 
     justify-content: space-around;
-    align-items: center;
     padding: 40px 0;
 }
-
 #footerTel, #footerAdresse, #mentionsLeg {
-    display: flex;
-    justify-content: center;
     //* faire une mixin flexCenter ?
-    align-items: center;
     gap: 5px;
     flex-grow: 1;
 }
-
 
 // RESPONSIVE
 @media (max-width: 1023px) {
@@ -457,7 +413,6 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -465,7 +420,6 @@ footer {
         gap: 0;
         flex-direction: column;
         width: 100%;
-        text-align: center;
         transition: 0.3s;
         height: calc(100% - 80px)
     }
@@ -474,7 +428,6 @@ footer {
         margin: 0;
         flex-grow: 1;
         display: flex;
-        align-items: center;
         justify-content: center;
         border-bottom: 1px solid #2f2f2f;
         border-top: 1px solid #2f2f2f;
