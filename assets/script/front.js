@@ -49,9 +49,11 @@ const faqBtn = document.querySelectorAll('.faqBtn');
 faqExpand.addEventListener('click', () => {
     containerFaq.forEach(element => {
         if ((faqExpand.textContent === 'Ouvrir toutes les réponses') || (faqExpand.textContent === 'Ouvrir tous') ) {
+            element.firstElementChild.lastElementChild.textContent = 'Fermer';
             element.lastElementChild.setAttribute('aria-hidden', 'false');
             element.lastElementChild.classList.remove('reponseHide');
         } else {
+            element.firstElementChild.lastElementChild.textContent = 'Ouvrir';
             element.lastElementChild.setAttribute('aria-hidden', 'true');
             element.lastElementChild.classList.add('reponseHide');
         }
@@ -66,6 +68,7 @@ faqBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         btn.parentElement.nextElementSibling.classList.toggle('reponseHide');
         btn.getAttribute('aria-expanded') === 'false' ? btn.setAttribute('aria-expanded', 'true') : btn.setAttribute('aria-expanded', 'false');
+        btn.textContent === 'Ouvrir' ? btn.textContent = 'Fermer' : btn.textContent = 'Ouvrir';
         btn.parentElement.nextElementSibling.getAttribute('aria-hidden') === 'true' ? btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'false') : btn.parentElement.nextElementSibling.setAttribute('aria-hidden', 'true');
     })
 })

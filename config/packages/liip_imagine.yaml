@@ -10,5 +10,4 @@ liip_imagine:
         my_thumb:
             quality: 100
             filters:
-                thumbnail: { size: [400, 180], mode: ineset }
-                background: { size: [400, 180], position: center, color: '$background' }
+                thumbnail: { size: [400, 180], mode: inset }
