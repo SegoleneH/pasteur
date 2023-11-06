@@ -43,6 +43,17 @@ body {
     }
 }
 
+//&:::::::::::::::::::::::::::::::::: FONTS & TEXTES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+.custom-brand p {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+li {
+    font-size: 1.2rem;
+}
+
 //* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //* ::::::::::::::::::::::::::::::::::::::::::::::::À FAIRE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -61,7 +72,7 @@ body {
 }
 .custom-wrapper {
     background-color: $bleu-base;
-    height: 3.5em;    
+    height: 60px;   
 
     .ctnListesNav {     
         justify-content: center;
@@ -74,26 +85,20 @@ body {
             display: none;
         }
     }
-    a{
-        font-size: 1rem;
-        padding: 20px 10px;
-    }
-    .custom-brand p, a {
-        font-weight: 700;
-        text-transform: uppercase;
+    .custom-brand p, li, a {
         margin: 0;
     }
+    .pure-menu-link {
+        color: black;
+        padding: 1em 0.5em;
+    }
+    
+    .fa-power-off {
+        margin: 0 0.3em 0 0.1em;
+    }
 }
 
 
-.pure-menu-link {
-    color: black;
-    padding: 0.94em 0.5em 0.94em 0.5em;
-}
-
-.fa-power-off {
-    margin: 0 0.3em 0 0.1em;
-}
 
 
 //&:::::::::::::::::::::::::::::::::::TABLEAUX:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
