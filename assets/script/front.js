@@ -48,7 +48,7 @@ const faqBtn = document.querySelectorAll('.faqBtn');
 //btn expand/close all
 faqExpand.addEventListener('click', () => {
     containerFaq.forEach(element => {
-        if (faqExpand.textContent === 'Ouvrir toutes les réponses') {
+        if ((faqExpand.textContent === 'Ouvrir toutes les réponses') || (faqExpand.textContent === 'Ouvrir tous') ) {
             element.lastElementChild.setAttribute('aria-hidden', 'false');
             element.lastElementChild.classList.remove('reponseHide');
         } else {
