@@ -409,22 +409,6 @@ footer {
         }
     }
 
-    .navbarFront {
-        overflow-x: scroll;
-        a, li {
-            @include disflex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-        }
-        a, ul, li {
-            height: 80px;
-
-        }
-        .nav-menu li {
-            font-size: 1.7rem;
-        }
-                
-    }
 
     #sectionPresentation {
         h2 {
@@ -432,38 +416,7 @@ footer {
         }
     }
 }
-// h1,
-// h2,
-// h3,
-// h4 {
-//     font-size: 2.5rem;
-// }
 
-// .containerNews,
-// .skipShow,
-// .nav-menu {
-//     text-align: center;
-// }
-
-// .nav-menu li,
-// .skipShow {
-//     font-size: 2rem;
-// }
-
-// h2,
-// h4 {
-//     width: 96vw;
-//     display: flex;
-// }
-
-// #topSectionTel,
-// #topSectionAdresse,
-// #main p,
-// .titreArticle,
-// footer a,
-// footer p {
-//     font-size: 1.5rem;
-// }
 @media (max-width: 435px) {
 
     #footerTel,
@@ -484,27 +437,8 @@ footer {
     }
 
 }
+
 @media (max-width:768px) {
-
-    #topSection {
-        gap: 1%;
-
-        h1 {
-            width: 270px;
-            font-size: 2rem;
-        }
-
-        #topSectionBtn {
-            display: none;
-        }
-
-        #topSectionTel, #topSectionAdresse {
-            font-size: 1rem;
-            @include disflex;
-            flex-direction: column;
-        }
-    }
-
     .hamburger {
         display: block;
         transition: 0.3s;
@@ -527,7 +461,6 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -536,7 +469,9 @@ footer {
         flex-direction: column;
         width: 100%;
         transition: 0.3s;
-        height: calc(100% - 80px)
+        height: 100dvh;
+        align-items: center;
+        padding: 0;
     }
 
     .nav-item {
@@ -549,7 +484,6 @@ footer {
         border-top: 1px solid #2f2f2f;
         width: 90%;
     }
-
 
     .navbarFront.active, .nav-menu.active {
         background-color: rgba(25, 156, 113, 0.8);
