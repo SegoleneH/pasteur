@@ -21,9 +21,9 @@ span {
 
 //* Fonts & Texte
 h1,
-h2,
 h3,
-h4 {
+h4,
+h5 {
     font-size: 2.5rem;
 }
 .containerNews, .skipShow, .nav-menu {
@@ -33,9 +33,9 @@ h4 {
     font-size: 2rem;
 }
 
-h2,
-h4 {
-    width: 100vw;
+h3,
+h5 {
+    width: 96vw;
     display: flex;
 }
 #topSectionTel,#topSectionAdresse, #main p, .titreArticle, footer a, footer p {
@@ -59,7 +59,7 @@ i{
 #sectionAcces, #sectionPraticien, footer {
     @include flexWrap;
 }
-h2, h4, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse, #mentionsLeg {
+h3, h5, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse, #mentionsLeg {
     @include flexCenter;
 }
 #main, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
@@ -68,7 +68,7 @@ h2, h4, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #
 #topSection, #topSectionTel, #topSectionAdresse, .navbarFront, .nav-menu, .nav-item, #sectionNews, .containerNews,
 .containerNewsInfos, #sectionFaq, .faqQuestion, .faqReponse, .containerPraticien, .containerPraticienText,
 footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
-    align-items: center;    
+    align-items: center;
 }
 #topSection, #topSectionTel, #topSectionAdresse, .faqQuestion, .faqReponse, #faqExpandDiv, #sectionAcces, .nav-menu {
     @include disflex;
@@ -79,12 +79,16 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 .containerNews, #sectionAcces, #faqExpandDiv {
     width: 80dvw;
 }
+#topSection, #sectionPresentation, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
+    max-width: 96dvw;
+}
 //*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
-//section Top
+// Fonction skip to main content
 .skipHidden, .skipShow {
     position: absolute;
 }
+
 .skipHidden {
     border: 0;
     height: 1px;
@@ -104,15 +108,21 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     height: fit-content;
 }
 
+//section Top
 #topSection {
     gap: 3%;
     height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
-    padding: 10px 0;    
+    padding: 10px 0;
+    justify-content: space-around;
 
     #topSectionBtn {
         margin-left: 2.5dvw;
+    }
+    h1 {
+        width: 340px;
+        text-align: justify;
     }
 }
 #topSectionTel, #topSectionAdresse {
@@ -127,7 +137,6 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     position: sticky;
     top: 0;
     height: 80px;
-    justify-content: space-between;
     padding: 0 24px 6px 24px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
 }
@@ -200,6 +209,20 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     background-repeat: no-repeat;
     object-fit: contain;
     height: 385px;
+    color: $bleu;
+    text-shadow: 0 2px rgba(0, 0, 0, 0.6);
+    @include disflex;
+    justify-content: flex-end;
+    width: 100dvw;
+    align-items: center;
+
+    h2 {
+        margin: 0 40px;
+        padding: 130px 0; 
+        font-size: 3.5rem;
+        width: 470px;
+        line-height: 1.2em;
+    }
 }
 
 //section News
@@ -306,7 +329,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 #sectionPraticien {
     align-items: flex-start;
     margin: -100px 0 100px 0;
-    h4 {
+    h5 {
         margin-bottom: 80px;
     }
 }
@@ -371,11 +394,76 @@ footer {
 // RESPONSIVE
 @media (max-width: 1023px) {
 
-    #topSectionTel,
-    #topSectionAdresse {
-        display: none;
+    #topSection {
+        h1 {
+            width: 320px;
+            font-size: 2rem;
+        }
+        
+        #topSectionTel, #topSectionAdresse {
+            font-size: 1rem;
+        }
+
+        #topSectionBtn {
+            display: none;
+        }
+    }
+
+    .navbarFront {
+        overflow-x: scroll;
+        a, li {
+            @include disflex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        a, ul, li {
+            height: 80px;
+
+        }
+        .nav-menu li {
+            font-size: 1.7rem;
+        }
+                
+    }
+
+    #sectionPresentation {
+        h2 {
+            font-size: 2.5rem;
+        }
     }
 }
+// h1,
+// h2,
+// h3,
+// h4 {
+//     font-size: 2.5rem;
+// }
+
+// .containerNews,
+// .skipShow,
+// .nav-menu {
+//     text-align: center;
+// }
+
+// .nav-menu li,
+// .skipShow {
+//     font-size: 2rem;
+// }
+
+// h2,
+// h4 {
+//     width: 96vw;
+//     display: flex;
+// }
+
+// #topSectionTel,
+// #topSectionAdresse,
+// #main p,
+// .titreArticle,
+// footer a,
+// footer p {
+//     font-size: 1.5rem;
+// }
 @media (max-width: 435px) {
 
     #footerTel,
@@ -397,6 +485,26 @@ footer {
 
 }
 @media (max-width:768px) {
+
+    #topSection {
+        gap: 1%;
+
+        h1 {
+            width: 270px;
+            font-size: 2rem;
+        }
+
+        #topSectionBtn {
+            display: none;
+        }
+
+        #topSectionTel, #topSectionAdresse {
+            font-size: 1rem;
+            @include disflex;
+            flex-direction: column;
+        }
+    }
+
     .hamburger {
         display: block;
     }
@@ -412,6 +520,7 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -420,19 +529,20 @@ footer {
         flex-direction: column;
         width: 100%;
         transition: 0.3s;
-        height: calc(100% - 80px)
+        height: calc(100% - 80px);
+        .nav-item {
+            align-items: center;
+            margin: 0;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #2f2f2f;
+            border-top: 1px solid #2f2f2f;
+            width: 90%;
+            padding: 0;
+        }
     }
 
-    .nav-item {
-        align-items: center;
-        margin: 0;
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #2f2f2f;
-        border-top: 1px solid #2f2f2f;
-        width: 90%;
-    }
 
     .navbarFront.active, .nav-menu.active {
         background-color: rgba(25, 156, 113, 0.8);

@@ -5,6 +5,7 @@
 {% block body %}
 
 <section id="sectionPresentation">
+    <h2>Maison médicale Pasteur-Santes</h2>
 </section>
 <main id="main">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -12,13 +13,13 @@
     </svg>
 
     <section id="sectionNews">
-        <h2>Actualités</h2>
+        <h3>Actualités</h3>
             {% for newsTag in newsTags %}
                 <article class="containerNews">
                     <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }} ' aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}">
                         
                         <p class="titreArticle">{{ newsTag.new.titre }}</p>
-                        <p>{{ newsTag.new.imageFile }}</p>
+                        <p>{{ newsTag.new.resume }}</p>
 
                     </a>
                 </article> 
@@ -29,7 +30,7 @@
     </svg>
     <section id="sectionFaq">
 
-        <h2>Foire Aux Questions</h2>
+        <h3>Foire Aux Questions</h3>
         <span id="faqExpandDiv">
             <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq" aria-label="Ouvrir toutes les questions">Ouvrir tous</button>
             {# * le bouton s'active à la 2ème activation  #}
@@ -54,10 +55,10 @@
     <section id="sectionAcces">
         <div id="sectionAccesText">
         
-            <h3>
+            <h4>
                 <i class="fa-sharp fa-solid fa-map-location-dot fa-2xl" aria-hidden="true"></i>
                 Accès
-            </h3>
+            </h4>
             <span>
                 <p>
                     Les médecins et infirmiers de la Maison médicale Pasteur Santes vous accueillent à l'adresse suivante :
@@ -83,7 +84,7 @@
     </svg>
     
     <section id="sectionPraticien">
-            <h4>Les Praticiens</h4>
+            <h5>Les Praticiens</h5>
             {% for praticiensMetiers in praticiensMetiers %}
                 <div class="containerPraticien">
                     {% if praticiensMetiers.praticien.imageName %}
@@ -114,5 +115,6 @@
                 </div>
             {% endfor %}
     </section>
+
 </main>
 {% endblock %}
