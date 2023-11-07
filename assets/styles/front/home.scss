@@ -37,7 +37,9 @@ h3,
 h5 {
     width: 96vw;
     display: flex;
+    margin-bottom: 100px;
 }
+
 #topSectionTel,#topSectionAdresse, #main p, .titreArticle, footer a, footer p {
     font-size: 1.5rem;
 }
@@ -110,7 +112,6 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
 //section Top
 #topSection {
-    gap: 3%;
     height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
@@ -118,7 +119,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     justify-content: space-around;   
 
     #topSectionBtn {
-        margin-left: 2.5dvw;
+        width: 160px;
     }
     h1 {
         width: 340px;
@@ -216,13 +217,12 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     width: 100dvw;
     @include disflex;
     justify-content: flex-end;
-    align-items: center;
+    // align-items: center;
     
     h2 {
         color: $bleu;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);;
-        margin: 0 40px;
-        padding: 130px 0; 
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+        // margin: 0 40px;
         font-size: 3.5rem;
         width: 470px;
         line-height: 1.2em;
@@ -234,7 +234,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 #sectionNews {
     padding: 0 20px;
     text-align: justify; 
-    margin-top: -110px;
+    margin-top: -50px;
 }
 
 .containerNews {
@@ -406,11 +406,11 @@ footer {
         
         #topSectionTel, #topSectionAdresse {
             font-size: 1rem;
-        }
-
-        #topSectionTel {
             display: none;
         }
+
+        
+        
     }
 
     .navbarFront {
@@ -423,6 +423,7 @@ footer {
     }
 
     #sectionPresentation {
+        align-items: flex-start;
         h2 {
             font-size: 2.5rem;
         }
@@ -430,6 +431,10 @@ footer {
 }
 
 @media (max-width: 435px) {
+    h1 {
+        width: 265px;
+        font-size: 1.3rem;
+    }
 
     #footerTel,
     #footerAdresse,
@@ -451,7 +456,10 @@ footer {
 }
 
 @media (max-width:768px) {
-
+    h1 {
+        width: 265px;
+        font-size: 1.5rem;
+    }
     #topSectionAdresse {
         @include flexColumn;
     }
@@ -517,5 +525,15 @@ footer {
 
     .backdropBlur {
         backdrop-filter: blur(8px);
+    }
+
+    #sectionPresentation {
+        h2 {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            
+        }
     }
 }
