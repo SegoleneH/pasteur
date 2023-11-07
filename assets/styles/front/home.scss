@@ -114,8 +114,8 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
-    padding: 10px 0;
-    justify-content: space-around;
+    padding: 10px 0; 
+    justify-content: space-around;   
 
     #topSectionBtn {
         margin-left: 2.5dvw;
@@ -507,6 +507,13 @@ footer {
 
     .hamburger {
         display: block;
+        transition: 0.3s;
+    }
+
+    .hamburger.deplace {
+
+        transition: 0.3s;
+        transform: translateY(-130px);
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -524,23 +531,23 @@ footer {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 0;
         gap: 0;
         flex-direction: column;
         width: 100%;
         transition: 0.3s;
-        height: calc(100% - 80px);
-        .nav-item {
-            align-items: center;
-            margin: 0;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            border-bottom: 1px solid #2f2f2f;
-            border-top: 1px solid #2f2f2f;
-            width: 90%;
-            padding: 0;
-        }
+        height: calc(100% - 80px)
+    }
+
+    .nav-item {
+        align-items: center;
+        margin: 0;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #2f2f2f;
+        border-top: 1px solid #2f2f2f;
+        width: 90%;
     }
 
 
@@ -551,7 +558,7 @@ footer {
         left: 0;
     }
     .navbarFront {
-        @include flexColumn;
+        @include disflex;
     }
 
     .backdropBlur {
