@@ -1,20 +1,62 @@
+#sectionPresentation {
+    max-height: 385px;
+    max-width: 100dvw;
+    background-image: url(../../images/maison-medicale-pasteur-santes.png);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    height: 385px;
+    color: $bleu;
+    text-shadow: 0 2px rgba(0, 0, 0, 0.6);
+    @include disflex;
+    justify-content: flex-end;
+    width: 100dvw;
+    align-items: center;
+
+    h2 {
+        margin: 0 40px;
+        padding: 130px 0;
+        font-size: 3.5rem;
+        width: 470px;
+        line-height: 1.2em;
+    }
+}
+
+/* - de 1023 */
+#sectionPresentation {
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+/*  */
+
 //* ::::::::::::::::::::::::::::: RESET ::::::::::::::::::::::::::::::::::::::
-:root{
+:root {
     :focus {
         outline: inset 6px rgb(3, 104, 82);
         transition: 0.3s outline;
         border-radius: auto;
     }
 }
-body, h3, .nav-menu, .containerNews, .faqBtn, #faqExpand, .containerNews p  {
+
+body,
+h3,
+.nav-menu,
+.containerNews,
+.faqBtn,
+#faqExpand,
+.containerNews p {
     margin: 0;
 }
+
 li {
     list-style: none;
 }
-a, .skipShow {
+
+a,
+.skipShow {
     text-decoration: none;
 }
+
 span {
     margin-bottom: 0;
 }
@@ -26,10 +68,15 @@ h4,
 h5 {
     font-size: 2.5rem;
 }
-.containerNews, .skipShow, .nav-menu {
+
+.containerNews,
+.skipShow,
+.nav-menu {
     text-align: center;
 }
-.nav-menu li, .skipShow {
+
+.nav-menu li,
+.skipShow {
     font-size: 2rem;
 }
 
@@ -38,54 +85,121 @@ h5 {
     width: 96vw;
     display: flex;
 }
-#topSectionTel,#topSectionAdresse, #main p, .titreArticle, footer a, footer p {
+
+#topSectionTel,
+#topSectionAdresse,
+#main p,
+.titreArticle,
+footer a,
+footer p {
     font-size: 1.5rem;
 }
+
 button {
     font-size: 1.3rem;
 }
 
 //*::::::::::::::::::::::::::::::::::: GENERAL :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-i{
+i {
     margin-right: 10px;
     color: $bleu;
-        &::after {
-            color: $bleu;
-        }
-        &:hover {
-            color: $bleu-base;
-        }
+
+    &::after {
+        color: $bleu;
+    }
+
+    &:hover {
+        color: $bleu-base;
+    }
 }
-#sectionAcces, #sectionPraticien, footer {
+
+#sectionAcces,
+#sectionPraticien,
+footer {
     @include flexWrap;
 }
-h3, h5, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse, #mentionsLeg {
+
+h3,
+h5,
+#sectionAccesText,
+#sectionPraticien,
+.containerPraticien,
+#footerTel,
+#footerAdresse,
+#mentionsLeg {
     @include flexCenter;
 }
-#main, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
+
+#main,
+#sectionNews,
+#sectionFaq,
+#sectionAcces,
+#sectionPraticien {
     scroll-margin-top: 80px;
 }
-#topSection, #topSectionTel, #topSectionAdresse, .navbarFront, .nav-menu, .nav-item, #sectionNews, .containerNews,
-.containerNewsInfos, #sectionFaq, .faqQuestion, .faqReponse, .containerPraticien, .containerPraticienText,
-footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
+
+#topSection,
+#topSectionTel,
+#topSectionAdresse,
+.navbarFront,
+.nav-menu,
+.nav-item,
+#sectionNews,
+.containerNews,
+.containerNewsInfos,
+#sectionFaq,
+.faqQuestion,
+.faqReponse,
+.containerPraticien,
+.containerPraticienText,
+footer,
+#footerTel,
+#footerAdresse,
+#mentionsLeg,
+.nav-item {
     align-items: center;
 }
-#topSection, #topSectionTel, #topSectionAdresse, .faqQuestion, .faqReponse, #faqExpandDiv, #sectionAcces, .nav-menu {
+
+#topSection,
+#topSectionTel,
+#topSectionAdresse,
+.faqQuestion,
+.faqReponse,
+#faqExpandDiv,
+#sectionAcces,
+.nav-menu {
     @include disflex;
 }
-#sectionNews, .containerNews, #sectionFaq, #sectionAccesText, .containerPraticien, .containerPraticienText {
+
+#sectionNews,
+.containerNews,
+#sectionFaq,
+#sectionAccesText,
+.containerPraticien,
+.containerPraticienText {
     @include flexColumn;
 }
-.containerNews, #sectionAcces, #faqExpandDiv {
+
+.containerNews,
+#sectionAcces,
+#faqExpandDiv {
     width: 80dvw;
 }
-#topSection, #sectionPresentation, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
+
+#topSection,
+#sectionPresentation,
+#sectionNews,
+#sectionFaq,
+#sectionAcces,
+#sectionPraticien {
     max-width: 96dvw;
 }
+
 //*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
 // Fonction skip to main content
-.skipHidden, .skipShow {
+.skipHidden,
+.skipShow {
     position: absolute;
 }
 
@@ -114,25 +228,30 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
-    padding: 10px 0; 
-    justify-content: space-around;   
+    padding: 10px 0;
+    justify-content: space-around;
 
     #topSectionBtn {
         margin-left: 2.5dvw;
     }
+
     h1 {
         width: 340px;
         text-align: justify;
     }
 }
-#topSectionTel, #topSectionAdresse {
+
+#topSectionTel,
+#topSectionAdresse {
     gap: 5px;
 }
 
 //navbar front
-.navbarFront, .nav-menu {
+.navbarFront,
+.nav-menu {
     background-color: $bleu-base;
 }
+
 .navbarFront {
     position: sticky;
     top: 0;
@@ -140,6 +259,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     padding: 0 24px 6px 24px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
 }
+
 .nav-menu {
     justify-content: space-around;
     flex-grow: 1;
@@ -218,7 +338,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
     h2 {
         margin: 0 40px;
-        padding: 130px 0; 
+        padding: 130px 0;
         font-size: 3.5rem;
         width: 470px;
         line-height: 1.2em;
@@ -229,7 +349,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
 #sectionNews {
     padding: 0 20px;
-    text-align: justify; 
+    text-align: justify;
     margin-top: -110px;
 }
 
@@ -237,10 +357,12 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     padding: 50px 20px;
     cursor: pointer;
     background-color: #BFF1E0;
+
     a {
         width: 100%;
         padding: 50px 20px;
     }
+
     &:hover {
         background-color: $bleu-test;
     }
@@ -251,7 +373,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 }
 
 //section faq
- #sectionFaq {
+#sectionFaq {
     padding: 100px 20px;
 
     p {
@@ -262,32 +384,34 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     div {
         width: 80dvw
     }
- }
+}
 
- .faqQuestion {    
+.faqQuestion {
     justify-content: space-between;
     padding: 5px 5px;
     font-weight: bold;
+
     &:hover {
-        background-color: #BFF1E0
-        ;
+        background-color: #BFF1E0;
     }
- }
- .faqReponse {
+}
+
+.faqReponse {
     border-bottom: 1px solid #2f2f2f;
     padding: 0 5px;
     padding-bottom: 10px;
- }
+}
 
- .faqBtn {
+.faqBtn {
     background-color: transparent;
     margin-left: 10px;
     align-self: baseline;
- }
+}
 
- .reponseHide {
+.reponseHide {
     display: none;
 }
+
 #faqExpandDiv {
     justify-content: flex-end;
     margin-bottom: 5px;
@@ -305,6 +429,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     justify-content: space-evenly;
     padding-bottom: 100px;
     gap: 5%;
+
     iframe {
         flex-basis: 40%;
         flex-grow: 1;
@@ -329,10 +454,12 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 #sectionPraticien {
     align-items: flex-start;
     margin: -100px 0 100px 0;
+
     h5 {
         margin-bottom: 80px;
     }
 }
+
 .containerPraticien {
     background-color: rgb(191, 241, 233);
     min-width: 300px;
@@ -343,15 +470,18 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     border-radius: 20px;
     box-shadow: 0 1px 8px $bleu-box-shadow;
     cursor: pointer;
+
     &:hover {
         box-shadow: 0 2px 10px 6px $bleu-fonce-box-shadow;
         background-color: rgb(205, 248, 241);
     }
 
-    img, svg {
+    img,
+    svg {
         height: 60%;
     }
 }
+
 .containerPraticienText {
     height: 40%;
     justify-content: space-evenly;
@@ -376,6 +506,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     opacity: 1;
     transition: 500ms;
 }
+
 .hide {
     opacity: 0;
 }
@@ -385,7 +516,10 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 footer {
     justify-content: space-around;
 }
-#footerTel, #footerAdresse, #mentionsLeg {
+
+#footerTel,
+#footerAdresse,
+#mentionsLeg {
     gap: 5px;
     flex-grow: 1;
     margin: 80px 0 100px 0;
@@ -399,8 +533,9 @@ footer {
             width: 320px;
             font-size: 2rem;
         }
-        
-        #topSectionTel, #topSectionAdresse {
+
+        #topSectionTel,
+        #topSectionAdresse {
             font-size: 1rem;
         }
 
@@ -411,19 +546,25 @@ footer {
 
     .navbarFront {
         overflow-x: scroll;
-        a, li {
+
+        a,
+        li {
             @include disflex;
             flex-direction: row;
             flex-wrap: nowrap;
         }
-        a, ul, li {
+
+        a,
+        ul,
+        li {
             height: 80px;
 
         }
+
         .nav-menu li {
             font-size: 1.7rem;
         }
-                
+
     }
 
     #sectionPresentation {
@@ -432,6 +573,7 @@ footer {
         }
     }
 }
+
 // h1,
 // h2,
 // h3,
@@ -484,6 +626,7 @@ footer {
     }
 
 }
+
 @media (max-width:768px) {
 
     #topSection {
@@ -498,7 +641,8 @@ footer {
             display: none;
         }
 
-        #topSectionTel, #topSectionAdresse {
+        #topSectionTel,
+        #topSectionAdresse {
             font-size: 1rem;
             @include disflex;
             flex-direction: column;
@@ -507,13 +651,6 @@ footer {
 
     .hamburger {
         display: block;
-        transition: 0.3s;
-    }
-
-    .hamburger.deplace {
-
-        transition: 0.3s;
-        transform: translateY(-130px);
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -531,33 +668,38 @@ footer {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 0;
+        top: 80px;
         gap: 0;
         flex-direction: column;
         width: 100%;
         transition: 0.3s;
-        height: calc(100% - 80px)
+        height: calc(100% - 80px);
+
+        .nav-item {
+            align-items: center;
+            margin: 0;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #2f2f2f;
+            border-top: 1px solid #2f2f2f;
+            width: 90%;
+            padding: 0;
+        }
     }
 
-    .nav-item {
-        align-items: center;
-        margin: 0;
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #2f2f2f;
-        border-top: 1px solid #2f2f2f;
-        width: 90%;
-    }
 
-    .navbarFront.active, .nav-menu.active {
+    .navbarFront.active,
+    .nav-menu.active {
         background-color: rgba(25, 156, 113, 0.8);
     }
+
     .nav-menu.active {
         left: 0;
     }
+
     .navbarFront {
-        @include disflex;
+        @include flexColumn;
     }
 
     .backdropBlur {
