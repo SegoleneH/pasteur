@@ -48,7 +48,7 @@ const faqBtn = document.querySelectorAll('.faqBtn');
 //btn expand/close all
 faqExpand.addEventListener('click', () => {
     containerFaq.forEach(element => {
-        if ((faqExpand.textContent === 'Ouvrir toutes les réponses') || (faqExpand.textContent === 'Ouvrir tous') ) {
+        if (faqExpand.textContent === 'Ouvrir toutes les réponses') {
             element.firstElementChild.lastElementChild.textContent = 'Fermer';
             element.lastElementChild.setAttribute('aria-hidden', 'false');
             element.lastElementChild.classList.remove('reponseHide');
@@ -59,8 +59,6 @@ faqExpand.addEventListener('click', () => {
         }
     })
     faqExpand.textContent = faqExpand.textContent === 'Ouvrir toutes les réponses' ? 'Fermer toutes les réponses' : 'Ouvrir toutes les réponses';
-    //* le bouton s'active à la 2ème activation 
-    //* la 1ère activation switch le texte prédéfini en html avec celui de l'eventlistener 
     faqExpand.getAttribute('aria-expanded') === 'false' ? faqExpand.setAttribute('aria-expanded', 'true') : faqExpand.setAttribute('aria-expanded', 'false');
 })
 //btn pr chaque faq

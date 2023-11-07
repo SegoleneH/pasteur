@@ -109,7 +109,8 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     height: 110px;
     max-width: 100dvw;
     background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
-    padding: 10px 0;    
+    padding: 10px 0; 
+    justify-content: space-around;   
 
     #topSectionBtn {
         margin-left: 2.5dvw;
