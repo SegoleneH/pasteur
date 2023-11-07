@@ -5,7 +5,15 @@ const toTheTtop = document.querySelector('.scrollToTheTop');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         toTheTtop.classList.toggle("hide", entry.isIntersecting)
-    })
+    });
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('deplace');
+    });
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.toggle('deplace');
+
+    }))
+
 }, {
     threshold: 0.5,
 })
@@ -23,14 +31,17 @@ const sectionAcces = document.getElementById('sectionAcces');
 const sectionPraticien = document.getElementById('sectionPraticien');
 
 
+
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
+    // hamburger.classList.toggle('deplace');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
 })
 
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.toggle('active');
+    // hamburger.classList.toggle('deplace');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
 }))

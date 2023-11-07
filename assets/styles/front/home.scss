@@ -507,6 +507,13 @@ footer {
 
     .hamburger {
         display: block;
+        transition: 0.3s;
+    }
+
+    .hamburger.deplace {
+
+        transition: 0.3s;
+        transform: translateY(-130px);
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -524,7 +531,7 @@ footer {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 0;
         gap: 0;
         flex-direction: column;
         width: 100%;
@@ -551,7 +558,7 @@ footer {
         left: 0;
     }
     .navbarFront {
-        @include flexColumn;
+        @include disflex;
     }
 
     .backdropBlur {
