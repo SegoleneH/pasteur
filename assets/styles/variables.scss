@@ -1,10 +1,29 @@
-//* PALETTE DE COULEURS
 // $bleu-base: rgb(25, 156, 113);
-// bleu base 1 ^ inspiré des photos de l'architecte
+//* ^ inspiré des photos de l'architecte
+
+
 $bleu-base: rgb(31, 185, 152);
-// bleu base 2 ^ ??
-$bleu-clair: rgb(0, 199, 149);
-$bleu-clair2: rgb(6, 226, 171);
+//* bleu base 2 ^ ??
+
+$bleu-clair: rgba(43, 216, 173, 1);
+//* ^boutons
+
+$bleu-clair2: rgba(96, 240, 204, 1);
+//* ^hover boutons
+
+$bleu: #1c354c;
+
+
+$bleu-test:rgba(0, 199, 149, 0.5);
+// $jaune-test: #fc9a2a;
+// $vert: #94dd28;
+// $vert-clair: #a1ee2f;
+// $vert-fonce: #588327;
+
+
+
+$blanc: rgba(255, 255, 255, 1);
+$noir: rgba(0, 0, 0, 1);
 $rouge: rgb(235, 31, 27);
 $rouge-clair: rgb(255, 38, 34);
 $texte-gris: rgb(37, 37, 37);

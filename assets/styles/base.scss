@@ -76,6 +76,9 @@ li {
     background-color: $bleu-base;
     height: 60px;   
 
+    .custom-brand {
+        font-size: 1.2rem;
+    }
     .ctnListesNav {     
         justify-content: center;
     }
@@ -91,7 +94,7 @@ li {
         margin: 0;
     }
     .pure-menu-link {
-        color: black;
+        color: $noir;
         padding: 1em 0.5em;
     }
     
@@ -135,20 +138,43 @@ tbody {
 
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// button {
+//     background-color: $bleu-clair;
+//     border: solid 2px $bleu-clair;
+//     border-radius: 20px;
+//     padding: 10px 15px;
+//     margin: 10px auto;
+//     cursor: pointer;
+//     box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
+//     color: rgba(255, 255, 255, 0.9);
+//     @include btnDelay;
+    
+//     &:hover {
+//         background-color: $bleu-clair2;
+//         border: solid 2px $bleu-clair2;
+//         box-shadow: 0 2px 3px 2px $bleu-fonce-box-shadow;
+//         color: $noir;
+//     }
+// }
+//* MIXIN button où background-color, color et text shadow peuvent varier
 button {
-    background-color: $bleu-clair;
-    border: solid 2px $bleu-clair;
+    background-color: $bleu;
+    border: none;
     border-radius: 20px;
     padding: 10px 15px;
     margin: 10px auto;
     cursor: pointer;
     box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
+    color: $blanc;
+    text-shadow: 0 2px 3px $noir;
     @include btnDelay;
-    
+
     &:hover {
-        background-color: $bleu-clair2;
-        border: solid 2px $bleu-clair2;
+        background-color: $bleu-clair;
+        border: none;
         box-shadow: 0 2px 3px 2px $bleu-fonce-box-shadow;
+        color: $noir;
+        text-shadow: 0 2px 3px transparent;
     }
 }
 
@@ -157,7 +183,7 @@ button {
 }
 
 a {
-    color: black;
+    color: $noir;
     text-decoration: none;
 }
 
