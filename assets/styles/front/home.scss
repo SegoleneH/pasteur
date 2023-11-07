@@ -537,3 +537,8 @@ footer {
         }
     }
 }
+
+//class pr empecher le scroll quand burger est ouvert
+.noScroll {
+    overflow-y: hidden;
+}
