@@ -1,10 +1,11 @@
-//observer pr show/hide le btn de scroll top. Reglé si topsection visible à 50%, 
-// apparait en 0.5sec
+//observer pr show/hide le btn de scroll top. Reglé si topsection visible à 50%
+//classe isVisible sert uniquement pour comme marqueur pour le burger quand topsection n'est pas sur la page
 const topSection = document.getElementById('topSection');
 const toTheTtop = document.querySelector('.scrollToTheTop');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        toTheTtop.classList.toggle("hide", entry.isIntersecting)
+        toTheTtop.classList.toggle("hide", entry.isIntersecting);
+        topSection.classList.toggle("IsVisible", entry.isIntersecting);
     });
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('deplace');
@@ -15,7 +16,6 @@ const observer = new IntersectionObserver(entries => {
 }, {
     threshold: 0.5,
 })
-
 observer.observe(topSection);
 
 //hamburger
@@ -32,12 +32,20 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
+    document.body.classList.toggle('noScroll')
+    if (!(topSection.classList.contains('IsVisible'))) {
+        toTheTtop.classList.toggle("hide")
+    }
 })
 
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
+    document.body.classList.toggle('noScroll')
+    if (!(topSection.classList.contains('IsVisible'))) {
+        toTheTtop.classList.toggle("hide")
+    }
 }))
 
 //accordeon pour la section faq
