@@ -123,7 +123,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 #topSection {
     height: 110px;
     max-width: 100dvw;
-    background: linear-gradient(90deg, rgba(6, 226, 153, 0.4) 0%, rgba(6, 226, 153, 0.2) 50%, $background 100%);
+    background: linear-gradient(90deg, rgba(6, 226, 189, 0.4) 0%, rgba(6, 226, 178, 0.2) 50%, $background 100%);
     padding: 10px 0; 
     justify-content: space-around;   
 
@@ -230,7 +230,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     
     h2 {
         color: $bleu;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 0px 3px rgba(0, 0, 0, 0.8);
         // margin: 0 40px;
         font-size: 3.5rem;
         width: 470px;
@@ -250,7 +250,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     padding: 0 20px;
     height: 100px;
     cursor: pointer;
-    background-color: #BFF1E0;
+    background-color: #bff1e9;
     margin-bottom: 20px;
 
     a {
@@ -439,9 +439,6 @@ footer {
             font-size: 1rem;
             display: none;
         }
-
-        
-        
     }
 
     .navbarFront {
@@ -459,14 +456,44 @@ footer {
             font-size: 2.5rem;
         }
     }
+    #sectionNews {
+
+        article {
+            
+            height: 160px;
+
+            a {
+                @include disflex;
+                flex-wrap: wrap;
+                padding: 0 20px;
+            }
+        
+            .titreArticle {
+                font-size: 1.5rem;
+                font-weight: 700;
+                // padding: 0 40px;
+                // // ^ marge droite & gauche du texte
+                margin: auto 0;
+            }
+
+            .resumeArticle {
+                font-size: 1rem;
+            }
+        }
+    }
 }
 
 @media (max-width: 435px) {
-    h1 {
-        width: 265px;
-        font-size: 1.3rem;
+    #topSection {
+    
+        h1 {
+            width: 100px;
+            font-size: 1.2rem;
+        }
+        #topSectionBtn {
+            font-size: 1rem;
+        }
     }
-
     #footerTel,
     #footerAdresse,
     #mentionsLeg {
@@ -487,12 +514,15 @@ footer {
 }
 
 @media (max-width:768px) {
-    h1 {
-        width: 265px;
-        font-size: 1.5rem;
-    }
-    #topSectionAdresse {
-        @include flexColumn;
+    #topSection {
+
+        h1 {
+            width: 185px;
+            font-size: 1.4rem;
+        }
+        #topSectionBtn {
+            font-size: 1.2rem;
+        }
     }
     .hamburger {
         display: block;
@@ -541,7 +571,7 @@ footer {
     }
 
     .navbarFront.active, .nav-menu.active {
-        background-color: rgba(25, 156, 113, 0.8);
+        background-color: rgba(25, 156, 145, 0.8);
     }
     .nav-menu.active {
         left: 0;
