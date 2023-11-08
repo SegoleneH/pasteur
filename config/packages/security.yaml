@@ -47,6 +47,8 @@ security:
         - { path: ^/tag, roles: ROLE_USER }
         - { path: ^/faq, roles: ROLE_USER }
         - { path: ^/editeur, roles: ROLE_USER }
+        - { path: ^/mentions, roles: ROLE_USER }
+
 
 
 when@test:

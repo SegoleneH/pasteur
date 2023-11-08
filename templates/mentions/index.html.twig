@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions index{% endblock %}
+
+{% block body %}
+    <h1>Mentions index</h1>
+
+    <table class="table pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th>MentionsLegale</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mention in mentions %}
+            <tr>
+                <td class="tdIndex">{{ mention.mentionsLegale | raw }}</td>
+                <td class="column btnTdIndex">
+                    <a href="{{ path('app_mentions_show', {'id': mention.id}) }}">
+                            <button class="afficherBtn">
+                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
+                    <a href="{{ path('app_mentions_edit', {'id': mention.id}) }}">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mentions_new') }}">Create new</a>
+{% endblock %}

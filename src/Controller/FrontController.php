@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Faq;
 use App\Entity\Metier;
+use App\Entity\Mentions;
 use App\Entity\Praticien;
 use App\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -76,6 +77,19 @@ class FrontController extends AbstractController
     {
         return $this->render('front_articles/show.html.twig', [
             'article' => $article,
+        ]);
+    }
+
+    #[Route('/front_mentions', name: 'app_front_mentions')]
+    public function frontMentionIndex(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $mentionsRepository = $em->getRepository(Mentions::class);
+
+        $mentions = $mentionsRepository->findAll();
+
+        return $this->render('front_mentions/index.html.twig', [
+            'mentions' => $mentions,
         ]);
     }
 }

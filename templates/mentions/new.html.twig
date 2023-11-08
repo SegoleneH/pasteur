@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Mentions{% endblock %}
+
+{% block body %}
+    <h1>Create new Mentions</h1>
+
+    {{ include('mentions/_form.html.twig') }}
+
+    <a href="{{ path('app_mentions_index') }}">back to list</a>
+{% endblock %}

@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\MentionsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: MentionsRepository::class)]
 class Mentions
@@ -14,6 +16,7 @@ class Mentions
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank (message:'Veuillez entrer du contenu pour votre article.')]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $mentionsLegale = null;
 
