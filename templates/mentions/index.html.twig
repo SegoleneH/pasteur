@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}Mentions index{% endblock %}
 
@@ -30,6 +30,42 @@
                         </button>
                     </a>
                 </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mentions_new') }}">Create new</a>
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légales{% endblock %}
+
+{% block body %}
+
+
+
+    <table class="table pure-table pure-table-horizontal">
+        <tbody>
+        {% for mention in mentions %}
+            <tr style="text-align : center">
+                <td>
+                    <a href="{{ path('app_mentions_edit', {'id': mention.id}) }}">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ mention.mentionsLegale | raw }}</td>
             </tr>
         {% else %}
             <tr>

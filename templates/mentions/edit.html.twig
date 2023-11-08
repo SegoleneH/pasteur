@@ -3,11 +3,19 @@
 {% block title %}Edit Mentions{% endblock %}
 
 {% block body %}
-    <h1>Edit Mentions</h1>
 
-    {{ include('mentions/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="topContainer">
+    <a href="{{ path('app_mentions_index') }}">
+         <button class="previousBtn">Précédent</button>
+    </a>
+</div>
 
-    <a href="{{ path('app_mentions_index') }}">back to list</a>
+
+    <h2 style="text-align: center">Vous pouvez trouver la liste des mentions obligatoires en suivant ce lien : <a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#"><u>Mentions obligatoires</u></a></h2>
+    
+
+    {{ include('mentions/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
 
     {{ include('mentions/_delete_form.html.twig') }}
 {% endblock %}
