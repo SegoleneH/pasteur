@@ -21,6 +21,7 @@ observer.observe(topSection);
 //hamburger
 
 const hamburger = document.querySelector('.hamburger');
+let hamburgerStyle = window.getComputedStyle(hamburger);
 const navMenu = document.querySelector('.nav-menu');
 const navbarFront = document.querySelector('.navbarFront');
 const sectionPresentation = document.getElementById('sectionPresentation');
@@ -42,10 +43,15 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     navMenu.classList.toggle('backdropBlur');
-    document.body.classList.toggle('noScroll')
-    if (!(topSection.classList.contains('IsVisible'))) {
-        toTheTtop.classList.toggle("hide")
+    if (hamburgerStyle.getPropertyValue('display') === 'block') {
+        document.body.classList.toggle('noScroll')
     }
+    if ((!(topSection.classList.contains('IsVisible'))) && (toTheTtop.classList.contains('hide')) ) {
+        
+            toTheTtop.classList.remove("hide")
+     } else {
+            return
+        }  
 }))
 
 //accordeon pour la section faq
