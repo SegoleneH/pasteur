@@ -5,20 +5,30 @@
 {% block body %}
     <h1>Mentions index</h1>
 
-    <table class="table">
+    <table class="table pure-table pure-table-horizontal">
         <thead>
             <tr>
                 <th>MentionsLegale</th>
-                <th>actions</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
         {% for mention in mentions %}
             <tr>
-                <td>{{ mention.mentionsLegale | raw }}</td>
-                <td>
-                    <a href="{{ path('app_mentions_show', {'id': mention.id}) }}">show</a>
-                    <a href="{{ path('app_mentions_edit', {'id': mention.id}) }}">edit</a>
+                <td class="tdIndex">{{ mention.mentionsLegale | raw }}</td>
+                <td class="column btnTdIndex">
+                    <a href="{{ path('app_mentions_show', {'id': mention.id}) }}">
+                            <button class="afficherBtn">
+                                <i class="fa-regular fa-eye fa-lg" style="color: #000000;"></i>
+                            Afficher
+                        </button>
+                    </a>
+                    <a href="{{ path('app_mentions_edit', {'id': mention.id}) }}">
+                            <button>
+                                <i class="fa-solid fa-pen-to-square fa-lg" style="color: #000000;"></i>
+                            Modifier
+                        </button>
+                    </a>
                 </td>
             </tr>
         {% else %}
