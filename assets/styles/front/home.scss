@@ -460,19 +460,21 @@ footer {
         article {
             
             height: 160px;
-
+            
             a {
                 @include disflex;
                 flex-wrap: wrap;
-                padding: 0 20px;
+                @include flexColumn;
+                
             }
         
             .titreArticle {
                 font-size: 1.5rem;
                 font-weight: 700;
+                height: 80px;
                 // padding: 0 40px;
                 // // ^ marge droite & gauche du texte
-                margin: auto 0;
+                margin: auto;
             }
 
             .resumeArticle {
