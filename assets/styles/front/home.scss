@@ -209,12 +209,11 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
 #sectionPresentation {
     max-height: 385px;
-    max-width: 100dvw;
+    max-width: 99dvw;
+    height: 385px;
     background-image: url(../../images/maison-medicale-pasteur-santes.png);
     background-repeat: no-repeat;
     object-fit: contain;
-    height: 385px;
-    width: 100dvw;
     @include disflex;
     justify-content: flex-end;
     // align-items: center;
