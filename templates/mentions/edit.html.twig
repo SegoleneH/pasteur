@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Mentions{% endblock %}
+
+{% block body %}
+    <h1>Edit Mentions</h1>
+
+    {{ include('mentions/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_mentions_index') }}">back to list</a>
+
+    {{ include('mentions/_delete_form.html.twig') }}
+{% endblock %}
