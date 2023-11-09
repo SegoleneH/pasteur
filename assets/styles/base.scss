@@ -11,7 +11,7 @@
 body {
     background-color: $background;
 
-    h1, th {
+    h2, th {
         text-align: center;
     }
     .custom-wrapper,
@@ -26,13 +26,6 @@ body {
     }
 
     section {
-
-        margin: 0 auto;
-
-        .imgContainer {
-            display: flex;
-            justify-content: center;
-        }
 
         article {
             margin: 40px;
@@ -273,17 +266,25 @@ div{
 #editeur_user_enabled {
     display: none;
 }
+.titreIndex, .topContainer h2 {
+    font-size: 2.5rem;
+}
 
+.titreIndex {
+    width: 100%;
+    margin: 20px auto;
+}
 .topContainer {
     height: 100px;
     width: 90%;
     justify-content: space-between;
     padding-top: 20px;
 
-    h1 {
+    h2 {
         margin: 3dvh auto;
     }
 }
+
 
 //&::::::::::::::::::::::::::::champs Password:::::::::::::::::::::::::::
 #user_password,
@@ -341,4 +342,7 @@ form {
         //     border-bottom-width: 1px;
         //     border-bottom: 1px solid #cbcbcb;
         // }
+        .topContainer {
+            @include flexColumn;
+        }
 }

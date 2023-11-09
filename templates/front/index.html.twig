@@ -32,12 +32,13 @@
 
         <h3>Foire Aux Questions</h3>
         <span id="faqExpandDiv">
-            <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq" aria-label="Ouvrir toutes les questions">Ouvrir toutes les réponses</button>
+            <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq" aria-label="Ouvrir toutes les réponses">Ouvrir toutes les réponses</button>
         </span>
         {% for faq in faqs %}
 
             <div>
-                <p class="faqQuestion" lang="fr">{{ faq.question }} 
+                <p class="faqQuestion" lang="fr">
+                    {{ faq.question }} 
                     <span class="faqSpan">+</span>
                 </p>
                 <p class="reponseHide faqReponse" id="faqReponse{{faq.id}}" aria-hidden="true" lang="fr">{{ faq.reponse }}</p>

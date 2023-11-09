@@ -55,3 +55,28 @@
         }
     }
 }
+
+section {
+
+    .imgContainer {
+        display: flex;
+        justify-content: center;
+        max-width: 80%;
+        max-height: 80%;
+        margin: 20dvh auto;
+    }
+}
+
+//TODO  
+//&:::::::::::::::::::::::::::::::::::::: RESPONSIVE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@media (max-width: 1023px) {
+    
+    .topContainer {
+        @include flexColumn;
+    }
+    .imgContainer {
+        max-width: 70%;
+        max-height: 70%;
+        margin: 40dvh auto;
+    }
+}

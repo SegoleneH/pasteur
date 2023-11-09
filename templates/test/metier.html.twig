@@ -4,13 +4,13 @@
 
 {% block body %}
 
-<h1>Liste de tous les metiers</h1>
+<h2>Liste de tous les métiers</h2>
 
 {% for metier in metiers %}
 
-<p>nom : {{ metier.nom }} </p>
-<p>description : {{ metier.description }} </p>
-<hr>
+    <p>nom : {{ metier.nom }} </p>
+    <p>description : {{ metier.description }} </p>
+    <hr>
 
 {% endfor %}
 
