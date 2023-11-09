@@ -1,6 +1,6 @@
 //* ::::::::::::::::::::::::::::: RESET ::::::::::::::::::::::::::::::::::::::
 :root{
-    :focus {
+    :focus-visible {
         outline: inset 6px rgb(3, 104, 82);
         transition: 0.3s outline;
         border-radius: auto;
@@ -275,7 +275,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     }
 
     div {
-        width: 80dvw
+        width: 80dvw;
     }
  }
 
@@ -447,11 +447,7 @@ footer {
 
 // RESPONSIVE
 @media (max-width: 1023px) {
-    :root {
-        :focus {
-            outline: none;
-        }
-    }
+
     #topSection {
         #topSectionTel, #topSectionAdresse {
             font-size: 1rem;
