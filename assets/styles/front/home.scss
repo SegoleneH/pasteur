@@ -447,7 +447,11 @@ footer {
 
 // RESPONSIVE
 @media (max-width: 1023px) {
-
+    :root {
+        :focus {
+            outline: none;
+        }
+    }
     #topSection {
         #topSectionTel, #topSectionAdresse {
             font-size: 1rem;
