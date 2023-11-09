@@ -36,7 +36,7 @@
         </span>
         {% for faq in faqs %}
 
-            <div aria-controls="faqReponse{{faq.id}}" aria-expanded="false">
+            <div aria-controls="faqReponse{{faq.id}}" aria-expanded="false" tabindex="0" role="button">
                 <p class="faqQuestion" lang="fr">{{ faq.question }} 
                     <span class="faqSpan">+</span>
                 </p>

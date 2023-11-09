@@ -96,6 +96,21 @@ containerFaq.forEach(ctn => {
         ctn.lastElementChild.getAttribute('aria-hidden') === 'true' ? ctn.lastElementChild.setAttribute('aria-hidden', 'false') : ctn.lastElementChild.setAttribute('aria-hidden', 'true');
     })
 })
+
+containerFaq.forEach(ctn => {
+    ctn.addEventListener('keydown', () => {
+        if (event.key === 'Enter' ||  event.keyCode === 13) {
+            
+            ctn.lastElementChild.classList.toggle('reponseHide');
+            ctn.firstElementChild.lastElementChild.classList.toggle('active')
+            ctn.getAttribute('aria-expanded') === 'false' ? ctn.setAttribute('aria-expanded', 'true') : ctn.setAttribute('aria-expanded', 'false');
+            ctn.lastElementChild.getAttribute('aria-hidden') === 'true' ? ctn.lastElementChild.setAttribute('aria-hidden', 'false') : ctn.lastElementChild.setAttribute('aria-hidden', 'true');
+        }
+    })
+})
+
+
+
 }
 
 //skip to main
