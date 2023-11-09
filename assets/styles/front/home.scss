@@ -148,6 +148,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     height: 80px;
     padding: 0 24px 6px 24px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
+    z-index: 2;
 
     ul {
         height: 40px;
@@ -278,18 +279,30 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     justify-content: space-between;
     padding: 5px 5px;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
         background-color: #BFF1E0;
+    }
+
+    .faqSpan {
+        margin: 0;
+        font-size: 40px;
+        display: block;
+        transition: 0.4s;
+
+    }
+
+    .faqSpan.active {
+        transform: rotate(135deg);
+        z-index: 0;
     }
  }
  .faqReponse {
     border-bottom: 1px solid #2f2f2f;
     padding: 0 5px;
     padding-bottom: 10px;
-    text-align: justify; 
+    text-align: left; 
     hyphens: auto;
-    // word-break: break-all;
-    // word-spacing: -2px;
  }
 
  .faqBtn {
