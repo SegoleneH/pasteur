@@ -84,6 +84,8 @@ faqExpand.addEventListener('click', () => {
             }
         }
     })
+    //* if faqExpand.getAttribute('aria-expanded') === 'false' { faqExpand.style('padding', '10px') }
+
     faqExpand.textContent = faqExpand.textContent === 'Ouvrir toutes les réponses' ? 'Fermer toutes les réponses' : 'Ouvrir toutes les réponses';
     faqExpand.getAttribute('aria-expanded') === 'false' ? faqExpand.setAttribute('aria-expanded', 'true') : faqExpand.setAttribute('aria-expanded', 'false');
 })

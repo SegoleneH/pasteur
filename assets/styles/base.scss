@@ -130,44 +130,29 @@ tbody {
 
 
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-// button {
-//     background-color: $bleu-clair;
-//     border: solid 2px $bleu-clair;
-//     border-radius: 20px;
-//     padding: 10px 15px;
-//     margin: 10px auto;
-//     cursor: pointer;
-//     box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
-//     color: rgba(255, 255, 255, 0.9);
-//     @include btnDelay;
-    
-//     &:hover {
-//         background-color: $bleu-clair2;
-//         border: solid 2px $bleu-clair2;
-//         box-shadow: 0 2px 3px 2px $bleu-fonce-box-shadow;
-//         color: $noir;
-//     }
-// }
-//* MIXIN button où background-color, color et text shadow peuvent varier
-button {
-    background-color: $bleu;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin: 10px auto;
-    cursor: pointer;
-    box-shadow: 0 2px 4px $bleu-fonce-box-shadow;
-    color: $blanc;
-    text-shadow: 0 2px 3px $noir;
+button, #faqExpand {
     @include btnDelay;
+    @include button($color: $bleu);
+    color: $blanc;
 
     &:hover {
         background-color: $bleu-clair;
         border: none;
-        box-shadow: 0 2px 3px 2px $bleu-fonce-box-shadow;
+        box-shadow: 0 2px 3px 2px $box-shadow;
         color: $noir;
-        text-shadow: 0 2px 3px transparent;
+    }
+}
+td, .btnContainer {
+    button {
+        @include btnDelay;
+        @include button($color: $bleu-clair);
+        color: $noir;
+
+        &:hover {
+            background-color: $bleu-clair2;
+            border: none;
+            box-shadow: 0 2px 3px 2px $box-shadow;
+        }
     }
 }
 
@@ -198,15 +183,15 @@ a {
 }
 
 .supprBtn {
+    color: $noir;
     background-color: $rouge;
-    border: solid 2px $rouge;
     margin: 30px auto;
     padding: 10px 30px;
-    box-shadow: 0 2px 4px $orange-box-shadow;
+    box-shadow: 0 2px 4px $box-shadow-clair;
     &:hover {
         background-color: $rouge-clair;
-        border: solid 2px $rouge-clair;
-        box-shadow: 0 2px 3px 2px $orange-box-shadow-clair;
+        border: none;
+        box-shadow: 0 2px 3px 2px $box-shadow;
     }
 }
 
@@ -281,7 +266,8 @@ div{
     padding-top: 20px;
 
     h2 {
-        margin: 3dvh auto;
+        width: 80%;
+        
     }
 }
 
@@ -344,5 +330,6 @@ form {
         // }
         .topContainer {
             @include flexColumn;
+            height: auto;
         }
 }
