@@ -130,7 +130,9 @@ tbody {
 
 
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-button, #faqExpand {
+
+//* Boutons frontPage bleu foncé
+#topSectionBtn button, .cardBtn, #faqExpand {
     @include btnDelay;
     @include button($color: $bleu);
     color: $blanc;
@@ -142,20 +144,34 @@ button, #faqExpand {
         color: $noir;
     }
 }
-td, .btnContainer {
-    button {
-        @include btnDelay;
-        @include button($color: $bleu-clair);
-        color: $noir;
 
-        &:hover {
-            background-color: $bleu-clair2;
-            border: none;
-            box-shadow: 0 2px 3px 2px $box-shadow;
-        }
+//* Boutons back-office bleu clair
+td button, .btnContainer button, .saveBtn, .previousBtn {
+    @include btnDelay;
+    @include button($color: $bleu-clair);
+    color: $noir;
+
+    &:hover {
+        background-color: $bleu-clair2;
+        border: none;
+        box-shadow: 0 2px 3px 2px $box-shadow;
     }
 }
+//* Bouton supprimer
+.supprBtn {
+    @include btnDelay;
+    @include button($color: $rouge);
+    // color: $noir;
+    margin: 30px auto;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px $box-shadow-clair;
 
+    &:hover {
+        background-color: $rouge-clair;
+        border: none;
+        box-shadow: 0 2px 3px 2px $box-shadow;
+    }
+}
 .previousBtn {
     margin-left: 20px;
 }
@@ -179,19 +195,6 @@ a {
     button {
         margin: 30px auto 60px auto;
         padding: 10px 30px;
-    }
-}
-
-.supprBtn {
-    color: $noir;
-    background-color: $rouge;
-    margin: 30px auto;
-    padding: 10px 30px;
-    box-shadow: 0 2px 4px $box-shadow-clair;
-    &:hover {
-        background-color: $rouge-clair;
-        border: none;
-        box-shadow: 0 2px 3px 2px $box-shadow;
     }
 }
 
