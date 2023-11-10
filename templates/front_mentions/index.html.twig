@@ -4,11 +4,18 @@
 
 {% block body %}
 
+<main id="main">
+
+    <div id="mentions">
+
 {% for mention in mentions %}
 
     <p>{{ mention.mentionsLegale | raw }}</p>
 
 {% endfor %}
+
+    </div>
+</main>
 
 
 {% endblock %}
