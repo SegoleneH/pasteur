@@ -86,7 +86,9 @@
             {% for praticiensMetiers in praticiensMetiers %}
                 <div class="containerPraticien">
                     {% if praticiensMetiers.praticien.imageName %}
-                        <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
+                        <div class="praticienImg">
+                            <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
+                        </div>
                     {% else %}
                         <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
                             <style type="text/css">.st0{fill:#00A5CB;} .st1{fill:#0190B0;} .st2{fill:#FFFFFF;} .st3{fill:#F2F2F2;}</style>
