@@ -14,7 +14,7 @@ $bleu-clair2: rgb(96, 240, 240);
 $bleu: #1c354c;
 
 
-$bleu-test:rgba(0, 199, 149, 0.5);
+$bleu-test: rgba(0, 199, 149, 0.5);
 // $jaune-test: #fc9a2a;
 // $vert: #94dd28;
 // $vert-clair: #a1ee2f;
@@ -29,12 +29,15 @@ $rouge-clair: rgb(255, 38, 34);
 $texte-gris: rgb(37, 37, 37);
 $background: rgb(255, 248, 239);
 
+$background-cards: rgb(191, 241, 233);
+$background-cards-hover: rgb(205, 248, 241);
+
 //* BOX-SHADOW & TRANSPARENT
-$bleu-box-shadow: rgba(0, 118, 122, 0.8);
-$bleu-fonce-box-shadow: rgba(0, 99, 99, 0.8);
+$box-shadow: rgba(0, 0, 0, 0.6);
+$box-shadow-clair: rgba(0, 0, 0, 0.5);
 
 $orange-box-shadow-clair: rgba(161, 43, 0, 0.8);
 $orange-box-shadow: rgba(82, 24, 0, 0.8);
 
-$bleu-transparent-thead: rgba(25, 156, 113, 0.8);
-$bleu-transparent-bordures: rgba(25, 156, 113, 0.3);
+$bleu-transparent-thead: rgba(25, 156, 139, 0.8);
+$bleu-transparent-bordures: rgba(25, 156, 145, 0.3);

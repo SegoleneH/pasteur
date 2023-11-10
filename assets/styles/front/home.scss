@@ -20,6 +20,9 @@ span {
 }
 
 //* Fonts & Texte
+h1, h2, h3, h4, h5, p, .containerNews, .skipShow, .nav-menu, a {
+    hyphens: auto;
+}
 h1,
 h3,
 h4,
@@ -245,7 +248,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
 #sectionNews {
     padding: 0 20px;
-    text-align: justify; 
+    text-align: left; 
     margin-top: -50px;
 }
 
@@ -268,6 +271,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 //section faq
  #sectionFaq {
     padding: 100px 20px;
+
 
     p {
         margin: 10px 0 10px 10px;
@@ -344,7 +348,7 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 }
 
 #sectionAccesText {
-    text-align: justify;
+    text-align: left;
     gap: 5%;
     flex-grow: 1;
     flex-shrink: 1;
@@ -365,18 +369,18 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     }
 }
 .containerPraticien {
-    background-color: rgb(191, 241, 233);
+    background-color: $background-cards;
     min-width: 300px;
     flex-basis: 25%;
     height: 500px;
     padding: 20px;
     margin: 20px auto;
     border-radius: 20px;
-    box-shadow: 0 1px 8px $bleu-box-shadow;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     cursor: pointer;
     &:hover {
-        box-shadow: 0 2px 10px 6px $bleu-fonce-box-shadow;
-        background-color: rgb(205, 248, 241);
+        box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
+        background-color: $background-cards-hover;  
     }
 
     img, svg {
@@ -432,6 +436,9 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     &:hover {
         filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
     }
+    &:focus {
+        border-radius: 50px;
+    }
     
 }
 .hide {
@@ -478,7 +485,6 @@ footer {
             border-radius: 20px;
             padding: 10px;
             text-align: center;
-            text-shadow: 1px 2px 10px #FFFFFF;
         }
     }
     #sectionNews {
@@ -508,9 +514,23 @@ footer {
             }
         }
     }
+
     iframe {
         height: 360px;
         width: 360px;
+    }
+
+    #sectionFaq {
+        h3 {
+            width: 100%;
+            margin: 0 0 80px 0;
+            text-align: center;
+        }
+    }
+
+    .containerPraticien {
+        max-width: 200px;
+
     }
 }
 
@@ -611,6 +631,11 @@ footer {
 
     .backdropBlur {
         backdrop-filter: blur(8px);
+    }
+
+    iframe {
+        height: 300px;
+        width: 300px;
     }
 }
 
