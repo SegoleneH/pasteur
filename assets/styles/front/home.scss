@@ -227,7 +227,8 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     max-height: 385px;
     max-width: 100dvw;
     height: 385px;
-    background-image: url(../../images/maison-medicale-pasteur-santes.png);
+    // background-image: url(../../images/maison-medicale-pasteur-santes.png);
+    background-image: url(../../images/maison-medicale-pasteur-santes.webp);
     background-repeat: no-repeat;
     object-fit: contain;
     @include disflex;
