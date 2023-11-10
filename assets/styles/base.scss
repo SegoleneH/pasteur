@@ -132,7 +132,7 @@ tbody {
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //* Boutons frontPage bleu foncé
-.cardBtn, #faqExpand {
+#topSectionBtn button, .cardBtn, #faqExpand {
     @include btnDelay;
     @include button($color: $bleu);
     color: $blanc;
