@@ -1,7 +1,7 @@
 //observer pr show/hide le btn de scroll top. Reglé si topsection visible à 50%
 //classe isVisible sert uniquement pour comme marqueur pour le burger quand topsection n'est pas sur la page
 const topSection = document.getElementById('topSection');
-const toTheTtop = document.querySelector('.scrollToTheTop');
+let toTheTtop = document.querySelector('.scrollToTheTop');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         toTheTtop.classList.toggle("hide", entry.isIntersecting);
@@ -55,15 +55,12 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 //accordeon pour la section faq
 
-
 const sectionFaq = document.getElementById('sectionFaq');
 
 if (sectionFaq) {
 
 const containerFaq = sectionFaq.querySelectorAll('div');
 const faqExpand = document.getElementById('faqExpand');
-const faqBtn = document.querySelectorAll('.faqBtn');
-const spans = document.querySelectorAll('.faqSpan');
 
 //btn expand/close all
 faqExpand.addEventListener('click', () => {
@@ -109,8 +106,6 @@ containerFaq.forEach(ctn => {
     })
 })
 
-
-
 }
 
 //skip to main
@@ -125,3 +120,19 @@ skipToContent.addEventListener('blur', () => {
     skipToContent.classList.toggle('skipHidden')
     skipToContent.classList.toggle('skipShow')   
 })
+
+// anim on scroll du btn tothetop
+// document.body.scrollHeight : hauteur en px de la page au total (y compris overflow)
+// window.innerHeight : hauteur du viewport
+// window.scrollY : nb de px qui ont été scrollé
+
+let progress = document.body.scrollHeight - window.innerHeight;
+
+window.onscroll = () => {
+    let progressTest = Math.round(50 - ((window.scrollY / progress) * 50));
+    setTimeout(() => {
+        toTheTtop.style.backgroundPosition = `0 ${progressTest}px `;
+    }, 100)
+    console.log("progress = " + progress);
+    console.log("scrollY = " + window.scrollY);
+}

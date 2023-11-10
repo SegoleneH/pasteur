@@ -404,13 +404,17 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     position: fixed;
     bottom: 60px;
     right: 30px;
-    transition: 500ms;
-    background: linear-gradient(
-        90deg,
-        $bleu-clair2 50%,
-        $bleu-clair 50%
-    );
+    // transition: 500ms;
+    // background-image: linear-gradient(
+    //     90deg,
+    //     $bleu-clair2 50%,
+    //     $bleu-clair 50%
+    // );
+    background-image: url(../../images/fondBtn.png);
+    background-size: cover;
     border-radius: 50px;
+    border: 1px solid lightgray;
+    background-repeat: no-repeat;
     padding: 15px 10px;
     cursor: pointer;
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
