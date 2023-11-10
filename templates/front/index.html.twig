@@ -105,9 +105,9 @@
                         <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
                         <p>{{ praticiensMetiers.metiers|join(', ')}}</p>
                         {% if praticiensMetiers.praticien.lienRdv %}
-                            <button onclick="window.open('{{ praticiensMetiers.praticien.lienRdv | e }}', target='_blank')" aria-label="prendre rendez-vous en ligne avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Prendre R.D.V en ligne</button>
+                            <button class="cardBtn" onclick="window.open('{{ praticiensMetiers.praticien.lienRdv | e }}', target='_blank')" aria-label="prendre rendez-vous en ligne avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Prendre R.D.V en ligne</button>
                         {% else %}
-                            <button onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rendez-vous par téléphone avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
+                            <button class="cardBtn" onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rendez-vous par téléphone avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
                         {% endif %}
                     </div>
                 </div>
