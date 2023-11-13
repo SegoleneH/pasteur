@@ -537,7 +537,6 @@ footer {
         #footerTel,
         #footerAdresse {
             flex-grow: 1;
-            max-width: 45dvw;
             margin: 40px 2dvw 0 2dvw;
             @include flexDirection($direction : column);
             .fa-house {
@@ -685,12 +684,10 @@ footer {
     #footerTel,
     #footerAdresse {
         justify-content: flex-start;
-        min-width: 70dvw
     }
 
     footer {
         width: 70dvw;
-        margin-bottom: 20px;
     }
 
 }
@@ -776,17 +773,24 @@ footer {
         @include flexDirection($direction : column);
         #footerTopContainer {
             @include flexDirection($direction : column);
-            margin: 0 auto;
             width: 70dvw;
         }
+        #footerAdresse {
+            width: 66dvw;
+        }
         #footerUrgence {
-            width: 20dvw;
             margin: 20px 5dvw 0 5dvw;
             @include flexCenter($justify : center);
         }
+        #footerUrgence, #mentionsLeg {
+            width: 55dvw;
+            margin: 20px 2.5dvw 0 2.5dvw;
+        }
         #mentionsLeg {
-            width: 70dvw;
             margin: 0px auto;
+        }
+        #footerTel {
+            width: 65dvw;
         }
     }
 }
