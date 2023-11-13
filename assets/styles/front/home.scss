@@ -471,6 +471,32 @@ footer, #footerTel, #footerAdresse, .nav-item {
     opacity: 0;
 }
 
+//section horaires
+
+#sectionHoraires {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80dvw;
+    gap: 5%;
+}
+
+.sectionHorairesText {
+    min-width: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    hyphens: auto;
+    flex-basis: 40%;
+
+    p {
+        text-align: justify;
+    }
+}
 
 //footer
 
