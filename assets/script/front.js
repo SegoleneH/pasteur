@@ -135,6 +135,4 @@ window.onscroll = () => {
     setTimeout(() => {
         toTheTtop.style.backgroundPosition = `0 ${progressTest}px `;
     }, 100)
-    console.log("progress = " + progress);
-    console.log("scrollY = " + window.scrollY);
 }
