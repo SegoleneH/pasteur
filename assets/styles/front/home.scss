@@ -29,7 +29,8 @@ h4,
 h5, h6 {
     font-size: 2.5rem;
 }
-.containerNews, .skipShow, .nav-menu {
+.containerNews, .skipShow, .nav-menu, #mentionsLeg,
+#sectionPresentation h2, #footerUrgence {
     text-align: center;
 }
 .nav-menu li, .skipShow {
@@ -49,7 +50,7 @@ h5 {
 #footerAdresse span,
 #footerAdresse p,
 #footerAdresse address,
-#footerTel p {
+#footerTel p, #footerUrgence {
     font-size: 1.2rem;
 }
 #sectionAcces, #sectionPraticien, footer {
@@ -69,6 +70,7 @@ article {
         font-size: 1.3rem;
     }
 }
+
 //*::::::::::::::::::::::::::::::::::: GENERAL :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 i{
     margin-right: 10px;
@@ -529,13 +531,16 @@ footer {
                 line-height: 1em;
             }
 
+        }
+        
+        #footerAdresse  {
             address {
                 font-style: normal;
+                margin: 30px auto;
             }
-        }
-
-        #footerAdresse p {
-            font-style: italic;
+            p {
+                margin: 10px auto;
+            }
         }
 
         #footerTel p {
@@ -545,21 +550,27 @@ footer {
                 @include flexWrap($wrap : wrap);
             }
         }
+        #lienFooterTel {
+            text-align: center;
+        }
     }
-    #mentionsLeg {
+    #footerUrgence,  #mentionsLeg {
+
         width: 92dvw;
-        text-align: center;
         margin: 20px 4dvw 0 4dvw;
         padding: 30px 0;
-        border-top: 1px dotted $bleu;
         a {
             color: $bleu;
-    
+            
             &:hover {
                 color: rgb(21, 126, 117);
             }
         }
     }
+    #mentionsLeg {
+        border-top: 1px dotted $bleu;
+    }
+
 }
 
 // RESPONSIVE
@@ -589,8 +600,7 @@ footer {
             font-size: 2.5rem;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
-            padding: 10px;
-            text-align: center;
+            padding: 10px;        
         }
     }
     #sectionNews {

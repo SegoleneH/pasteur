@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li class="nav-item" role="button" >
-                        <a aria-label="Voir tous les articles" href="#footerListContainer" class="nav-link hvr-underline-from-center">
+                        <a href="#footerTopContainer" class="nav-link hvr-underline-from-center">
                             <i class="fa-sharp fa-solid fa-angle-down fa-2xl "></i>
                         </a>
                     </li>                                                                                                   
@@ -113,28 +113,28 @@
                 </svg>
                 <div id="footerTopContainer">
                         <div id="footerAdresse">
-                            <i class="fa-sharp fa-solid fa-house fa-2xl" aria-hidden="true"></i>
-                            <address>
-                                33B avenue Albert Bernard<br>
-                                59211 Santes
-                            </address>
+                            <p>
+                                <i class="fa-sharp fa-solid fa-house fa-2xl" aria-hidden="true"></i>
+                                <address>
+                                    33B avenue Albert Bernard<br>
+                                    59211 Santes
+                                </address>
+                                <p> Le site est accessible aux personnes à mobilité réduite. </p>
+                            </p>
                         </div>
 
                     <div id="footerTel">
                         <p>
                             <div id="lienFooterTel">
                                 <i class="fa-sharp fa-solid fa-phone fa-2xl" aria-hidden="true"></i>
+                                <p> Pour prendre rendez-vous, contactez le secrétariat :</p>
                                 <a href="tel:+33632147594" tabindex="-1"> 06 32 14 75 94</a>
                             </div>
                         </p>
                     </div>
                 </div>
-                <div id="footerListContainer">
-                    <div class="footerList">
-                        <ul>
-                            <li>En cas d'urgence : Contacter le SAMU tél. <a href="tel:15">15</a></li>
-                        </ul>
-                    </div>
+                    <p id="footerUrgence">En cas d'urgence : Contacter le SAMU tél. <a href="tel:15">15</a></p>
+
                     {# <div class="footerList">
                         <ul>
                             <li>Santé Publique France :
@@ -144,7 +144,6 @@
                             </li>
                         </ul>
                     </div>   #}
-                </div>
                         {#
                             <li>Conseil National de l'Ordre des Médecins :
                                 <a href="https://www.conseil-national.medecin.fr/annuaire">Annuaire</a>
