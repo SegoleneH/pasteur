@@ -531,7 +531,7 @@ footer {
         @include disflex;
         @include flexDirection($direction : row);
         @include flexCenter($justify : space-around);
-        width: 100dvw;
+        width: 96dvw;
         margin: 0;
 
         #footerTel,
@@ -758,7 +758,6 @@ footer {
         ul {
             height: 100dvh;
         }
-    
     }
 
     .backdropBlur {
@@ -771,12 +770,24 @@ footer {
     }
     #footerTel, #footerAdresse{
         margin: 40px 3dvw 0 3dvw;
+        width: 30dvw;
     }
-    #footerTopContainer {
-        @include disflex;
+    footer {
         @include flexDirection($direction : column);
-        width: 96dvw;
-        margin: 0;
+        #footerTopContainer {
+            @include flexDirection($direction : column);
+            margin: 0 auto;
+            width: 70dvw;
+        }
+        #footerUrgence {
+            width: 20dvw;
+            margin: 20px 5dvw 0 5dvw;
+            @include flexCenter($justify : center);
+        }
+        #mentionsLeg {
+            width: 70dvw;
+            margin: 0px auto;
+        }
     }
 }
 
