@@ -50,7 +50,7 @@ h5 {
 #footerAdresse span,
 #footerAdresse p,
 #footerAdresse address,
-#footerTel p, #footerUrgence {
+#footerTel, #footerUrgence {
     font-size: 1.2rem;
 }
 #sectionAcces, #sectionPraticien, footer {
@@ -530,7 +530,9 @@ footer {
     #footerTopContainer {
         @include disflex;
         @include flexDirection($direction : row);
-        width: 92dvw;
+        @include flexCenter($justify : space-around);
+        width: 100dvw;
+        margin: 0;
 
         #footerTel,
         #footerAdresse {
@@ -538,7 +540,9 @@ footer {
             max-width: 45dvw;
             margin: 40px 2dvw 0 2dvw;
             @include flexDirection($direction : column);
-
+            .fa-house {
+                margin-top: 25px;
+            }
             a {
                 font-size: 1.2rem;
                 color: $bleu;
@@ -547,39 +551,30 @@ footer {
                     color: rgb(21, 126, 117);
                 }
             }
-        }
-
-        #footerAdresse span,
-        #footerTel p {
-            @include flexDirection($direction : row);
-
             i {
                 line-height: 1em;
             }
-
         }
         
         #footerAdresse  {
             address {
                 font-style: normal;
-                margin: 30px auto;
-            }
-            p {
-                margin: 10px auto;
+                line-height: 2.6rem;
+                text-align: center;
+                margin: 15px 0;
             }
         }
 
-        #footerTel p {
-            #lienFooterTel {
-                @include flexDirection($direction : row);
-                height: 100px;
-                @include flexWrap($wrap : wrap);
+        #footerTel  {
+            @include flexDirection($direction : column);
+            @include flexWrap($wrap : wrap);
+            text-align: center;
+            a {
+                text-align: center;
             }
         }
-        #lienFooterTel {
-            text-align: center;
-        }
     }
+
     #footerUrgence,  #mentionsLeg {
 
         width: 92dvw;
@@ -673,11 +668,6 @@ footer {
     .containerPraticien {
         max-width: 200px;
 
-    }
-    footer {
-        #footerTopContainer{
-            @include flexDirection($direction : column);
-        }
     }
 }
 
@@ -781,6 +771,12 @@ footer {
     }
     #footerTel, #footerAdresse{
         margin: 40px 3dvw 0 3dvw;
+    }
+    #footerTopContainer {
+        @include disflex;
+        @include flexDirection($direction : column);
+        width: 96dvw;
+        margin: 0;
     }
 }
 
