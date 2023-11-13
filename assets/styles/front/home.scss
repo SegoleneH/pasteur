@@ -472,71 +472,81 @@ footer, #footerTel, #footerAdresse, .nav-item {
 
 
 //footer
-footer {
-    #footerTopContainer {
-        @include disflex;
-        @include flexDirection($direction : row);
-        width: 92dvw;
-        #footerTel, #footerAdresse{
-            flex-grow: 1;
-            max-width: 45dvw;
-            margin: 40px 2dvw 0 2dvw;
-            @include flexDirection($direction : column);
+
+#footerListContainer {
+    @include disflex;
+    @include flexDirection($direction : row);
+}
+.footerList {
+    max-width: 45dvw;
+    margin: 0 1dvw 40px 1dvw;
+    ul {
+        h6, p {
+            font-weight: 600;
+        }
+        h6 {
+            margin: 20px auto;
+        }
+        li {
+            margin: 15px 0;
             a {
-                font-size: 1.2rem;
                 color: $bleu;
-                
+    
                 &:hover {
                     color: rgb(21, 126, 117);
                 }
             }
         }
-        #footerAdresse span, #footerTel p {
+    }
+}
+footer {
+    #footerTopContainer {
+            @include disflex;
             @include flexDirection($direction : row);
-            i {
-                line-height: 1em;
-            }
-            address {
-                font-style: normal;
-            }
-        }
-        #footerAdresse p {
-            font-style: italic;
-        }
-        #footerTel p {
-            #lienFooterTel {
-                @include flexDirection($direction : row);
-                height: 100px;
-
-            }
-        }
-    }
-    #footerListContainer {
-        @include disflex;
-        @include flexDirection($direction : row);
-    }
-    .footerList {
-        max-width: 45dvw;
-        margin: 0 1dvw 40px 1dvw;
-        ul {
-            h6, p {
-                font-weight: 600;
-            }
-            h6 {
-                margin: 20px auto;
-            }
-            li {
-                margin: 15px 0;
+            width: 92dvw;
+    
+            #footerTel,
+            #footerAdresse {
+                flex-grow: 1;
+                max-width: 45dvw;
+                margin: 40px 2dvw 0 2dvw;
+                @include flexDirection($direction : column);
+    
                 a {
+                    font-size: 1.2rem;
                     color: $bleu;
-        
+    
                     &:hover {
                         color: rgb(21, 126, 117);
                     }
                 }
             }
+    
+            #footerAdresse span,
+            #footerTel p {
+                @include flexDirection($direction : row);
+    
+                i {
+                    line-height: 1em;
+                }
+    
+                address {
+                    font-style: normal;
+                }
+            }
+    
+            #footerAdresse p {
+                font-style: italic;
+            }
+    
+            #footerTel p {
+                #lienFooterTel {
+                    @include flexDirection($direction : row);
+                    height: 100px;
+                    @include flexWrap($wrap : wrap);
+                }
+            }
         }
-    }
     #mentionsLeg {
         width: 92dvw;
         text-align: center;
@@ -628,6 +638,11 @@ footer {
     .containerPraticien {
         max-width: 200px;
 
+    }
+    footer {
+        #footerTopContainer{
+            @include flexDirection($direction : column);
+        }
     }
 }
 
