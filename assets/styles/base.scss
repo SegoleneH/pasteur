@@ -1,4 +1,3 @@
-
 @import 'app.scss';
 
 //&::::::::::::::::::::::::::::::::::GENERAL::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -11,18 +10,28 @@
 body {
     background-color: $background;
 
-    h2, th {
+    h2,
+    th {
         text-align: center;
     }
+
     .custom-wrapper,
     .ctnListesNav,
-    .pure-g, .liensMenu, .menuLogin, .btnContainer, .btnRow, #praticien_metiers,
+    .pure-g,
+    .liensMenu,
+    .menuLogin,
+    .btnContainer,
+    .btnRow,
+    #praticien_metiers,
     #article_tags,
-    #article_editeurs, .topContainer {
+    #article_editeurs,
+    .topContainer {
         @include disflex;
     }
-    form, form div {
-        @include flexColumn;
+
+    form,
+    form div {
+        @include flexDirection;
     }
 
     section {
@@ -63,17 +72,21 @@ li {
 
 
 //&::::::::::::::::::::::::::::::MENU HEADER:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-.custom-wrapper, .ctnListesNav, .pure-g {
+.custom-wrapper,
+.ctnListesNav,
+.pure-g {
     flex-flow: row nowrap;
 }
+
 .custom-wrapper {
     background-color: $bleu-base;
-    height: 60px;   
+    height: 60px;
 
     .custom-brand {
         font-size: 1.2rem;
     }
-    .ctnListesNav {     
+
+    .ctnListesNav {
         justify-content: center;
     }
 
@@ -84,14 +97,18 @@ li {
             display: none;
         }
     }
-    .custom-brand p, li, a {
+
+    .custom-brand p,
+    li,
+    a {
         margin: 0;
     }
+
     .pure-menu-link {
         color: $noir;
         padding: 1em 0.5em;
     }
-    
+
     .fa-power-off {
         margin: 0 0.3em 0 0.1em;
     }
@@ -110,11 +127,11 @@ tbody {
     tr {
         height: 80px;
     }
-    
+
     .btnTdIndex {
         width: 360px;
 
-        .afficherBtn{
+        .afficherBtn {
             margin-right: 10px;
         }
     }
@@ -133,7 +150,9 @@ tbody {
 //&:::::::::::::::::::::::::::::::::::BOUTONS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //* Boutons frontPage bleu foncé
-#topSectionBtn button, .cardBtn, #faqExpand {
+#topSectionBtn button,
+.cardBtn,
+#faqExpand {
     @include btnDelay;
     @include button($color: $bleu);
     color: $blanc;
@@ -147,7 +166,11 @@ tbody {
 }
 
 //* Boutons back-office bleu clair
-td button, .btnContainer button, .saveBtn, .previousBtn, #loginBtn, .vich-image input {
+td button,
+.btnContainer button,
+.saveBtn,
+.previousBtn,
+#loginBtn {
     @include btnDelay;
     @include button($color: $bleu-clair);
     color: $noir;
@@ -158,6 +181,7 @@ td button, .btnContainer button, .saveBtn, .previousBtn, #loginBtn, .vich-image 
         box-shadow: 0 2px 3px 2px $box-shadow;
     }
 }
+
 //* Bouton supprimer
 .supprBtn {
     @include btnDelay;
@@ -173,6 +197,7 @@ td button, .btnContainer button, .saveBtn, .previousBtn, #loginBtn, .vich-image 
         box-shadow: 0 2px 3px 2px $box-shadow;
     }
 }
+
 .previousBtn {
     margin-left: 20px;
 }
@@ -185,6 +210,7 @@ a {
 .btnRow {
     flex-direction: row;
     justify-content: center;
+
     div {
         padding-inline: 1rem;
     }
@@ -199,20 +225,20 @@ a {
     }
 }
 
-#praticien_imageFile_file, 
+#praticien_imageFile_file,
 #article_imageFile_file {
     width: 40%;
 }
 
 //&:::::::::::::::::::::::::::::::::::FORMULAIRES:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 form {
-    
+
     textarea {
         margin: 10px 0;
         width: 40vw;
         height: 100px;
     }
-    
+
     input {
         padding: 5px 0;
         margin: 5px 0;
@@ -233,20 +259,24 @@ form {
 }
 
 //&::::::::::::::::::::::::::::checkboxes:::::::::::::::::::::::::::
-#praticien_metiers, #article_tags, #article_editeurs {
+#praticien_metiers,
+#article_tags,
+#article_editeurs {
     flex-wrap: wrap;
     flex-direction: row;
     margin: 10px 0 0 0;
+
     label {
         width: 28%;
     }
-    input{
+
+    input {
         width: 5%;
     }
 }
 
-div{
-    .required{
+div {
+    .required {
         margin: 20px 0 5px 0;
     }
 }
@@ -255,7 +285,9 @@ div{
 #editeur_user_enabled {
     display: none;
 }
-.titreIndex, .topContainer h2 {
+
+.titreIndex,
+.topContainer h2 {
     font-size: 2.5rem;
 }
 
@@ -263,6 +295,7 @@ div{
     width: 100%;
     margin: 20px auto;
 }
+
 .topContainer {
     height: 100px;
     width: 90%;
@@ -270,8 +303,8 @@ div{
     padding-top: 20px;
 
     h2 {
-        width: 80%;
-        
+        width: 90%;
+        margin-right: 5dvw;
     }
 }
 
@@ -320,20 +353,22 @@ form {
     .custom-wrapper .ctnListesNav {
         justify-content: flex-start;
     }
+
     .column {
-        @include flexColumn;
+        @include flexDirection;
     }
+
     // border: none;
     // border-bottom: none;
     // ^ Impossible de ré-écrire sur ce code : 
-        // .pure-table-horizontal td,
-        // .pure-table-horizontal th {
-        //     border-width: 0 0 1px 0;
-        //     border-bottom-width: 1px;
-        //     border-bottom: 1px solid #cbcbcb;
-        // }
-        .topContainer {
-            @include flexColumn;
-            height: auto;
-        }
+    // .pure-table-horizontal td,
+    // .pure-table-horizontal th {
+    //     border-width: 0 0 1px 0;
+    //     border-bottom-width: 1px;
+    //     border-bottom: 1px solid #cbcbcb;
+    // }
+    .topContainer {
+        @include flexDirection;
+        height: auto;
+    }
 }

@@ -20,13 +20,13 @@ span {
 }
 
 //* Fonts & Texte
-h1, h2, h3, h4, h5, p, .containerNews, .skipShow, .nav-menu, a {
+h1, h2, h3, h4, h5, p, .containerNews, .skipShow, .nav-menu, a, .faqReponse, footer {
     hyphens: auto;
 }
 h1,
 h3,
 h4,
-h5 {
+h5, h6 {
     font-size: 2.5rem;
 }
 .containerNews, .skipShow, .nav-menu {
@@ -43,8 +43,14 @@ h5 {
     margin-bottom: 80px;
 }
 
-#topSectionTel,#topSectionAdresse, #sectionFaq p, #sectionAcces p, #sectionPraticien p, footer a, footer p {
+#topSectionTel,#topSectionAdresse, #sectionFaq p, #sectionAcces p, #sectionPraticien p {
     font-size: 1.5rem;
+}
+#footerAdresse span,
+#footerAdresse p,
+#footerAdresse address,
+#footerTel p {
+    font-size: 1.2rem;
 }
 #sectionAcces, #sectionPraticien, footer {
     margin: 0 auto;
@@ -77,7 +83,7 @@ i{
 #sectionAcces, #sectionPraticien, footer {
     @include flexWrap;
 }
-h3, h5, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse, #mentionsLeg {
+h3, h5, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #footerAdresse {
     @include flexCenter;
 }
 #main, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
@@ -85,14 +91,14 @@ h3, h5, #sectionAccesText, #sectionPraticien, .containerPraticien, #footerTel, #
 }
 #topSection, #topSectionTel, #topSectionAdresse, .navbarFront, .nav-menu, .nav-item, #sectionNews, .containerNews,
  #sectionFaq, .faqQuestion, .faqReponse, .containerPraticien, .containerPraticienText,
-footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
+footer, #footerTel, #footerAdresse, .nav-item {
     align-items: center;
 }
 #topSection, #topSectionTel, #topSectionAdresse, .faqQuestion, .faqReponse, #faqExpandDiv, #sectionAcces, .nav-menu {
     @include disflex;
 }
 #sectionNews, .containerNews, #sectionFaq, #sectionAccesText, .containerPraticien, .containerPraticienText {
-    @include flexColumn;
+    @include flexDirection;
 }
 .containerNews, #sectionAcces, #faqExpandDiv {
     width: 80dvw;
@@ -311,7 +317,6 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
     padding: 0 5px;
     padding-bottom: 10px;
     text-align: left; 
-    hyphens: auto;
  }
 
  .faqBtn {
@@ -468,12 +473,84 @@ footer, #footerTel, #footerAdresse, #mentionsLeg, .nav-item {
 
 //footer
 footer {
-    justify-content: space-around;
-}
-#footerTel, #footerAdresse, #mentionsLeg {
-    gap: 5px;
-    flex-grow: 1;
-    margin: 40px 0;
+    #footerTopContainer {
+        @include disflex;
+        @include flexDirection($direction : row);
+        width: 92dvw;
+        #footerTel, #footerAdresse{
+            flex-grow: 1;
+            max-width: 45dvw;
+            margin: 40px 2dvw 0 2dvw;
+            @include flexDirection($direction : column);
+            a {
+                font-size: 1.2rem;
+                color: $bleu;
+                
+                &:hover {
+                    color: rgb(21, 126, 117);
+                }
+            }
+        }
+        #footerAdresse span, #footerTel p {
+            @include flexDirection($direction : row);
+            i {
+                line-height: 1em;
+            }
+            address {
+                font-style: normal;
+            }
+        }
+        #footerAdresse p {
+            font-style: italic;
+        }
+        #footerTel p {
+            #lienFooterTel {
+                @include flexDirection($direction : row);
+                height: 100px;
+
+            }
+        }
+    }
+    #footerListContainer {
+        @include disflex;
+        @include flexDirection($direction : row);
+    }
+    .footerList {
+        max-width: 45dvw;
+        margin: 0 1dvw 40px 1dvw;
+        ul {
+            h6, p {
+                font-weight: 600;
+            }
+            h6 {
+                margin: 20px auto;
+            }
+            li {
+                margin: 15px 0;
+                a {
+                    color: $bleu;
+        
+                    &:hover {
+                        color: rgb(21, 126, 117);
+                    }
+                }
+            }
+        }
+    }
+    #mentionsLeg {
+        width: 92dvw;
+        text-align: center;
+        margin: 20px 4dvw 0 4dvw;
+        padding: 30px 0;
+        border-top: 1px dotted $bleu;
+        a {
+            color: $bleu;
+    
+            &:hover {
+                color: rgb(21, 126, 117);
+            }
+        }
+    }
 }
 
 // RESPONSIVE
@@ -516,7 +593,7 @@ footer {
             a {
                 @include disflex;
                 flex-wrap: wrap;
-                @include flexColumn;
+                @include flexDirection;
                 
             }
         
@@ -566,14 +643,9 @@ footer {
     }
 
     #footerTel,
-    #footerAdresse,
-    #mentionsLeg {
+    #footerAdresse {
         justify-content: flex-start;
         min-width: 70dvw
-    }
-
-    #mentionsLeg {
-        margin-top: 20px;
     }
 
     footer {
@@ -616,7 +688,7 @@ footer {
         left: -100%;
         top: 0;
         gap: 0;
-        flex-direction: column;
+        @include flexDirection($direction : column);
         width: 100%;
         transition: 0.3s;
         height: 100dvh;
@@ -656,6 +728,9 @@ footer {
     iframe {
         height: 300px;
         width: 300px;
+    }
+    #footerTel, #footerAdresse{
+        margin: 40px 3dvw 0 3dvw;
     }
 }
 

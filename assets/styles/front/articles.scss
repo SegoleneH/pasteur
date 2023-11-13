@@ -4,7 +4,9 @@
     flex-direction: row;
     justify-content: center;
 
-    .articleCard, .articleCardWithoutImg, #cardContainer {
+    .articleCard,
+    .articleCardWithoutImg,
+    #cardContainer {
         height: 300px;
         display: flex;
         flex-direction: column;
@@ -12,7 +14,7 @@
     }
 
 
-    
+
     .articleCard {
         border-radius: 20px;
         width: 350px;
@@ -21,26 +23,27 @@
         cursor: pointer;
         background-color: $background-cards;
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-    
+
         &:hover {
             box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
             background-color: $background-cards-hover;
         }
-        
+
         #cardContainer {
             display: flex;
             justify-content: space-around;
             flex-direction: column;
-            
+
             img {
                 object-fit: cover;
                 height: 60%;
             }
-            
-            .articleCardTxt, .articleCardWithoutImg {
+
+            .articleCardTxt,
+            .articleCardWithoutImg {
                 text-align: center;
-                
-                :nth-child(1){
+
+                :nth-child(1) {
                     font-weight: 800;
                     font-size: 1.3em;
                     height: 50px;
@@ -50,12 +53,13 @@
             }
 
             .articleCardTxt {
-                :nth-child(1){
+                :nth-child(1) {
                     margin-top: 20px;
                 }
             }
+
             .articleCardWithoutImg {
-                :nth-child(1){
+                :nth-child(1) {
                     margin-top: 40px;
                 }
             }
@@ -77,9 +81,9 @@ section {
 //TODO  
 //&:::::::::::::::::::::::::::::::::::::: RESPONSIVE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @media (max-width: 1023px) {
-    
+
     .topContainer {
-        @include flexColumn;
+        @include flexDirection;
         align-items: center;
         margin: 0 auto;
 
@@ -87,6 +91,7 @@ section {
             width: 60%;
         }
     }
+
     .imgContainer {
         max-width: 70%;
         max-height: 70%;
