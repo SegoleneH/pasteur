@@ -9,10 +9,12 @@
 }
 
 @mixin flexWrap($wrap : wrap) {
+    display: flex;
     flex-wrap: wrap;
 }
 
 @mixin flexDirection($direction : column) {
+    display: flex;
     flex-direction: $direction;
 }
 
