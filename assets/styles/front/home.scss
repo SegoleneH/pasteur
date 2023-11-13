@@ -382,9 +382,8 @@ footer, #footerTel, #footerAdresse, .nav-item {
         overflow: hidden;
         img {
             object-fit: cover;
-            height: 100%;
-            width: 100%;
-            // aspect-ratio: 1;
+            height: 300px;
+            width: 300px;
         }
         &:hover {
             border: 2px solid $box-shadow;
