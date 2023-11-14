@@ -828,22 +828,12 @@ footer {
                 font-size: 3rem;
             }
             
-    
             .iconeBande {
                 text-align: center;
                 justify-content: center;
                 @include flexDirection($direction : column);
             }
     
-            //     p {
-            //         font-size: 2rem;
-            //         margin-top: 20px;
-            //     }
-    
-            //     span {
-            //         font-size: 1
-            //     }
-            // }
         }
         #footerTopContainer {
             @include flexDirection($direction : column);
