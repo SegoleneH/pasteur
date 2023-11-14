@@ -54,6 +54,9 @@ class Praticien
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
+    #[ORM\Column(length: 190, nullable: true)]
+    private ?string $joursOff = null;
+
     public function __construct()
     {
         $this->metiers = new ArrayCollection();
@@ -163,5 +166,17 @@ class Praticien
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getJoursOff(): ?string
+    {
+        return $this->joursOff;
+    }
+
+    public function setJoursOff(?string $joursOff): static
+    {
+        $this->joursOff = $joursOff;
+
+        return $this;
     }
 }
