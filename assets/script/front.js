@@ -136,3 +136,25 @@ window.onscroll = () => {
         toTheTtop.style.backgroundPosition = `0 ${progressTest}px `;
     }, 100)
 }
+
+//text DYn rdv prat
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textDyn = document.querySelectorAll('.texteDyn');
+    textDyn.forEach(text => {
+        let textlength = text.innerText.length;
+        if (textlength > 120) {
+        text.setAttribute('style', `font-size: 0.9em;`);
+        }
+        else if (textlength > 100) {
+            text.setAttribute('style', `font-size: 1em;`);
+            }
+
+        else if (textlength > 80) {
+            text.setAttribute('style', `font-size: 1.3em;`);
+            }
+    })
+})
+
+

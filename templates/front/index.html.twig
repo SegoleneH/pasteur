@@ -113,6 +113,11 @@
                         {% else %}
                             <button class="cardBtn" onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rendez-vous par téléphone avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
                         {% endif %}
+                        {% if praticiensMetiers.praticien.joursOff %}
+                            <p class="texteDyn">Tous les jours sauf {{ praticiensMetiers.praticien.joursOff }}</p>
+                        {% else %}
+                            <p class="texteDyn">Tous les jours</p>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

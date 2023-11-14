@@ -31,6 +31,15 @@ class PraticienType extends AbstractType
                 ],
                 'purify_html' => true,
             ])
+            ->add ('joursOff', null, [
+                'label' => ' Indiquez ici les jours sans rendez-vous',
+                'help' => 'Saisissez les jours où le praticien ne prends pas de rendez-vous (ex: Lundi, Mardi, Mercredi, etc.)',
+                'help_attr' => [ 'class' => 'helpForm'],
+                'attr' => [
+                    'placeholder' => 'Saisissez les jours sans prise de rendez-vous possible',
+                ],
+                'purify_html' => true,
+            ])
             ->add('lienRdv', null, [
                 'label' => 'Lien de rdv ',
                 'help' => 'Saisissez le lien de prise de rdv du praticien (doctissimo). Si aucune valeur n\'est saisie, le numéro du standard sera utilisé.',
