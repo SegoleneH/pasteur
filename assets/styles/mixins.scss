@@ -1,17 +1,28 @@
 
+// @mixin disFlex($wrap : wrap) {
+//     display: flex;
+//     flex-wrap: $wrap;
+// }
 @mixin disflex {
     display: flex;
 }
+// Pour remplacer mixin ci dessous
+@mixin flexWrap($wrap : wrap) {
+    display: flex;
+    flex-wrap: wrap;
+}
+//  center-xy($x : space-between, $y : center)
+// @mixin centerXY {
+//     justify-content: $x;
+//     align-items: $y;
+// }
+
 
 @mixin flexCenter($justify : center) {
     display: flex;
     justify-content: center;
 }
 
-@mixin flexWrap($wrap : wrap) {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 @mixin flexDirection($direction : column) {
     display: flex;
