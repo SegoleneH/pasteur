@@ -149,11 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else if (textlength > 100) {
             text.setAttribute('style', `font-size: 1em;`);
-            }
-
+        }
         else if (textlength > 80) {
             text.setAttribute('style', `font-size: 1.3em;`);
-            }
+        }
     })
 })
 
