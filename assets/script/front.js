@@ -156,4 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("cacheBody").style.display = "none";
+}
+// window.onload = () => {
+//     setTimeout(showPage, 1000);
+// }
+
+document.addEventListener('DOMContentLoaded', showPage());
+
 
