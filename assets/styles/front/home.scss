@@ -44,8 +44,11 @@ h5 {
     margin-bottom: 80px;
 }
 
-#topSectionTel,#topSectionAdresse, #sectionFaq p, #sectionAcces p, #sectionPraticien p {
+#topSectionTel,#topSectionAdresse, #sectionFaq p, #sectionAcces p{
     font-size: 1.5rem;
+}
+#sectionPraticien p {
+    font-size: 1.3rem;
 }
 #footerAdresse span,
 #footerAdresse p,
@@ -57,7 +60,7 @@ h5 {
     margin: 0 auto;
 }
 
-button {
+button, #newMentionLeg {
     font-size: 1.3rem;
 }
 article {
@@ -81,6 +84,18 @@ i{
         &:hover {
             color: $bleu-base;
         }
+}
+#footerUrgence,
+#mentionsLeg, #topSection {
+
+    a,
+    #newMentionLeg,  a h1 {
+        color: $bleu;
+
+        &:hover {
+            color: rgb(21, 126, 117);
+        }
+    }
 }
 #sectionAcces, #sectionPraticien, footer {
     @include flexWrap;
@@ -235,7 +250,6 @@ footer, #footerTel, #footerAdresse, .nav-item {
     max-height: 385px;
     max-width: 100dvw;
     height: 385px;
-    // background-image: url(../../images/maison-medicale-pasteur-santes.png);
     background-image: url(../../images/maison-medicale-pasteur-santes.webp);
     background-repeat: no-repeat;
     object-fit: contain;
@@ -246,7 +260,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
     
     h2 {
         color: $bleu;
-        // margin: 0 40px;
+        margin-right: 1.5em;
         font-size: 3.5rem;
         width: 470px;
         line-height: 1.2em;
@@ -416,12 +430,12 @@ footer, #footerTel, #footerAdresse, .nav-item {
     justify-content: space-evenly;
 
     :first-child {
-        font-size: 25px;
+        font-size: 1.2rem;
         font-weight: bold;
     }
 
     :nth-child(2) {
-        font-size: 20px;
+        font-size: 0.9rem;
         margin-top: 0;
     }
 }
@@ -472,33 +486,6 @@ footer, #footerTel, #footerAdresse, .nav-item {
 }
 .hide {
     opacity: 0;
-}
-
-//section horaires
-
-#sectionHoraires {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 80dvw;
-    gap: 5%;
-}
-
-.sectionHorairesText {
-    min-width: 300px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    hyphens: auto;
-    flex-basis: 40%;
-
-    p {
-        text-align: justify;
-    }
 }
 
 //footer
@@ -689,6 +676,14 @@ footer {
             font-size: 1rem;
         }
     }
+    #sectionPresentation {
+        height: 370px;
+
+        h2 {
+            margin: 8dvh 2dvw 2dvh 2dvw;
+            width: 470px;
+        }
+    }
     #sectionAccesText {
         margin-right: 0;
     }
@@ -708,6 +703,16 @@ footer {
     #topSection {
         h1 {
             width: 150px;
+        }
+    }
+    #sectionPresentation {
+        background-image: url(../../images/maison-medicale-mobile-crop2.webp);
+        background-position: center;
+        background-size: cover;
+        height: 350px;
+        h2 {
+            
+            width: 470px;
         }
     }
     .hamburger {
@@ -768,7 +773,9 @@ footer {
             height: 100dvh;
         }
     }
-
+    #sectionPraticien p {
+        font-size: 1.2rem;
+    }
     .backdropBlur {
         backdrop-filter: blur(8px);
     }
