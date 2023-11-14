@@ -517,6 +517,27 @@ footer, #footerTel, #footerAdresse, .nav-item {
     }
 }
 footer {
+    margin-top: 40px;
+
+    #bandeIcones {
+        @include disflex;
+        @include flexDirection($direction : row);
+        background-color: rgba(31, 185, 172, 0.2);
+        padding: 60px;
+        gap: 10%;
+
+        i {
+            font-size: 3rem;
+        }
+        .iconeBande {
+            width: 30dvw;
+            text-align: center;
+            p {
+                font-size: 2rem;
+                margin-top: 20px;
+            }
+        }
+    }
     #footerTopContainer {
         @include disflex;
         @include flexDirection($direction : row);
@@ -677,13 +698,20 @@ footer {
         }
     }
     #sectionPresentation {
-        height: 370px;
+        background-image: url(../../images/maison-medicale-mobile-crop2.webp);
+        background-position: bottom;
+        background-size: cover;
+        height: 390px;
 
         h2 {
             margin: 8dvh 2dvw 2dvh 2dvw;
             width: 470px;
         }
     }
+
+
+
+
     #faqExpandDiv {
         max-height: 80px;
         font-size: 1.1rem;
@@ -701,7 +729,6 @@ footer {
     footer {
         width: 70dvw;
     }
-
 }
 
 @media (max-width:768px) {
@@ -710,15 +737,7 @@ footer {
             width: 150px;
         }
     }
-    #sectionPresentation {
-        background-image: url(../../images/maison-medicale-mobile-crop2.webp);
-        background-position: bottom;
-        background-size: cover;
-        height: 389px;
-        h2 {
-            width: 470px;
-        }
-    }
+    
     .hamburger {
         display: block;
         transition: 0.3s;
