@@ -135,8 +135,7 @@ window.onscroll = () => {
     }, 100)
 }
 
-//text DYn rdv prat
-
+//text Dynamique rdv prat
 
 document.addEventListener('DOMContentLoaded', () => {
     const textDyn = document.querySelectorAll('.texteDyn');
@@ -154,14 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+//loader
+
 function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("cacheBody").style.display = "none";
 }
-// window.onload = () => {
-//     setTimeout(showPage, 1000);
-// }
-
 document.addEventListener('DOMContentLoaded', showPage());
-
-
