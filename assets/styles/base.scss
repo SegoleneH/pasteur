@@ -176,7 +176,8 @@ td button,
 .btnContainer button,
 .saveBtn,
 .previousBtn,
-#loginBtn {
+#loginBtn, 
+#newMentionLeg {
     @include btnDelay;
     @include button($color: $bleu-clair);
     color: $noir;
@@ -312,6 +313,9 @@ div {
         width: 90%;
         margin: 10px 5dvw 0 0;
     }
+    a {
+        hyphens: none;
+    }
 }
 
 
@@ -349,9 +353,6 @@ form {
 //* Moins de 1024px => Tablettes
 @media (max-width: 1023px) {
 
-    // button {
-    //     margin: 10px 30vw;
-    // }
     .custom-wrapper {
         overflow-x: scroll;
     }
