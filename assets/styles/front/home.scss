@@ -848,6 +848,7 @@ footer {
         #footerTopContainer {
             @include flexDirection($direction : column);
             width: 70dvw;
+            margin: 0 auto;
         }
         #footerAdresse {
             width: 66dvw;
