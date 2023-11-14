@@ -117,7 +117,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
 #sectionNews, .containerNews, #sectionFaq, #sectionAccesText, .containerPraticien, .containerPraticienText {
     @include flexDirection;
 }
-.containerNews, #sectionAcces, #faqExpandDiv {
+.containerNews, #sectionAcces {
     width: 80dvw;
 }
 #topSection, #sectionPresentation, #sectionNews, #sectionFaq, #sectionAcces, #sectionPraticien {
@@ -680,6 +680,11 @@ footer {
             width: 470px;
         }
     }
+    #faqExpandDiv {
+        max-height: 80px;
+        font-size: 1.1rem;
+        @include flexWrap($wrap : nowrap);
+    }
     #sectionAccesText {
         margin-right: 0;
     }
@@ -703,11 +708,10 @@ footer {
     }
     #sectionPresentation {
         background-image: url(../../images/maison-medicale-mobile-crop2.webp);
-        background-position: center;
+        background-position: bottom;
         background-size: cover;
-        height: 350px;
+        height: 389px;
         h2 {
-            
             width: 470px;
         }
     }
