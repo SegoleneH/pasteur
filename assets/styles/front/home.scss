@@ -519,14 +519,15 @@ footer, #footerTel, #footerAdresse, .nav-item {
 }
 footer {
     margin-top: 40px;
-    width: 100dvw;
 
     #bandeIcones {
         @include disflex;
         @include flexDirection($direction : row);
+        justify-content: space-around;
         background-color: rgba(31, 185, 172, 0.2);
-        padding: 60px 45px;
+        // padding: 60px 45px;
         gap: 10%;
+        width: 100%;
 
         i {
             font-size: 3rem;
@@ -818,9 +819,10 @@ footer {
     footer {
         #bandeIcones {
             @include flexDirection($direction : column);
-            width: 100%;
+            // padding: 10dvh 34.5dvw;
             gap: 10%;
-            margin: 0 auto;
+            // margin: 0 auto;
+            width: 100%;
     
             i {
                 font-size: 3rem;
