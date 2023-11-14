@@ -538,7 +538,7 @@ footer {
                 margin-top: 20px;
             }
             span {
-                font-size: 1
+                font-size: 1rem;
             }
         }
     }
@@ -816,10 +816,9 @@ footer {
         width: 30dvw;
     }
     footer {
-        @include flexDirection($direction : column);
         #bandeIcones {
             @include flexDirection($direction : column);
-            padding: 10dvh 34.5dvw;
+            width: 100%;
             gap: 10%;
             margin: 0 auto;
     
@@ -854,11 +853,8 @@ footer {
             margin: 20px 5dvw 0 5dvw;
             @include flexCenter($justify : center);
         }
-        #footerUrgence, #mentionsLeg {
-            width: 55dvw;
-            margin: 20px 2.5dvw 0 2.5dvw;
-        }
         #mentionsLeg {
+            width: 55dvw;
             margin: 0px auto;
         }
         #footerTel {
