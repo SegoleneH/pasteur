@@ -649,7 +649,7 @@ footer {
             font-size: 2.5rem;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
-            padding: 10px;        
+            padding: 10px;
         }
     }
     #sectionNews {
@@ -781,8 +781,8 @@ footer {
         @include flexCenter;
         h2  {
             font-size: 2.5rem;
-            margin: 30px 0;
-            max-width: 96dvw;
+            margin: 20px 0;
+            max-width: 85dvw;
         }
     }
     
@@ -913,9 +913,13 @@ footer {
             }
             
             .iconeBande {
+                margin-top: 20px;
                 text-align: center;
                 justify-content: center;
                 @include flexDirection($direction : column);
+                p {
+                    margin: 0;
+                }
             }
     
         }

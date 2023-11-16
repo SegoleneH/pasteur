@@ -311,7 +311,6 @@ div {
     justify-content: space-between;
     padding-top: 20px;
     flex-direction: column;
-    margin-bottom: 12dvh;
 
     h2 {
         width: 92%;
@@ -319,6 +318,7 @@ div {
     }
     div {
         width: 100dvw;
+        padding-left: 20px;
     }
 }
 
