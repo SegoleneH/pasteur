@@ -89,7 +89,7 @@
                 <div class="containerPraticien">
                     {% if praticiensMetiers.praticien.imageName %}
                         <div class="praticienImg">
-                            <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
+                            <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') | imagine_filter('webp_80') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
                         </div>
                     {% else %}
                         <div class="praticienImg">

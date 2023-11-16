@@ -63,6 +63,7 @@ class PraticienType extends AbstractType
             'download_uri' => false,
             'label' => 'Photo du praticien',
             'help' => 'Choisissez la photo du praticien, si aucune photo n\'est choisie, la photo par défaut sera utilisée',
+            'imagine_pattern' => 'webp_80'
             ])
         ;
     }
