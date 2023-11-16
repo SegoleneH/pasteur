@@ -386,11 +386,30 @@ footer, #footerTel, #footerAdresse, .nav-item {
 //section RDV, Equipe
 #sectionPraticien {
     align-items: flex-start;
+    width: 96dvw;
     
+    .containerPraticien {
+        background-color: $background-cards;
+        min-width: 290px;
+        flex-basis: 25%;
+        height: 500px;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 20px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        &:hover {
+            box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
+            background-color: $background-cards-hover;  
+        }
+    
+    }
     h5 {
         margin: 80px 0;
     }
     .praticienImg {
+        width: 310px;
+        height: 310px;
         border-radius: 50%;
         border: 2px solid rgb(145, 145, 145);
         box-shadow: inset 0 0 3px 1px rgb(145, 145, 145);
@@ -398,32 +417,15 @@ footer, #footerTel, #footerAdresse, .nav-item {
         overflow: hidden;
         img, svg {
             object-fit: cover;
-            height: 310px;
-            width: 310px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
         }
         &:hover {
             border: 2px solid $box-shadow;
             box-shadow: inset 0 0 3px 1px rgb(156, 156, 156), 0 0 3px 1px $box-shadow;
         }
-    }
-}
-.containerPraticien {
-    background-color: $background-cards;
-    min-width: 300px;
-    flex-basis: 25%;
-    height: 500px;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 20px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-    &:hover {
-        box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
-        background-color: $background-cards-hover;  
-    }
-
-    img, svg {
-        height: 60%;
     }
 }
 .containerPraticienText {
@@ -714,12 +716,9 @@ footer {
         }
     }
 
-
-
-
     #faqExpandDiv {
         max-height: 80px;
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         @include flexWrap($wrap : nowrap);
     }
     #sectionAccesText {
@@ -801,8 +800,23 @@ footer {
             height: 100dvh;
         }
     }
-    #sectionPraticien p {
-        font-size: 1.2rem;
+    #sectionPraticien {
+        width: 80dvw;
+        max-width: 80dvw;
+        p {
+            font-size: 1.2rem;
+        }
+        .containerPraticien {
+            max-width: 70dvw;            // flex-basis: 25%;
+            height: 450px;
+            margin: 20px 5dvw;
+            padding: 10px;
+
+            .praticienImg {
+                width: 210px;
+                height: 210px;
+            }
+        }
     }
     .backdropBlur {
         backdrop-filter: blur(8px);
@@ -828,22 +842,12 @@ footer {
                 font-size: 3rem;
             }
             
-    
             .iconeBande {
                 text-align: center;
                 justify-content: center;
                 @include flexDirection($direction : column);
             }
     
-            //     p {
-            //         font-size: 2rem;
-            //         margin-top: 20px;
-            //     }
-    
-            //     span {
-            //         font-size: 1
-            //     }
-            // }
         }
         #footerTopContainer {
             @include flexDirection($direction : column);

@@ -70,11 +70,23 @@
 section {
 
     .imgContainer {
-        display: flex;
-        justify-content: center;
-        max-width: 80%;
+
         max-height: 80%;
-        margin: 5dvh auto;
+        margin: 5dvh 5dvw;
+        width: 90dvw;
+        border-radius: 20px;
+        overflow: hidden;
+        @include flexCenter;
+
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        &:hover {
+            box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
+            background-color: $background-cards-hover;
+        }
+        
+        img {
+            width: 100%;
+        }
     }
 }
 
@@ -87,14 +99,24 @@ section {
         align-items: center;
         margin: 0 auto;
 
+        .previousBtn {
+            margin-left: 0;
+        }
         h2 {
             width: 60%;
         }
     }
+}
+
+@media (max-width: 768px) {
+
 
     .imgContainer {
-        max-width: 70%;
-        max-height: 70%;
-        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        //* border-radius: 0;
+        //* margin: 10px 0;
+        //* ^ pour essayer d'enlever le border radius sur mobile
     }
 }
