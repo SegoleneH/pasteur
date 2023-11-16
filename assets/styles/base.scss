@@ -308,13 +308,17 @@ div {
 
 .topContainer {
     height: 100px;
-    // width: 90%;
     justify-content: space-between;
     padding-top: 20px;
+    flex-direction: column;
+    margin-bottom: 12dvh;
 
     h2 {
         width: 92%;
         margin: 25px auto;
+    }
+    div {
+        width: 100dvw;
     }
 }
 
