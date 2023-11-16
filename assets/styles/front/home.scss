@@ -261,7 +261,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
     
     h2 {
         color: $bleu;
-        margin-right: 1.5em;
+        margin: 50px 4dvw;
         font-size: 3.5rem;
         width: 470px;
         line-height: 1.2em;
@@ -390,10 +390,9 @@ footer, #footerTel, #footerAdresse, .nav-item {
     
     .containerPraticien {
         background-color: $background-cards;
-        min-width: 290px;
         flex-basis: 25%;
-        height: 85dvh;
-        padding: 20px;
+        height: 500px;
+        padding: 10px 20px 20px 20px;
         margin: 20px auto;
         border-radius: 20px;
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
@@ -530,7 +529,8 @@ footer {
         // padding: 60px 45px;
         gap: 10%;
         width: 100%;
-
+        padding: 10dvh 0;
+        
         i {
             font-size: 3rem;
         }
@@ -545,6 +545,7 @@ footer {
             }
         }
     }
+
     #footerTopContainer {
         @include disflex;
         @include flexDirection($direction : row);
@@ -713,6 +714,7 @@ footer {
         h2 {
             margin: 8dvh 2dvw 2dvh 2dvw;
             width: 470px;
+            font-size: 2rem;
         }
     }
 
@@ -736,6 +738,65 @@ footer {
 }
 
 @media (max-width:768px) {
+
+//*:::::::::::::::::::::::::::::::::::::: FONTS :::::::::::::::::::::::::::::::::::::::::::: 
+
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 2.2rem;
+    }
+
+    .nav-menu li,
+    .skipShow {
+        font-size: 1.8rem;
+    }
+
+    #topSectionTel,
+    #topSectionAdresse,
+    #sectionFaq p,
+    #sectionAcces p, #newMentionLeg, #sectionPraticien p {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+
+    #sectionPresentation {
+
+        @include flexCenter;
+        h2  {
+            font-size: 2.5rem;
+            margin: 30px 0;
+            max-width: 96dvw;
+        }
+    }
+    
+
+    #footerAdresse span,
+    #footerAdresse p,
+    #footerAdresse address,
+    #footerTel,
+    #footerUrgence {
+        font-size: 1.2rem;
+    }
+
+    article {
+
+        .titreArticle {
+            font-size: 1.5rem;
+        }
+
+        .resumeArticle {
+            font-size: 1.1rem;
+        }
+    }
+
+//*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
     #topSection {
         h1 {
             width: 150px;
@@ -808,9 +869,10 @@ footer {
         }
         .containerPraticien {
             max-width: 70dvw;            // flex-basis: 25%;
-            height: 450px;
+            height: 470px;
             margin: 20px 5dvw;
             padding: 10px;
+            justify-content: space-around;
 
             .praticienImg {
                 width: 210px;
@@ -887,7 +949,7 @@ footer {
     margin: -76px 0 0 -76px;
     border: 16px solid rgb(163, 163, 163);
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(43, 204, 216);
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     z-index: 999;

@@ -4,11 +4,13 @@
 
 {% block body %}
     <div class="topContainer">
-        <a href="{{ path('app_faq_index') }}">
-            <button class="previousBtn">Précédent</button>
-        </a>
+        <div>
+            <a href="{{ path('app_faq_index') }}">
+                <button class="previousBtn">Précédent</button>
+            </a>
+        </div>
 
-        <h2>Modifier Faq {{ faq.id }}</h2>
+        <h2>Modifier Question {{ faq.id }}</h2>
     </div>
     
 

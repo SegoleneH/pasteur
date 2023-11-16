@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             text.setAttribute('style', `font-size: 1em;`);
         }
         else if (textlength > 80) {
-            text.setAttribute('style', `font-size: 1.3em;`);
+            text.setAttribute('style', `font-size: 1.1em;`);
         }
     })
 })
