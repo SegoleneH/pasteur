@@ -392,8 +392,8 @@ footer, #footerTel, #footerAdresse, .nav-item {
         background-color: $background-cards;
         min-width: 290px;
         flex-basis: 25%;
-        height: 500px;
-        padding: 20px;
+        height: 60dvh;
+        padding: 10px 20px 20px 20px;
         margin: 20px auto;
         border-radius: 20px;
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
@@ -811,6 +811,7 @@ footer {
             height: 450px;
             margin: 20px 5dvw;
             padding: 10px;
+            justify-content: space-around;
 
             .praticienImg {
                 width: 210px;
