@@ -870,8 +870,10 @@ footer {
         .containerPraticien {
             max-width: 70dvw;            // flex-basis: 25%;
             height: 470px;
-            padding: 10px;
+            // margin: 20px 5dvw;
+            // padding: 10px;
             justify-content: space-around;
+            flex-grow: 1;
 
             .praticienImg {
                 width: 210px;
