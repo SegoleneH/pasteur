@@ -57,6 +57,7 @@ class ArticleType extends AbstractType
             ['required' => false,
             'download_uri' => false,
             'label' => 'Importer une image',
+            'imagine_pattern' => 'webp_80'
             ])
             ->add('alt', null, [
                 'label' => 'Description de l\'image',

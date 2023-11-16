@@ -14,7 +14,7 @@
     <section>
         {% if article.imageName %}
             <div class="imgContainer">
-                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.alt }} "/>
+                <img src="{{ vich_uploader_asset(article, 'imageFile') | imagine_filter('webp_80') }}" alt="{{ article.alt }} "/>
             </div>
         {% endif %}
 

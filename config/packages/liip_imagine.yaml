@@ -2,6 +2,11 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+    default_filter_set_settings:
+        format: webp
+    webp:
+        generate: true
+        quality: 80
     resolvers:
         default:
             web_path: ~
@@ -11,3 +16,5 @@ liip_imagine:
             quality: 100
             filters:
                 thumbnail: { size: [400, 180], mode: inset }
+        webp_80:
+            format: webp
