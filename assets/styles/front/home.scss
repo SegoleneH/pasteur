@@ -649,7 +649,7 @@ footer {
             font-size: 2.5rem;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
-            padding: 10px;        
+            padding: 10px;
         }
     }
     #sectionNews {
@@ -693,10 +693,20 @@ footer {
         }
     }
 
-    // .containerPraticien {
-    //     max-width: 200px;
-
-    // }
+    .containerPraticien {
+        max-width: 200px;
+                // max-width: 70dvw; // flex-basis: 25%;
+                // height: 470px;
+                // margin: 20px 5dvw;
+                // // padding: 10px;
+                // justify-content: space-around;
+                // flex-grow: 1;
+        
+        .praticienImg {
+            width: 230px;
+            height: 230px;
+        }
+    }
 }
 
 @media (max-width: 435px) {
@@ -771,8 +781,8 @@ footer {
         @include flexCenter;
         h2  {
             font-size: 2.5rem;
-            margin: 30px 0;
-            max-width: 96dvw;
+            margin: 20px 0;
+            max-width: 85dvw;
         }
     }
     
@@ -871,15 +881,10 @@ footer {
         .containerPraticien {
             max-width: 70dvw;            // flex-basis: 25%;
             height: 470px;
-            // margin: 20px 5dvw;
             // padding: 10px;
             justify-content: space-around;
             flex-grow: 1;
 
-            .praticienImg {
-                width: 210px;
-                height: 210px;
-            }
         }
     }
     .backdropBlur {
@@ -904,12 +909,17 @@ footer {
     
             i {
                 font-size: 3rem;
+                line-height: 2;
             }
             
             .iconeBande {
+                margin-top: 20px;
                 text-align: center;
                 justify-content: center;
                 @include flexDirection($direction : column);
+                p {
+                    margin: 0;
+                }
             }
     
         }

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    margin-top: 60px;
 
     .articleCard,
     .articleCardWithoutImg,
@@ -10,7 +11,6 @@
         height: 300px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
 
 
@@ -18,11 +18,13 @@
     .articleCard {
         border-radius: 20px;
         width: 350px;
+        height: 270px;
         margin: 30px;
         overflow: hidden;
         cursor: pointer;
         background-color: $background-cards;
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        justify-content: space-between;
 
         &:hover {
             box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.6);
@@ -31,12 +33,13 @@
 
         #cardContainer {
             display: flex;
-            justify-content: space-around;
             flex-direction: column;
+
 
             img {
                 object-fit: cover;
                 height: 60%;
+                width: 100%;
             }
 
             .articleCardTxt,
@@ -46,9 +49,8 @@
                 :nth-child(1) {
                     font-weight: 800;
                     font-size: 1.3em;
-                    height: 50px;
-                    max-height: 50px;
                     margin-block: 0;
+                    margin: 10px 0;
                 }
             }
 
@@ -56,11 +58,15 @@
                 :nth-child(1) {
                     margin-top: 20px;
                 }
+                
             }
 
             .articleCardWithoutImg {
                 :nth-child(1) {
-                    margin-top: 40px;
+                    margin: 40px 0;
+                }
+                :nth-child(2) {
+                    margin: 3dvh 0 8dvh 0;
                 }
             }
         }
@@ -74,7 +80,7 @@ section {
         max-height: 80%;
         margin: 5dvh 5dvw;
         width: 90dvw;
-        border-radius: 20px;
+        border-radius: 5px;
         overflow: hidden;
         @include flexCenter;
 
@@ -90,9 +96,12 @@ section {
     }
 }
 
-//TODO  
 //&:::::::::::::::::::::::::::::::::::::: RESPONSIVE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @media (max-width: 1023px) {
+
+    #sectionArticles {
+        margin-top: 0;
+    }
 
     .topContainer {
         @include flexDirection;
@@ -106,6 +115,32 @@ section {
             width: 60%;
         }
     }
+    #sectionArticles #cardContainer{
+        height: 265px;
+    }
+    #sectionArticles .articleCard {
+        height: 265px;
+        .cardContainer {
+            height: 265px;
+        }
+    }
+
+    #cardContainer .articleCardWithoutImg {
+        :nth-child(1) {
+            margin-top: 0;
+        }
+        :nth-child(2) {
+            margin: 0;
+        }
+    }
+
+    .articleCardTxt {
+        :nth-child(1) {
+            margin-top: 0;
+            height: 25px;
+        }
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -119,4 +154,5 @@ section {
         //* margin: 10px 0;
         //* ^ pour essayer d'enlever le border radius sur mobile
     }
+    
 }
