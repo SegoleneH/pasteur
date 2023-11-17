@@ -307,17 +307,18 @@ div {
 }
 
 .topContainer {
-    height: 100px;
+    height: 2
+    00px;
     justify-content: space-between;
     padding-top: 20px;
     flex-direction: column;
 
     h2 {
-        width: 92%;
+        width: 92dvw;
         margin: 25px auto;
     }
     div {
-        width: 100dvw;
+        max-width: 94dvw;
         padding-left: 20px;
     }
 }
@@ -388,6 +389,9 @@ form {
         h2 {
             
             font-size: 1.7rem;
+        }
+        div {
+            padding-left: 0;
         }
     }
 }
