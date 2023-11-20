@@ -76,8 +76,8 @@ section {
     .imgContainer {
 
         max-height: 80%;
-        margin: 5dvh 5dvw;
-        width: 90dvw;
+        margin: 5dvh auto;
+        width: 30dvw;
         border-radius: 5px;
         overflow: hidden;
         @include flexCenter;
