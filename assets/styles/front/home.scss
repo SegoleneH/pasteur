@@ -521,7 +521,13 @@ footer, #footerTel, #footerAdresse, .nav-item {
 }
 footer {
     margin-top: 40px;
-
+    #border {
+        border-top: 1px dotted $bleu;
+        width: 80%;
+        margin: 0 auto;
+    }
+        
+    
     #bandeIcones {
         @include disflex;
         @include flexDirection($direction : row);
@@ -615,10 +621,6 @@ footer {
                 color: rgb(21, 126, 117);
             }
         }
-    }
-    #mentionsLeg {
-        border-top: 1px dotted $bleu;
-        border-width: 80%;
     }
 
 }
@@ -881,7 +883,6 @@ footer {
         }
         .containerPraticien {
             max-width: 70dvw;            // flex-basis: 25%;
-            height: 470px;
             // padding: 10px;
             justify-content: space-around;
             flex-grow: 1;
