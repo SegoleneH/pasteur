@@ -3,7 +3,7 @@
     :focus-visible {
         outline: inset 6px rgb(3, 104, 82);
         transition: 0.3s outline;
-        border-radius: auto;
+        border-radius: inherit;
     }
 }
 
@@ -42,7 +42,6 @@ h3,
 h5 {
     width: 96vw;
     display: flex;
-    margin-bottom: 80px;
 }
 
 #topSectionTel,#topSectionAdresse, #sectionFaq p, #sectionAcces p{
@@ -64,16 +63,7 @@ h5 {
 button, #newMentionLeg {
     font-size: 1.3rem;
 }
-article {
 
-    .titreArticle {
-        font-size: 1.7rem;
-        font-weight: 700;
-    }
-    .resumeArticle {
-        font-size: 1.3rem;
-    }
-}
 
 //*::::::::::::::::::::::::::::::::::: GENERAL :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 i{
@@ -273,7 +263,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
 #sectionNews {
     padding: 0 20px;
     text-align: left; 
-    margin-top: -50px;
+    margin-top: -100px;
 }
 
 .containerNews {
@@ -282,6 +272,14 @@ footer, #footerTel, #footerAdresse, .nav-item {
     cursor: pointer;
     background-color: #bff1e9;
     margin-bottom: 20px;
+    .titreArticle {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    
+    .resumeArticle {
+        font-size: 1.3rem;
+    }
 
     a {
         width: 100%;
@@ -299,7 +297,6 @@ footer, #footerTel, #footerAdresse, .nav-item {
 
     p {
         margin: 10px 0 10px 10px;
-        height: clamp(30px, auto, 80px);
     }
 
     div {
@@ -363,6 +360,9 @@ footer, #footerTel, #footerAdresse, .nav-item {
     align-items: center;
     padding-bottom: 100px;
     gap: 2%;
+    :nth-child(3) {
+        margin-top: 20px;
+    }
     iframe {
         flex-basis: 40%;
         flex-grow: 1;
@@ -404,9 +404,9 @@ footer, #footerTel, #footerAdresse, .nav-item {
         }
     
     }
-    h5 {
-        margin: 80px 0;
-    }
+    // h5 {
+    //     margin: 80px 0;
+    // }
     .praticienImg {
         width: 310px;
         height: 310px;
@@ -521,6 +521,8 @@ footer, #footerTel, #footerAdresse, .nav-item {
 }
 footer {
     margin-top: 40px;
+    justify-content: center;
+    
     #border {
         border-top: 1px dotted $bleu;
         width: 80%;
@@ -531,18 +533,19 @@ footer {
     #bandeIcones {
         @include disflex;
         @include flexDirection($direction : row);
-        justify-content: space-around;
         background-color: rgba(31, 185, 172, 0.2);
-        // padding: 60px 45px;
         gap: 10%;
         width: 100%;
-        padding: 10dvh 0;
+        padding: 10dvh 3dvw 10dvh 3dvw;
         
         i {
             font-size: 3rem;
         }
         .iconeBande {
             text-align: center;
+            margin: 0 auto;
+            width: 33%;
+
             p {
                 font-size: 2rem;
                 margin-top: 20px;
