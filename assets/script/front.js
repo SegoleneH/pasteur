@@ -1,6 +1,8 @@
 //observer pr show/hide le btn de scroll top. Reglé si topsection visible à 50%
 //classe isVisible sert uniquement pour comme marqueur pour le burger quand topsection n'est pas sur la page
 const topSection = document.getElementById('topSection');
+
+if (topSection) {
 let toTheTtop = document.querySelector('.scrollToTheTop');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -17,6 +19,8 @@ const observer = new IntersectionObserver(entries => {
     threshold: 0.5,
 })
 observer.observe(topSection);
+
+
 
 //hamburger
 
@@ -127,11 +131,12 @@ skipToContent.addEventListener('blur', () => {
 // window.scrollY : nb de px qui ont été scrollé
 
 let progress = document.body.scrollHeight - window.innerHeight;
+let progressPx = Math.round(50 - ((window.scrollY / progress) * 50));
 
 window.onscroll = () => {
-    let progressTest = Math.round(50 - ((window.scrollY / progress) * 50));
+    progressPx = Math.round(50 - ((window.scrollY / progress) * 50));
     setTimeout(() => {
-        toTheTtop.style.backgroundPosition = `0 ${progressTest}px `;
+        toTheTtop.style.backgroundPosition = `0 ${progressPx}px `;
     }, 100)
 }
 
@@ -160,3 +165,5 @@ function showPage() {
     document.getElementById("cacheBody").style.display = "none";
 }
 document.addEventListener('DOMContentLoaded', showPage());
+
+}
