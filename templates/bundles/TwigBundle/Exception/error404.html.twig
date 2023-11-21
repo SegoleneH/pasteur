@@ -6,8 +6,10 @@
 
 <div id="error">
 
-    <img src="{{ asset('build/erreur-404.webp') }}" alt="test" />
-    <h1> Oops ! </h1>
+    <div class="imgContainer">
+        <img src="{{ asset('build/erreur-404.webp') }}" alt="test" />
+    </div>
+    <h1> Oups ! </h1>
     <p>Cette page n'existe pas... </p>
     <button onclick= window.location.href="{{ path('app_front') }}">Retour à l'accueil</button>
 

@@ -17,14 +17,14 @@
     <section id="sectionNews">
         <h3>Actualités</h3>
             {% for newsTag in newsTags %}
-                <article class="containerNews">
+                <div class="containerNews">
                     <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }} ' aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}">
                         
                         <p class="titreArticle">{{ newsTag.new.titre }}</p>
                         <p class="resumeArticle">{{ newsTag.new.resume | u.truncate(40, '...', false) }}</p>
 
                     </a>
-                </article> 
+                </div> 
             {% endfor %}
     </section>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" aria-hidden="true">
@@ -34,7 +34,7 @@
 
         <h3>Foire Aux Questions</h3>
         <span id="faqExpandDiv">
-            <button id="faqExpand" aria-expanded="false" role='button' aria-controls="sectionFaq" aria-label="Ouvrir toutes les réponses">Ouvrir toutes les réponses</button>
+            <button id="faqExpand" aria-expanded="false" aria-controls="sectionFaq" aria-label="Ouvrir toutes les réponses">Ouvrir toutes les réponses</button>
         </span>
         {% for faq in faqs %}
 
@@ -59,7 +59,7 @@
                 <i loading="lazy" class="fa-sharp fa-solid fa-map-location-dot fa-2xl" aria-hidden="true"></i>
                 Accès
             </h4>
-            <span>
+            <div>
                 <p>
                     Les médecins et infirmiers de la Maison médicale Pasteur Santes vous accueillent à l'adresse suivante :
                 </p>
@@ -68,13 +68,13 @@
                     <p>33 B avenue Albert Bernard, 59211 Santes</p>
                     <p>Centre ville, à 100 mètres de la mairie</p>
                 </address>
-            </span>
-            <span>
+            </div>
+            <div>
                 <p>Pour venir à votre rendez-vous</p>
                 <p>Parking à proximité<br>
                 Bus : arrêt Hôtel de ville (ligne 58)<br>
                 TER : Gare de Santes (8min de Lille)</p>
-            </span>
+            </div>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.0344510818522!2d2.961974476717986!3d50.58931297735548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd2b10851cce87%3A0x3ed8a9001498e9d5!2s33%20Av.%20Albert%20Bernard%2C%2059211%20Santes!5e0!3m2!1sen!2sfr!4v1698219777820!5m2!1sen!2sfr" width="600" height="450" title="plan google map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="true" tabindex="-1"></iframe>    
     </section>
@@ -89,11 +89,11 @@
                 <div class="containerPraticien" aria-labelledby="praticien {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
                     {% if praticiensMetiers.praticien.imageName %}
                         <div class="praticienImg">
-                            <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') | imagine_filter('webp_80') }}" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" >
+                            <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') | imagine_filter('webp_80') }}" alt="" >
                         </div>
                     {% else %}
                         <div class="praticienImg">
-                            <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg" alt="photo de {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
+                            <svg enable-background="new 0 0 38.1 38.1" version="1.1" viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg" alt="">
                                 <style type="text/css">.st0{fill:#00A5CB;} .st1{fill:#0190B0;} .st2{fill:#FFFFFF;} .st3{fill:#F2F2F2;}</style>
                                 <path class="st0" d="M19,38.8C8.6,40.8,0.2,31.4,0,19S8.6,0.1,19,0"/>
                                 <path class="st1" d="M19,0c10.4,0,20.8,8.4,20.8,18.8S29.4,37.8,19,40.8"/>
