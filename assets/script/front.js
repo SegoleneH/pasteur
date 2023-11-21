@@ -132,8 +132,10 @@ skipToContent.addEventListener('blur', () => {
 
 let progress = document.body.scrollHeight - window.innerHeight;
 let progressPx = Math.round(50 - ((window.scrollY / progress) * 50));
+toTheTtop.style.backgroundPosition = `0 ${progressPx}px `;
 
 window.onscroll = () => {
+    progress = document.body.scrollHeight - window.innerHeight;
     progressPx = Math.round(50 - ((window.scrollY / progress) * 50));
     setTimeout(() => {
         toTheTtop.style.backgroundPosition = `0 ${progressPx}px `;
