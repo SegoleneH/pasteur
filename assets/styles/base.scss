@@ -67,7 +67,12 @@ body {
 li {
     font-size: 1.2rem;
 }
-
+div::selection, span::selection, p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, 
+a::selection, li::selection, button::selection, th::selection, td::selection, label::selection, 
+input::selection, strong::selection, address::selection, img::selection {
+    color: $blanc;
+    background-color: $bleu;
+}
 //TODO ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //TODO ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -255,10 +260,8 @@ form {
         margin: 5px 0;
     }
 
-    
 
     .vich-image {
-        
         img {
             width: 25%;
             height: auto;
