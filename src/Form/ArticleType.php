@@ -51,7 +51,7 @@ class ArticleType extends AbstractType
 
                 'required' => true,
                 'purify_html' => true,
-
+                
             ])
             ->add('imageFile', VichImageType::class, 
             ['required' => false,
