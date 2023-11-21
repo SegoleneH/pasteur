@@ -254,6 +254,20 @@ form {
         padding: 5px 0;
         margin: 5px 0;
     }
+
+    
+
+    .vich-image {
+        
+        img {
+            width: 25%;
+            height: auto;
+            margin-top: 20px;
+        }
+        div {
+            display: none;
+        }
+    }
 }
 
 #articleForm,
