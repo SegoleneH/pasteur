@@ -94,7 +94,7 @@
     <section id="sectionPraticien">
             <h3>Les Praticiens</h3>
             {% for praticiensMetiers in praticiensMetiers %}
-                <div class="containerPraticien" aria-labelledby="praticien {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
+                <div class="containerPraticien" aria-label="praticien {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" role="group">
                     {% if praticiensMetiers.praticien.imageName %}
                         <div class="praticienImg">
                             <img loading="lazy" src="{{ vich_uploader_asset(praticiensMetiers.praticien, 'imageFile') | imagine_filter('webp_80') }}" alt="" >
@@ -117,7 +117,7 @@
                     {% endif %}
 
                     <div class="containerPraticienText">
-                        <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
+                        <h4>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</h4>
                         <p>{{ praticiensMetiers.metiers|join(', ')}}</p>
                         
                         {% if praticiensMetiers.praticien.lienRdv %}
