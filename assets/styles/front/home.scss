@@ -384,6 +384,14 @@ footer, #footerTel, #footerAdresse, .nav-item {
     }
 }
 
+#titreAcces {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    margin-bottom: 25px;
+    align-items: baseline;
+}
+
 //section RDV, Equipe
 #sectionPraticien {
     align-items: flex-start;
