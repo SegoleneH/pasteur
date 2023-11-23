@@ -21,13 +21,11 @@ span {
 }
 
 //* Fonts & Texte
-h1, h2, h3, h4, h5, p, .containerNews, .skipShow, .nav-menu, a, .faqReponse, footer {
+h1, h2, h3, p, .containerNews, .skipShow, .nav-menu, a, .faqReponse, footer {
     hyphens: auto;
 }
 h1,
-h3,
-h4,
-h5, h6 {
+h3 {
     font-size: 2.5rem;
 }
 .containerNews, .skipShow, .nav-menu, #mentionsLeg,
@@ -509,24 +507,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
 .footerList {
     max-width: 45dvw;
     margin: 0 1dvw 40px 1dvw;
-    ul {
-        h6, p {
-            font-weight: 600;
-        }
-        h6 {
-            margin: 20px auto;
-        }
-        li {
-            margin: 15px 0;
-            a {
-                color: $bleu;
     
-                &:hover {
-                    color: rgb(21, 126, 117);
-                }
-            }
-        }
-    }
 }
 footer {
     margin-top: 40px;
@@ -768,10 +749,7 @@ footer {
 //*:::::::::::::::::::::::::::::::::::::: FONTS :::::::::::::::::::::::::::::::::::::::::::: 
 
     h1,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h3 {
         font-size: 2.2rem;
     }
 
