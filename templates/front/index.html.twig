@@ -117,7 +117,8 @@
                     {% endif %}
 
                     <div class="containerPraticienText">
-                        <h4>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</h4>
+                    <div>
+                        <p>{{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}</p>
                         <p>{{ praticiensMetiers.metiers|join(', ')}}</p>
                         
                         {% if praticiensMetiers.praticien.lienRdv %}
@@ -125,11 +126,14 @@
                         {% else %}
                             <button class="cardBtn" onclick="window.location.href = 'tel:0321759484' " aria-label="prendre rendez-vous par téléphone avec {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom  }}">Tel : 03 21 75 94 84</button>
                         {% endif %}
+                    </div>
+                    <div>
                         {% if praticiensMetiers.praticien.joursOff %}
                             <p class="texteDyn">Tous les jours sauf {{ praticiensMetiers.praticien.joursOff }}</p>
                         {% else %}
                             <p class="texteDyn">Tous les jours</p>
                         {% endif %}
+                    </div>
                     </div>
                 </div>
             {% endfor %}

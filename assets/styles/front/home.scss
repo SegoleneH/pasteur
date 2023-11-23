@@ -437,16 +437,25 @@ footer, #footerTel, #footerAdresse, .nav-item {
 }
 .containerPraticienText {
     height: 40%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    text-align: center;
 
     :first-child {
-        font-size: 1.2rem;
-        font-weight: bold;
+
+        :first-child {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
     }
 
     :nth-child(2) {
         font-size: 0.9rem;
         margin-top: 0;
+    }
+
+    :nth-child(3) {
+        margin: 20px 0;
     }
 }
 
