@@ -504,11 +504,6 @@ footer, #footerTel, #footerAdresse, .nav-item {
     @include disflex;
     @include flexDirection($direction : row);
 }
-.footerList {
-    max-width: 45dvw;
-    margin: 0 1dvw 40px 1dvw;
-    
-}
 footer {
     margin-top: 40px;
     justify-content: center;
