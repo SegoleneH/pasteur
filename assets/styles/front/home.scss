@@ -7,7 +7,7 @@
     }
 }
 
-body, h3, .nav-menu, .containerNews, .faqBtn, #faqExpand, .containerNews p  {
+body, h3, h4, .nav-menu, .containerNews, .faqBtn, #faqExpand, .containerNews p  {
     margin: 0;
 }
 li {
@@ -452,6 +452,9 @@ footer, #footerTel, #footerAdresse, .nav-item {
 
 .texteDyn {
     text-align: center;
+    // position: relative;
+    // bottom: -50px;
+    // ^ pour aligner le texte en bas des cartes praticiens
 }
 
 //btn pr scroll en haut de page
