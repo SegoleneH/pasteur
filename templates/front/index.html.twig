@@ -10,7 +10,7 @@
     <h2>Maison médicale Pasteur-Santes</h2>
 </section>
 <main id="main">
-    <svg id="visual" viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <svg id="visual" viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-hidden="true">
         
         <path fill-opacity="0.5" d="M0 174L46.7 174.7C93.3 175.3 186.7 176.7 280 173.5C373.3 170.3 466.7 162.7 560 156.3C653.3 150 746.7 145 840 148C933.3 151 1026.7 162 1120 166.8C1213.3 171.7 1306.7 170.3 1353.3 169.7L1400 169L1400 0L1353.3 0C1306.7 0 1213.3 0 1120 0C1026.7 0 933.3 0 840 0C746.7 0 653.3 0 560 0C466.7 0 373.3 0 280 0C186.7 0 93.3 0 46.7 0L0 0Z" fill="#a9f4e6" ></path>
         <path  fill-opacity="0.5" d="M0 98L46.7 103.8C93.3 109.7 186.7 121.3 280 121.8C373.3 122.3 466.7 111.7 560 110.3C653.3 109 746.7 117 840 115C933.3 113 1026.7 101 1120 97.2C1213.3 93.3 1306.7 97.7 1353.3 99.8L1400 102L1400 0L1353.3 0C1306.7 0 1213.3 0 1120 0C1026.7 0 933.3 0 840 0C746.7 0 653.3 0 560 0C466.7 0 373.3 0 280 0C186.7 0 93.3 0 46.7 0L0 0Z" fill="#71d6c8" ></path>
@@ -87,7 +87,7 @@
     </svg>
     
     <section id="sectionPraticien">
-            <h5>Les Praticiens</h5>
+            <h3>Les Praticiens</h3>
             {% for praticiensMetiers in praticiensMetiers %}
                 <div class="containerPraticien" aria-labelledby="praticien {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}">
                     {% if praticiensMetiers.praticien.imageName %}
