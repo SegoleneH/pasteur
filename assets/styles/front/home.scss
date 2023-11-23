@@ -912,7 +912,7 @@ footer {
             gap: 10%;
             // margin: 0 auto;
             width: 100%;
-    
+            
             i {
                 font-size: 3rem;
                 line-height: 2;
@@ -922,9 +922,11 @@ footer {
                 margin-top: 20px;
                 text-align: center;
                 justify-content: center;
+                width: 55%;
                 @include flexDirection($direction : column);
                 p {
                     margin: 0;
+                    hyphens: none;
                 }
             }
     
