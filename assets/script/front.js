@@ -149,13 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
     textDyn.forEach(text => {
         let textlength = text.innerText.length;
         if (textlength > 120) {
-        text.setAttribute('style', `font-size: 0.9em;`);
+        text.setAttribute('style', `font-size: 0.8em;`);
         }
         else if (textlength > 100) {
-            text.setAttribute('style', `font-size: 1em;`);
+            text.setAttribute('style', `font-size: 0.9em;`);
         }
         else if (textlength > 80) {
-            text.setAttribute('style', `font-size: 1.1em;`);
+            text.setAttribute('style', `font-size: 1em;`);
         }
     })
 })
