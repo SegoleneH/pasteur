@@ -29,7 +29,7 @@
 
             <a href="#main" id="skipToContent" class="skipHidden" aria-label="Aller directement au contenu principal">Aller au contenu principal</a>
                
-            <div id="topSection">
+            <div id="topSection" role="banner">
                 
                     <h1><a href="{{ path('app_front') }} " aria-label="Lien vers page d'accueil">Pasteur Santes</a></h1>
                 
@@ -106,31 +106,31 @@
 
         {% block footer %}
             <footer>
-                <section id="bandeIcones" role="group">
-                    <div class="iconeBande">
+                <section id="bandeIcones" role="section" aria-label="Les mots représentatifs de la maison de santé">
+                    <div class="iconeBande" role="group">
                         <i loading="lazy" class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
                         <p>Soins Médicaux</p> 
                         <span>& Paramédicaux</span>
                     </div>
 
-                    <div class="iconeBande">
+                    <div class="iconeBande" role="group">
                         <i loading="lazy" class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
                         <p>Bienveillance</p>
                         <span>& Disponibilité</span>
                     </div>
 
-                    <div class="iconeBande">
+                    <div class="iconeBande" role="group">
                         <i loading="lazy" class="fa-solid fa-stethoscope" aria-hidden="true"></i>
                         <p>Compétence</p>
                         <span>& Expérience</span>
                     </div>
                 </section>
 
-                <div id="footerTopContainer">
+                <div id="footerTopContainer" role="contentinfo">
                         <div id="footerAdresse">
                             <i loading="lazy" class="fa-sharp fa-solid fa-house fa-2xl" aria-hidden="true"></i>
                             <address>
-                                33B avenue Albert Bernard<br>
+                                33 B avenue Albert Bernard<br>
                                 59211 Santes
                             </address>
 
@@ -138,7 +138,7 @@
 
                     <div id="footerTel">
                             <i loading="lazy" class="fa-sharp fa-solid fa-phone fa-2xl" aria-hidden="true"></i>
-                            <p> Contactez le secrétariat :</p>
+                            <p> Contacter le secrétariat :</p>
                             <a href="tel:+33632147594" tabindex="-1"> 06 32 14 75 94</a>
                     </div>
                 </div>

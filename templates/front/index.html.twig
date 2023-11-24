@@ -6,20 +6,20 @@
     <div id="loader"></div>
     <div id="cacheBody"></div>
 
-<section id="sectionPresentation">
-    <h2>Maison médicale Pasteur-Santes</h2>
-</section>
 <main id="main">
+    <section id="sectionPresentation" role="banner">
+        <h2>Maison médicale Pasteur-Santes</h2>
+    </section>
     <svg viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-hidden="true">
         <path fill-opacity="0.5" d="M0 174L46.7 174.7C93.3 175.3 186.7 176.7 280 173.5C373.3 170.3 466.7 162.7 560 156.3C653.3 150 746.7 145 840 148C933.3 151 1026.7 162 1120 166.8C1213.3 171.7 1306.7 170.3 1353.3 169.7L1400 169L1400 0L1353.3 0C1306.7 0 1213.3 0 1120 0C1026.7 0 933.3 0 840 0C746.7 0 653.3 0 560 0C466.7 0 373.3 0 280 0C186.7 0 93.3 0 46.7 0L0 0Z" fill="#a9f4e6" ></path>
         <path  fill-opacity="0.5" d="M0 98L46.7 103.8C93.3 109.7 186.7 121.3 280 121.8C373.3 122.3 466.7 111.7 560 110.3C653.3 109 746.7 117 840 115C933.3 113 1026.7 101 1120 97.2C1213.3 93.3 1306.7 97.7 1353.3 99.8L1400 102L1400 0L1353.3 0C1306.7 0 1213.3 0 1120 0C1026.7 0 933.3 0 840 0C746.7 0 653.3 0 560 0C466.7 0 373.3 0 280 0C186.7 0 93.3 0 46.7 0L0 0Z" fill="#71d6c8" ></path>
         <path  fill-opacity="0.5" d="M0 42L46.7 43.8C93.3 45.7 186.7 49.3 280 55C373.3 60.7 466.7 68.3 560 68.3C653.3 68.3 746.7 60.7 840 57.5C933.3 54.3 1026.7 55.7 1120 58.7C1213.3 61.7 1306.7 66.3 1353.3 68.7L1400 71L1400 0L1353.3 0C1306.7 0 1213.3 0 1120 0C1026.7 0 933.3 0 840 0C746.7 0 653.3 0 560 0C466.7 0 373.3 0 280 0C186.7 0 93.3 0 46.7 0L0 0Z" fill="#1fb9ac" ></path>
     </svg>
 
-    <section id="sectionNews" role="group">
+    <section id="sectionNews" role="region">
         <h3>Actualités</h3>
             {% for newsTag in newsTags %}
-                <div class="containerNews" aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}">
+                <div class="containerNews" aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}" role="group">
                     <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }} '>
                         
                         <p class="titreArticle" >{{ newsTag.new.titre }}</p>
@@ -34,7 +34,7 @@
         <path fill-opacity="0.5" d="M0 184L33.3 191.7C66.7 199.3 133.3 214.7 200 218C266.7 221.3 333.3 212.7 400 208.7C466.7 204.7 533.3 205.3 600 211.5C666.7 217.7 733.3 229.3 800 228.7C866.7 228 933.3 215 1000 208.3C1066.7 201.7 1133.3 201.3 1200 207.5C1266.7 213.7 1333.3 226.3 1366.7 232.7L1400 239L1400 321L1366.7 321C1333.3 321 1266.7 321 1200 321C1133.3 321 1066.7 321 1000 321C933.3 321 866.7 321 800 321C733.3 321 666.7 321 600 321C533.3 321 466.7 321 400 321C333.3 321 266.7 321 200 321C133.3 321 66.7 321 33.3 321L0 321Z" fill="#71d6c8"></path>
         <path fill-opacity="0.5" d="M0 260L33.3 265.3C66.7 270.7 133.3 281.3 200 282.7C266.7 284 333.3 276 400 269.5C466.7 263 533.3 258 600 254.3C666.7 250.7 733.3 248.3 800 253.2C866.7 258 933.3 270 1000 277.5C1066.7 285 1133.3 288 1200 284.5C1266.7 281 1333.3 271 1366.7 266L1400 261L1400 321L1366.7 321C1333.3 321 1266.7 321 1200 321C1133.3 321 1066.7 321 1000 321C933.3 321 866.7 321 800 321C733.3 321 666.7 321 600 321C533.3 321 466.7 321 400 321C333.3 321 266.7 321 200 321C133.3 321 66.7 321 33.3 321L0 321Z" fill="#1fb9ac"></path>
     </svg>
-    <section id="sectionFaq" role="group">
+    <section id="sectionFaq" role="region">
 
         <h3>Foire Aux Questions</h3>
         <span id="faqExpandDiv">
@@ -58,7 +58,7 @@
         <path fill-opacity="0.5" d="M0 50L33.3 54.8C66.7 59.7 133.3 69.3 200 70.8C266.7 72.3 333.3 65.7 400 60C466.7 54.3 533.3 49.7 600 47.8C666.7 46 733.3 47 800 52C866.7 57 933.3 66 1000 66.5C1066.7 67 1133.3 59 1200 57.7C1266.7 56.3 1333.3 61.7 1366.7 64.3L1400 67L1400 0L1366.7 0C1333.3 0 1266.7 0 1200 0C1133.3 0 1066.7 0 1000 0C933.3 0 866.7 0 800 0C733.3 0 666.7 0 600 0C533.3 0 466.7 0 400 0C333.3 0 266.7 0 200 0C133.3 0 66.7 0 33.3 0L0 0Z" fill="#1fb9ac"></path>
     </svg>
 
-    <section id="sectionAcces" role="group">
+    <section id="sectionAcces" role="region">
         <div id="sectionAccesText">
         
             <h3 id="titreAcces">
@@ -91,7 +91,7 @@
         <path fill-opacity="0.5" d="M0 49L33.3 52.7C66.7 56.3 133.3 63.7 200 64C266.7 64.3 333.3 57.7 400 59.5C466.7 61.3 533.3 71.7 600 75.3C666.7 79 733.3 76 800 69.8C866.7 63.7 933.3 54.3 1000 55C1066.7 55.7 1133.3 66.3 1200 69.8C1266.7 73.3 1333.3 69.7 1366.7 67.8L1400 66L1400 0L1366.7 0C1333.3 0 1266.7 0 1200 0C1133.3 0 1066.7 0 1000 0C933.3 0 866.7 0 800 0C733.3 0 666.7 0 600 0C533.3 0 466.7 0 400 0C333.3 0 266.7 0 200 0C133.3 0 66.7 0 33.3 0L0 0Z" fill="#1fb9ac"></path>
     </svg>
     
-    <section id="sectionPraticien" role="group">
+    <section id="sectionPraticien" role="region">
             <h3>Les Praticiens</h3>
             {% for praticiensMetiers in praticiensMetiers %}
                 <div class="containerPraticien" aria-label="praticien {{ praticiensMetiers.praticien.nom }} {{ praticiensMetiers.praticien.prenom }}" role="group">
