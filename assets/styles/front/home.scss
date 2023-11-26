@@ -7,7 +7,7 @@
     }
 }
 
-body, h3, h4, .nav-menu, .containerNews, .faqBtn, #faqExpand, .containerNews p  {
+body, .nav-menu, .containerNews, .faqBtn, #faqExpand, .containerNews p  {
     margin: 0;
 }
 li {
@@ -258,98 +258,115 @@ footer, #footerTel, #footerAdresse, .nav-item {
 //section News
 
 #sectionNews {
-    padding: 0 20px;
+    padding: 20px 20px;
     text-align: left; 
-    margin-top: -100px;
+    margin-top: -120px;
+    h3 {
+        margin: 20px 0 40px 0;
+    }
+    .containerNews {
+        padding: 0 20px;
+        height: 100px;
+        cursor: pointer;
+        background-color: #bff1e9;
+        margin-bottom: 20px;
+        .titreArticle {
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+        
+        .resumeArticle {
+            font-size: 1.3rem;
+        }
+    
+        a {
+            width: 100%;
+            padding: 20px;
+        }
+        &:hover {
+            background-color: $bleu-test;
+        }
+    }
 }
 
-.containerNews {
-    padding: 0 20px;
-    height: 100px;
-    cursor: pointer;
-    background-color: #bff1e9;
-    margin-bottom: 20px;
-    .titreArticle {
-        font-size: 1.7rem;
-        font-weight: 700;
-    }
-    
-    .resumeArticle {
-        font-size: 1.3rem;
-    }
-
-    a {
-        width: 100%;
-        padding: 20px;
-    }
-    &:hover {
-        background-color: $bleu-test;
-    }
+//& positionnement sections par rapport aux svg & vice-versa
+#svgNewsFaq, #svgAccesPraticien,
+#sectionPraticien,
+#sectionNews {
+    margin-top: -90px;
 }
 
 //section faq
  #sectionFaq {
-    padding: 100px 20px;
+    padding: 60px 20px 80px 20px;
 
-
-    p {
-        margin: 10px 0 10px 10px;
+    h3 {
+        margin: 0 0 30px 0;
     }
 
     div {
         width: 80dvw;
     }
- }
 
- .faqQuestion {    
-    justify-content: space-between;
-    padding: 5px 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.5s;
-    &:hover {
-        background-color: #BFF1E0;
-    }
+}
+.faqQuestion {    
+    // margin-top: 20px;
+   justify-content: space-between;
+   padding: 5px 5px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: 0.5s;
+    margin: 10px 0 10px 10px;
+   &:hover {
+       background-color: #BFF1E0;
+   }
 
-    .faqSpan {
-        margin: 0;
-        font-size: 40px;
-        display: block;
-        transition: 0.4s;
-        color: #1C354C;
-    }
+   .faqSpan {
+       margin: 0;
+       font-size: 40px;
+       display: block;
+       transition: 0.4s;
+       color: $bleu;
 
-    .faqSpan.active {
-        transform: rotate(135deg);
-        z-index: 0;
-    }
- }
- .faqReponse {
-    border-bottom: 1px solid #2f2f2f;
+       &:hover {
+           color: $noir;
+       }
+   }
+
+   .faqSpan.active {
+       transform: rotate(135deg);
+       z-index: 0;
+   }
+}
+.faqReponse {
+//    border-bottom: 1px solid #2f2f2f;
     padding: 0 5px;
     padding-bottom: 10px;
     text-align: left;
- }
+    border-left: 8px solid #BFF1E0;
+    margin: 10px 0 10px 12px;
+}
 
- .faqBtn {
-    background-color: transparent;
-    margin-left: 10px;
-    align-self: baseline;
- }
+.faqBtn {
+   background-color: transparent;
+   margin-left: 10px;
+   align-self: baseline;
+}
 
- .reponseHide {
-    display: none;
+.reponseHide {
+   display: none;
 }
 #faqExpandDiv {
-    justify-content: flex-end;
-    margin-bottom: 5px;
-    height: auto;
-    margin-right: 10px;
+   justify-content: flex-end;
+   margin-bottom: 5px;
+   height: auto;
+   margin-right: 10px;
 }
 
 #faqExpand {
-    background-color: transparent;
+   background-color: transparent;
 }
+
 
 
 //Section Acces, Map etc
@@ -358,6 +375,9 @@ footer, #footerTel, #footerAdresse, .nav-item {
     align-items: center;
     padding-bottom: 100px;
     gap: 2%;
+    margin-top: -80px;
+    margin-bottom: 40px;
+
     :nth-child(3) {
         margin-top: 20px;
     }
@@ -379,6 +399,13 @@ footer, #footerTel, #footerAdresse, .nav-item {
     i {
         margin-right: 20px;
     }
+    div {
+        margin: 20px 0;
+
+        p:nth-child(2), address {
+            margin: 20px 0;
+        }
+    }
 }
 
 #titreAcces {
@@ -393,6 +420,7 @@ footer, #footerTel, #footerAdresse, .nav-item {
 #sectionPraticien {
     align-items: flex-start;
     width: 96dvw;
+    margin-bottom: 70px;
     
     .containerPraticien {
         background-color: $background-cards;
@@ -655,7 +683,6 @@ footer {
         }
     }
     #sectionNews {
-
         article {
             
             height: 160px;
@@ -788,6 +815,9 @@ footer {
     #sectionNews, #sectionNews h2 {
         margin-top: -20px;
     }
+    #sectionNews {
+        margin-bottom: 40px;
+    }
 
     #footerAdresse span,
     #footerAdresse p,
@@ -874,7 +904,16 @@ footer {
             height: 100dvh;
         }
     }
+    #sectionFaq {
+        h3 {
+            margin: 0 0 20px 0;
+        }
+    }
+    #sectionAcces {
+        margin-top: 0;
+    }
     #sectionPraticien {
+        margin-top: 0;
         width: 80dvw;
         max-width: 80dvw;
         p {
