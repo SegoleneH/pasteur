@@ -27,6 +27,14 @@
                 <td>{{ praticien.lienRdv ? (praticien.lienRdv) : "03.21.75.94.84" }}</td>
             </tr>
             <tr>
+                <th>Métiers</th>
+                <td>{{ metiers|join(', ') }}</td>
+            </tr>
+            <tr>
+                <th>Jours off</th>
+                <td>{{ praticien.joursOff }}</td>
+            </tr>
+            <tr>
                 <th>image</th>
                 {% if praticien.imageName %}
                 <td><img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticien.nom }} {{ praticien.prenom }}"></td>

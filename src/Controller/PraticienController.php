@@ -22,8 +22,16 @@ class PraticienController extends AbstractController
     #[Route('/', name: 'app_praticien_index', methods: ['GET'])]
     public function index(PraticienRepository $praticienRepository): Response
     {
+        $praticiens = $praticienRepository->findAll();
+        foreach ($praticiens as $praticien) {
+            $praticiensMetiers[] = [
+                'praticien' => $praticien,
+                'metiers' => $praticien->getMetiers()
+            ];
+        }
+
         return $this->render('praticien/index.html.twig', [
-            'praticiens' => $praticienRepository->findAll(),
+            'praticiensMetiers' => $praticiensMetiers
         ]);
     }
 
@@ -50,8 +58,11 @@ class PraticienController extends AbstractController
     #[Route('/{id}', name: 'app_praticien_show', methods: ['GET'])]
     public function show(Praticien $praticien): Response
     {
+        $metiers = $praticien->getMetiers();
+
         return $this->render('praticien/show.html.twig', [
             'praticien' => $praticien,
+            'metiers' => $metiers,
         ]);
     }
 
