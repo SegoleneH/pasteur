@@ -16,7 +16,6 @@
             <tr>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>Praticien(s)</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
@@ -25,11 +24,6 @@
             <tr>
                 <td class="tdIndex">{{ metier.nom }}</td>
                 <td class="tdIndex">{{ metier.description }}</td>
-                {# <td class="tdIndex">
-                    {% for praticien in metier.praticiens %}
-                        {{ metier.praticiens.nom }}
-                    {% endfor %}
-                </td> #}
                 <td class="column btnTdIndex">
                     <a href="{{ path('app_metier_show', {'id': metier.id}) }}">
                         <button class="afficherBtn">
