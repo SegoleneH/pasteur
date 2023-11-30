@@ -26,7 +26,7 @@ minifier le SCSS et le JavaScript.
 - PHP 8
 - Composer
 - Symfony-cli
-* MariaDB 10
+- MariaDB 10
 
 
 ## Installation
@@ -37,7 +37,7 @@ cd symfony
 composer install
 ```
 
-Puis créez une base de données & un utilisateur dédié pour cette base de données.
+  Puis créez une base de données & un utilisateur dédié pour cette base de données.
 
 
 ## Configuration
