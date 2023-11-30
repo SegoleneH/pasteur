@@ -1,4 +1,4 @@
-# Projet de site vitrine et back office pour la Maison Médicale Pasteur Santes.
+# Projet de site vitrine et back office pour une Maison Médicale.
 
 ## Le besoin
 
