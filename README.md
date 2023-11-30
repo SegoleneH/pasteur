@@ -15,7 +15,7 @@ contenu de l’accueil.
 
 
 ## Technologies utilisées
-	Nous avons développé cette application en php grâce au framework Symfony
+Nous avons développé cette application en php grâce au framework Symfony
 accompagné du moteur de templates TWIG et du WebPack-Encore pour compiler et
 minifier le SCSS et le JavaScript.
 
