@@ -13,6 +13,7 @@ Il a été convenu de la livraison d’une interface qui regroupe à la fois une
 d’accueil destinée au public et un back office destiné au personnel pour gérer le
 contenu de l’accueil.
 
+
 ## Technologies utilisées
 	Nous avons développé cette application en php grâce au framework Symfony
 accompagné du moteur de templates TWIG et du WebPack-Encore pour compiler et
@@ -27,6 +28,7 @@ minifier le SCSS et le JavaScript.
 - Symfony-cli
 * MariaDB 10
 
+
 ## Installation
 
 ```
@@ -36,6 +38,7 @@ composer install
 ```
 
 Puis créez une base de données & un utilisateur dédié pour cette base de données.
+
 
 ## Configuration
 
