@@ -19,7 +19,7 @@
                 <td>{{ praticien.nom }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th>Prénom</th>
                 <td>{{ praticien.prenom }}</td>
             </tr>
             <tr>
@@ -35,7 +35,7 @@
                 <td>{{ praticien.joursOff }}</td>
             </tr>
             <tr>
-                <th>image</th>
+                <th>Avatar</th>
                 {% if praticien.imageName %}
                 <td><img src="{{ vich_uploader_asset(praticien, 'imageFile') | imagine_filter('my_thumb') }}" alt="photo de {{ praticien.nom }} {{ praticien.prenom }}"></td>
                 {% else %}
