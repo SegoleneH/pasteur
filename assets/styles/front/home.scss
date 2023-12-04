@@ -687,7 +687,17 @@ footer {
         .containerNews, .containerNews a {
             height: 130px;
         }
+        .containerNews {
         
+            .titreArticle {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .resumeArticle {
+                font-size: 1.2rem;
+            }
+        }
         div {
             
             
@@ -699,11 +709,7 @@ footer {
             }
         
             .titreArticle {
-                font-size: 1.5rem;
-                font-weight: 700;
-                height: 80px;
-                // padding: 0 40px;
-                // // ^ marge droite & gauche du texte
+                height: 50px;
                 margin: auto;
             }
 
@@ -821,6 +827,17 @@ footer {
     }
     #sectionNews {
         margin-bottom: 40px;
+        .containerNews {
+    
+            .titreArticle {
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+    
+            .resumeArticle {
+                font-size: 1.1rem;
+            }
+        }
     }
 
     #footerAdresse span,
