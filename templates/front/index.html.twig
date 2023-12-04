@@ -23,7 +23,7 @@
                 <div class="containerNews" aria-label="Lien vers l'article qui a pour titre {{ newsTag.new.titre }}" role="group">
                     <a href='{{ path('app_front_articles_show', {'id': newsTag.new.id}) }} '>
                         
-                        <p class="titreArticle" >{{ newsTag.new.titre }}</p>
+                        <p class="titreArticle" >{{ newsTag.new.titre | u.truncate(40, '...', false) }}</p>
                         <p class="resumeArticle">{{ newsTag.new.resume | u.truncate(40, '...', false) }}</p>
 
                     </a>

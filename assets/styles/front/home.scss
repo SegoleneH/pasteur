@@ -682,10 +682,17 @@ footer {
             padding: 10px;
         }
     }
-    #sectionNews {
-        article {
+        #sectionNews {
             
-            height: 160px;
+        }
+    #sectionNews {
+        
+        .containerNews, .containerNews a {
+            height: 130px;
+        }
+        
+        div {
+            
             
             a {
                 @include disflex;
