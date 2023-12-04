@@ -32,7 +32,7 @@ minifier le SCSS et le JavaScript.
 ## Installation
 
 ```
-git clone https://github.com/SegoleneH/symfony_1
+git clone https://github.com/SegoleneH/pasteur
 cd symfony
 composer install
 ```
