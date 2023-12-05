@@ -11,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+@include flexWrap($wrap : nowrap);
 //  center-xy($x : space-between, $y : center)
 // @mixin centerXY {
 //     justify-content: $x;

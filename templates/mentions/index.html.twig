@@ -5,6 +5,9 @@
 {% block body %}
 
     <h2 class="titreIndex">Mentions Légales</h2>
+    <div class="btnContainer">
+        <a href="{{ path('app_mentions_new') }}" id="newMentionLeg">Créer Nouveau</a>
+    </div>
 
     <table class="table pure-table pure-table-horizontal">
         <tbody>
@@ -30,5 +33,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_mentions_new') }}" id="newMentionLeg">Create new</a>
 {% endblock %}
