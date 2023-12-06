@@ -236,8 +236,8 @@ class TestFixtures extends Fixture implements FixtureGroupInterface
 
             ],
             [
-                'nom' => 'Batman',
-                'prenom' => 'Detective',
+                'nom' => 'Artemis',
+                'prenom' => 'Rimbauth',
                 'lienRdv' => null,
                 'metiers' => [$metier3]
             ],
