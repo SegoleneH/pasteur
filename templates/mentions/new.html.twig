@@ -3,9 +3,16 @@
 {% block title %}New Mentions{% endblock %}
 
 {% block body %}
-    <h2>Create new Mentions</h2>
+
+    <div class="topContainer">
+        <a href="{{ path('app_metier_index') }}">
+            <button class="previousBtn">Précédent</button>
+        </a>
+
+        <h2>Ajouter des Mentions Légales</h2>
+    </div>
+    <p style="text-align: center">Vous pouvez trouver la liste des mentions obligatoires en suivant ce lien : <a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">Mentions obligatoires</a></p>
 
     {{ include('mentions/_form.html.twig') }}
 
-    <a href="{{ path('app_mentions_index') }}">back to list</a>
 {% endblock %}

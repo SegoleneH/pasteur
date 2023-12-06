@@ -13,12 +13,13 @@
     <h2>Modifier Mentions Légales</h2>
 </div>
 
-
-    <h2 style="text-align: center">Vous pouvez trouver la liste des mentions obligatoires en suivant ce lien : <a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#"><u>Mentions obligatoires</u></a></h2>
+    <p style="text-align: center">Vous pouvez trouver la liste des mentions obligatoires en suivant ce lien : 
+        <a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">
+            www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#
+        </a>
+    </p>
     
-
-    {{ include('mentions/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
-
+    {{ include('mentions/_form.html.twig') }}
 
     {{ include('mentions/_delete_form.html.twig') }}
 {% endblock %}

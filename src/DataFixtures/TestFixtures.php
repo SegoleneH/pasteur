@@ -182,16 +182,16 @@ class TestFixtures extends Fixture implements FixtureGroupInterface
         //données statiques
         $datas = [
             [
-                'nom' => 'Metier 1',
-                'description' => 'Description métier 1',
+                'nom' => 'Médecin Généraliste',
+                'description' => 'Métier 1',
             ],
             [
-                'nom' => 'Metier 2',
-                'description' => 'Description métier 2',
+                'nom' => 'Kinésithérapeute',
+                'description' => 'Métier 2',
             ],
             [
-                'nom' => 'Metier 3',
-                'description' => 'Description métier 3',
+                'nom' => 'Orthophoniste',
+                'description' => 'Métier 3',
             ],
         ];
         foreach ($datas as $data) {
@@ -223,21 +223,21 @@ class TestFixtures extends Fixture implements FixtureGroupInterface
         //données statiques
         $datas = [
             [
-                'nom' => 'Babar',
-                'prenom' => 'Mohamed',
+                'nom' => 'Martin',
+                'prenom' => 'Jerôme',
                 'lienRdv' => 'https://www.google.fr',
                 'metiers' => [$metier1]
             ],
             [
-                'nom' => 'Dumbo',
+                'nom' => 'Delacourt',
                 'prenom' => 'Julien',
                 'lienRdv' => 'https://www.yahoo.fr',
                 'metiers' => [$metier2]
 
             ],
             [
-                'nom' => 'Artemis',
-                'prenom' => 'Rimbauth',
+                'nom' => 'Lavillier',
+                'prenom' => 'Sylvie',
                 'lienRdv' => null,
                 'metiers' => [$metier3]
             ],
@@ -255,7 +255,7 @@ class TestFixtures extends Fixture implements FixtureGroupInterface
         }
         $this->manager->flush();
 
-        for ($i = 0; $i < 13; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $praticien = new Praticien();
             $praticien->setNom($this->faker->lastName());
             $praticien->setPrenom($this->faker->firstName());
@@ -356,12 +356,12 @@ class TestFixtures extends Fixture implements FixtureGroupInterface
         //données statiques
         $datas = [
             [
-                'question' => 'Question 1',
-                'reponse' => 'Réponse 1',
+                'question' => 'Quels documents apporter ?',
+                'reponse' => 'Munissez de votre carte vitale et de vos ordonnances de soins. ',
             ],
             [
-                'question' => 'Question 2',
-                'reponse' => 'Réponse 2',
+                'question' => 'Comment me préparer à une séance de kinésithérapie ?',
+                'reponse' => 'Adoptez une tenue et des sous-vêtements confortables et qui n\'entravent pas vos mouvements.',
             ],
         ];
         foreach ($datas as $data) {
