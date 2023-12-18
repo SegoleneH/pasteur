@@ -23,10 +23,7 @@ class UserType extends AbstractType
     {
         $this->hasher = $hasher;
     }
-    // function isPasswordValid(PasswordAuthenticatedUserInterface $user, string $plainPassword): bool
-    // {
 
-    // }
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $hasher = $this->hasher;
